@@ -33,6 +33,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _getsUSBUSART `(uc ~T0 @X0 0 ef2`*uc`uc ]
 "53 C:\Program Files (x86)\Microchip\xc8\v1.45\include\string.h
 [v _strstr `(*uc ~T0 @X0 0 ef2`*Cuc`*Cuc ]
+"37
+[v _strcpy `(*uc ~T0 @X0 0 ef2`*uc`*Cuc ]
+"779 mcc_generated_files/usb/usb_device_cdc.h
+[v _putrsUSBUSART `(v ~T0 @X0 0 ef1`*Cuc ]
 [; ;__size_t.h: 4: typedef unsigned size_t;
 [; ;string.h: 14: extern void * memcpy(void *, const void *, size_t);
 [; ;string.h: 15: extern void * memmove(void *, const void *, size_t);
@@ -2885,26 +2889,38 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 115: {
 "115
 {
-[; ;main.c: 117: if(strstr(readBuffer, "ON")) RC3 = 1;
+[; ;main.c: 117: if(strstr(readBuffer, "ON")) {
 "117
 [e $ ! != ( _strstr (2 , -> &U _readBuffer `*Cuc :s 1C -> -> 0 `i `*uc 328  ]
-[e = _RC3 -> -> 1 `i `b ]
-[e :U 328 ]
-[; ;main.c: 118: if(strstr(readBuffer, "OFF")) RC3 = 0;
+{
+[; ;main.c: 118: RC3 = 1;
 "118
+[e = _RC3 -> -> 1 `i `b ]
+[; ;main.c: 119: strcpy(writeBuffer, readBuffer);
+"119
+[e ( _strcpy (2 , &U _writeBuffer -> &U _readBuffer `*Cuc ]
+[; ;main.c: 120: putrsUSBUSART(writeBuffer);
+"120
+[e ( _putrsUSBUSART (1 -> &U _writeBuffer `*Cuc ]
+"121
+}
+[e :U 328 ]
+[; ;main.c: 121: }
+[; ;main.c: 122: if(strstr(readBuffer, "OFF")) RC3 = 0;
+"122
 [e $ ! != ( _strstr (2 , -> &U _readBuffer `*Cuc :s 2C -> -> 0 `i `*uc 329  ]
 [e = _RC3 -> -> 0 `i `b ]
 [e :U 329 ]
-"126
+"130
 }
 [e :U 327 ]
-"131
+"135
 }
 [e :U 326 ]
-[; ;main.c: 126: }
-[; ;main.c: 131: }
-[; ;main.c: 176: }
-"176
+[; ;main.c: 130: }
+[; ;main.c: 135: }
+[; ;main.c: 180: }
+"180
 [e :UE 324 ]
 }
 [a 1C 79 78 0 ]

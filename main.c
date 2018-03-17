@@ -114,7 +114,11 @@ void UserApplication(void)
         if(numBytesRead > 0) 
         {
             //Slaar paa LED om string inn inneholder "ON" eller "OFF" (foerste instans)
-            if(strstr(readBuffer, "ON")) RC3 = 1;
+            if(strstr(readBuffer, "ON")) {
+                RC3 = 1;
+                strcpy(writeBuffer, readBuffer); //Bruk heller forløkke tror jeg, bruker færre ord
+                putrsUSBUSART(writeBuffer);
+            }
             if(strstr(readBuffer, "OFF")) RC3 = 0;
            
             //TODO : Håndtere åpning av I2C

@@ -3991,10 +3991,14 @@ numBytesRead = getsUSBUSART(readBuffer, sizeof(readBuffer));
 if(numBytesRead > 0)
 {
 
-if(strstr(readBuffer, "ON")) RC3 = 1;
+if(strstr(readBuffer, "ON")) {
+RC3 = 1;
+strcpy(writeBuffer, readBuffer);
+putrsUSBUSART(writeBuffer);
+}
 if(strstr(readBuffer, "OFF")) RC3 = 0;
 
-# 126
+# 130
 }
 
 
@@ -4002,6 +4006,6 @@ if(strstr(readBuffer, "OFF")) RC3 = 0;
 
 }
 
-# 176
+# 180
 }
 

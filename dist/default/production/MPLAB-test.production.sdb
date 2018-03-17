@@ -154,16 +154,6 @@ EVENT_EP0_REQUEST 3
 EVENT_ATTACH 4
 EVENT_TRANSFER_TERMINATED 5
 ]
-"103 C:\Users\Larse\MPLABXProjects\MPLAB-test\main.c
-[e E2522 . `uc
-DETACHED_STATE 0
-ATTACHED_STATE 1
-POWERED_STATE 2
-DEFAULT_STATE 4
-ADR_PENDING_STATE 8
-ADDRESS_STATE 16
-CONFIGURED_STATE 32
-]
 "80 C:\Users\Larse\MPLABXProjects\MPLAB-test\mcc_generated_files/drivers/i2c_master.c
 [e E2347 . `uc
 I2C_IDLE 0
@@ -226,6 +216,16 @@ I2C_NOERR 0
 I2C_BUSY 1
 I2C_FAIL 2
 ]
+"103 C:\Users\Larse\MPLABXProjects\MPLAB-test\main.c
+[e E2522 . `uc
+DETACHED_STATE 0
+ATTACHED_STATE 1
+POWERED_STATE 2
+DEFAULT_STATE 4
+ADR_PENDING_STATE 8
+ADDRESS_STATE 16
+CONFIGURED_STATE 32
+]
 "62 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 "86 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftadd.c
@@ -235,6 +235,8 @@ I2C_FAIL 2
 [v i1_memset memset `(*.39v  1 e 1 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\strchr.c
 [v _strchr strchr `(*.7uc  1 e 1 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\strcpy.c
+[v _strcpy strcpy `(*.7uc  1 e 1 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\strlen.c
 [v _strlen strlen `(ui  1 e 2 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\strncmp.c
@@ -446,6 +448,8 @@ I2C_FAIL 2
 [v i1_CDCInitEP CDCInitEP `(v  1 e 1 0 ]
 "484
 [v _getsUSBUSART getsUSBUSART `(uc  1 e 1 0 ]
+"725
+[v _putrsUSBUSART putrsUSBUSART `(v  1 e 1 0 ]
 "835
 [v _CDCTxService CDCTxService `(v  1 e 1 0 ]
 "49 C:\Users\Larse\MPLABXProjects\MPLAB-test\mcc_generated_files/usb/usb_device_events.c
@@ -561,7 +565,7 @@ I2C_FAIL 2
 [v _SSP1MSK SSP1MSK `VEuc  1 e 1 @531 ]
 "2364
 [v _SSP1STAT SSP1STAT `VEuc  1 e 1 @532 ]
-[s S2811 . 1 `uc 1 BF 1 0 :1:0 
+[s S2754 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -571,11 +575,11 @@ I2C_FAIL 2
 `uc 1 SMP 1 0 :1:7 
 ]
 "2386
-[u S2820 . 1 `S2811 1 . 1 0 ]
-[v _SSP1STATbits SSP1STATbits `VES2820  1 e 1 @532 ]
+[u S2763 . 1 `S2754 1 . 1 0 ]
+[v _SSP1STATbits SSP1STATbits `VES2763  1 e 1 @532 ]
 "2486
 [v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @533 ]
-[s S2722 . 1 `uc 1 SSP1M0 1 0 :1:0 
+[s S2665 . 1 `uc 1 SSP1M0 1 0 :1:0 
 `uc 1 SSP1M1 1 0 :1:1 
 `uc 1 SSP1M2 1 0 :1:2 
 `uc 1 SSP1M3 1 0 :1:3 
@@ -585,16 +589,16 @@ I2C_FAIL 2
 `uc 1 WCOL 1 0 :1:7 
 ]
 "2518
-[s S2731 . 1 `uc 1 SSPM 1 0 :4:0 
+[s S2674 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 . 1 0 :1:4 
 `uc 1 SSP1EN 1 0 :1:5 
 `uc 1 SSP1OV 1 0 :1:6 
 ]
-[u S2736 . 1 `S2722 1 . 1 0 `S2731 1 . 1 0 ]
-[v _SSP1CON1bits SSP1CON1bits `VES2736  1 e 1 @533 ]
+[u S2679 . 1 `S2665 1 . 1 0 `S2674 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES2679  1 e 1 @533 ]
 "2729
 [v _SSP1CON2 SSP1CON2 `VEuc  1 e 1 @534 ]
-[s S2788 . 1 `uc 1 SEN 1 0 :1:0 
+[s S2731 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -604,8 +608,8 @@ I2C_FAIL 2
 `uc 1 GCEN 1 0 :1:7 
 ]
 "2751
-[u S2797 . 1 `S2788 1 . 1 0 ]
-[v _SSP1CON2bits SSP1CON2bits `VES2797  1 e 1 @534 ]
+[u S2740 . 1 `S2731 1 . 1 0 ]
+[v _SSP1CON2bits SSP1CON2bits `VES2740  1 e 1 @534 ]
 "3208
 [v _ACTCON ACTCON `VEuc  1 e 1 @923 ]
 "3619
@@ -676,13 +680,15 @@ I2C_FAIL 2
 [v _RC3 RC3 `VEb  1 e 0 @115 ]
 "48 C:\Users\Larse\MPLABXProjects\MPLAB-test\main.c
 [v _readBuffer readBuffer `[64]uc  1 s 64 readBuffer ]
-[s S2435 . 29 `uc 1 busy 1 0 :1:0 
+"49
+[v _writeBuffer writeBuffer `[64]uc  1 s 64 writeBuffer ]
+[s S2378 . 29 `uc 1 busy 1 0 :1:0 
 `uc 1 inUse 1 0 :1:1 
 `uc 1 bufferFree 1 0 :1:2 
 `uc 1 addressNACKCheck 1 0 :1:3 
 `uc 1 address 1 1 `*.1uc 1 data_ptr 1 2 `ui 1 data_length 2 3 `ui 1 time_out 2 5 `ui 1 time_out_value 2 7 `E2347 1 state 1 9 `E2176 1 error 1 10 `[6]*.37(E2181 1 callbackTable 12 11 `[6]*.1v 1 callbackPayload 6 23 ]
 "80 C:\Users\Larse\MPLABXProjects\MPLAB-test\mcc_generated_files/drivers/i2c_master.c
-[v _i2c_status i2c_status `S2435  1 e 29 0 ]
+[v _i2c_status i2c_status `S2378  1 e 29 0 ]
 "400
 [v _fsmStateTable fsmStateTable `[16]*.37DC(E2347  1 e 32 0 ]
 "75 C:\Users\Larse\MPLABXProjects\MPLAB-test\mcc_generated_files/i2c_driver.h
@@ -927,7 +933,7 @@ I2C_FAIL 2
 {
 "111
 [v UserApplication@numBytesRead numBytesRead `uc  1 a 1 27 ]
-"176
+"180
 } 0
 "4 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\strstr.c
 [v _strstr strstr `(*.7uc  1 e 1 0 ]
@@ -966,7 +972,34 @@ I2C_FAIL 2
 [v strchr@ptr ptr `*.7DCuc  1 a 1 8 ]
 "11
 } 0
-"484 C:\Users\Larse\MPLABXProjects\MPLAB-test\mcc_generated_files/usb/usb_device_cdc.c
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\strcpy.c
+[v _strcpy strcpy `(*.7uc  1 e 1 0 ]
+{
+[v strcpy@to to `*.7uc  1 a 1 wreg ]
+"15
+[v strcpy@cp cp `*.7uc  1 a 1 9 ]
+"8
+[v strcpy@to to `*.7uc  1 a 1 wreg ]
+[v strcpy@from from `*.7DCuc  1 p 1 6 ]
+"18
+[v strcpy@to to `*.7uc  1 a 1 8 ]
+"24
+} 0
+"725 C:\Users\Larse\MPLABXProjects\MPLAB-test\mcc_generated_files/usb/usb_device_cdc.c
+[v _putrsUSBUSART putrsUSBUSART `(v  1 e 1 0 ]
+{
+[v putrsUSBUSART@data data `*.7DCuc  1 a 1 wreg ]
+"727
+[v putrsUSBUSART@len len `uc  1 a 1 9 ]
+"728
+[v putrsUSBUSART@pData pData `*.7DCuc  1 a 1 7 ]
+"725
+[v putrsUSBUSART@data data `*.7DCuc  1 a 1 wreg ]
+"753
+[v putrsUSBUSART@data data `*.7DCuc  1 a 1 8 ]
+"782
+} 0
+"484
 [v _getsUSBUSART getsUSBUSART `(uc  1 e 1 0 ]
 {
 [v getsUSBUSART@buffer buffer `*.7uc  1 a 1 wreg ]
