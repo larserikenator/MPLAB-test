@@ -1,64 +1,132 @@
 Version 3.2 HI-TECH Software Intermediate Code
 [v F2168 `(v ~T0 @X0 0 tf ]
 [v F2171 `(v ~T0 @X0 0 tf ]
-"120 mcc_generated_files/pin_manager.h
-[v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
-"85 mcc_generated_files/mcc.h
-[v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
-"98
-[v _WDT_Initialize `(v ~T0 @X0 0 ef ]
-"195 mcc_generated_files/usb/usb_device.h
-[v _USBDeviceInit `(v ~T0 @X0 0 ef ]
-"635
-[v _USBDeviceAttach `(v ~T0 @X0 0 ef ]
-"1366 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1454.h
-[v _OSCCON `Vuc ~T0 @X0 0 e@153 ]
-"1302
-[v _OSCTUNE `Vuc ~T0 @X0 0 e@152 ]
-"3208
-[v _ACTCON `Vuc ~T0 @X0 0 e@923 ]
-"1570
-[v _BORCON `Vuc ~T0 @X0 0 e@278 ]
-"5024
-[v _PLLRDY `Vb ~T0 @X0 0 e@1238 ]
-"1243
-[v _WDTCON `Vuc ~T0 @X0 0 e@151 ]
-"49 mcc_generated_files/mcc.c
-[p x FOSC=INTOSC ]
-"50
-[p x WDTE=OFF ]
-"51
-[p x PWRTE=OFF ]
-"52
-[p x MCLRE=ON ]
-"53
-[p x CP=OFF ]
-"54
-[p x BOREN=ON ]
-"55
-[p x CLKOUTEN=OFF ]
-"56
-[p x IESO=ON ]
-"57
-[p x FCMEN=ON ]
-"60
-[p x WRT=OFF ]
-"61
-[p x CPUDIV=NOCLKDIV ]
-"62
-[p x USBLSCLK=48MHz ]
-"63
-[p x PLLMULT=3x ]
-"64
-[p x PLLEN=ENABLED ]
-"65
-[p x STVREN=ON ]
-"66
-[p x BORV=LO ]
-"67
-[p x LPBOR=OFF ]
-"68
-[p x LVP=ON ]
+"2501 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1454.h
+[s S144 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S144 . SSP1M0 SSP1M1 SSP1M2 SSP1M3 CKP SSPEN SSPOV WCOL ]
+"2511
+[s S145 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S145 . SSPM . SSP1EN SSP1OV ]
+"2500
+[u S143 `S144 1 `S145 1 ]
+[n S143 . . . ]
+"2518
+[v _SSP1CON1bits `VS143 ~T0 @X0 0 e@533 ]
+"1017
+[s S61 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S61 . TMR1IE TMR2IE . SSP1IE TXIE RCIE . TMR1GIE ]
+"1016
+[u S60 `S61 1 ]
+[n S60 . . ]
+"1028
+[v _PIE1bits `VS60 ~T0 @X0 0 e@145 ]
+"528
+[s S34 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S34 . TMR1IF TMR2IF . SSP1IF TXIF RCIF . TMR1GIF ]
+"527
+[u S33 `S34 1 ]
+[n S33 . . ]
+"539
+[v _PIR1bits `VS33 ~T0 @X0 0 e@17 ]
+[v F2047 `(v ~T0 @X0 1 tf1`ul ]
+"153 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic.h
+[v __delay `JF2047 ~T0 @X0 0 e ]
+[p i __delay ]
+"2364 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1454.h
+[v _SSP1STAT `Vuc ~T0 @X0 0 e@532 ]
+"2486
+[v _SSP1CON1 `Vuc ~T0 @X0 0 e@533 ]
+"2729
+[v _SSP1CON2 `Vuc ~T0 @X0 0 e@534 ]
+"2288
+[v _SSP1ADD `Vuc ~T0 @X0 0 e@530 ]
+"2740
+[s S153 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S153 . SEN RSEN PEN RCEN ACKEN ACKDT ACKSTAT GCEN ]
+"2739
+[u S152 `S153 1 ]
+[n S152 . . ]
+"2751
+[v _SSP1CON2bits `VS152 ~T0 @X0 0 e@534 ]
+"2250
+[v _SSP1BUF `Vuc ~T0 @X0 0 e@529 ]
+"2326
+[v _SSP1MSK `Vuc ~T0 @X0 0 e@531 ]
+"2375
+[s S140 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S140 . BF UA R_nW S P D_nA CKE SMP ]
+"2374
+[u S139 `S140 1 ]
+[n S139 . . ]
+"2386
+[v _SSP1STATbits `VS139 ~T0 @X0 0 e@532 ]
+"580
+[s S36 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S36 . . ACTIF USBIF BCL1IF . OSFIF ]
+"579
+[u S35 `S36 1 ]
+[n S35 . . ]
+"589
+[v _PIR2bits `VS35 ~T0 @X0 0 e@18 ]
+[; ;__size_t.h: 4: typedef unsigned size_t;
+[; ;stdarg.h: 7: typedef void * va_list[1];
+[; ;stdarg.h: 10: extern void * __va_start(void);
+[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
+[; ;stdio.h: 43: struct __prbuf
+[; ;stdio.h: 44: {
+[; ;stdio.h: 45: char * ptr;
+[; ;stdio.h: 46: void (* func)(char);
+[; ;stdio.h: 47: };
+[; ;errno.h: 29: extern int errno;
+[; ;conio.h: 12: extern void init_uart(void);
+[; ;conio.h: 14: extern char getch(void);
+[; ;conio.h: 15: extern char getche(void);
+[; ;conio.h: 16: extern void putch(char);
+[; ;conio.h: 17: extern void ungetch(char);
+[; ;conio.h: 19: extern __bit kbhit(void);
+[; ;conio.h: 23: extern char * cgets(char *);
+[; ;conio.h: 24: extern void cputs(const char *);
+[; ;stdio.h: 88: extern int cprintf(char *, ...);
+[; ;stdio.h: 93: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+[; ;stdio.h: 183: extern char * gets(char *);
+[; ;stdio.h: 184: extern int puts(const char *);
+[; ;stdio.h: 185: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+[; ;stdio.h: 186: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+[; ;stdio.h: 187: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+[; ;stdio.h: 188: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+[; ;stdio.h: 189: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+[; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+[; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
+[; ;stdio.h: 195: extern int printf(const char *, ...);
+[; ;stdint.h: 13: typedef signed char int8_t;
+[; ;stdint.h: 20: typedef signed int int16_t;
+[; ;stdint.h: 28: typedef signed short long int int24_t;
+[; ;stdint.h: 36: typedef signed long int int32_t;
+[; ;stdint.h: 43: typedef unsigned char uint8_t;
+[; ;stdint.h: 49: typedef unsigned int uint16_t;
+[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
+[; ;stdint.h: 63: typedef unsigned long int uint32_t;
+[; ;stdint.h: 71: typedef signed char int_least8_t;
+[; ;stdint.h: 78: typedef signed int int_least16_t;
+[; ;stdint.h: 90: typedef signed short long int int_least24_t;
+[; ;stdint.h: 98: typedef signed long int int_least32_t;
+[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
+[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
+[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
+[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
+[; ;stdint.h: 137: typedef signed char int_fast8_t;
+[; ;stdint.h: 144: typedef signed int int_fast16_t;
+[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
+[; ;stdint.h: 164: typedef signed long int int_fast32_t;
+[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
+[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
+[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
+[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
+[; ;stdint.h: 200: typedef int32_t intmax_t;
+[; ;stdint.h: 205: typedef uint32_t uintmax_t;
+[; ;stdint.h: 210: typedef int16_t intptr_t;
+[; ;stdint.h: 215: typedef uint16_t uintptr_t;
+[; ;stdbool.h: 12: typedef unsigned char bool;
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -2041,66 +2109,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 195: extern __bank0 __bit __timeout;
 [; ;pin_manager.h: 120: void PIN_MANAGER_Initialize (void);
 [; ;pin_manager.h: 132: void PIN_MANAGER_IOC(void);
-[; ;stdint.h: 13: typedef signed char int8_t;
-[; ;stdint.h: 20: typedef signed int int16_t;
-[; ;stdint.h: 28: typedef signed short long int int24_t;
-[; ;stdint.h: 36: typedef signed long int int32_t;
-[; ;stdint.h: 43: typedef unsigned char uint8_t;
-[; ;stdint.h: 49: typedef unsigned int uint16_t;
-[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
-[; ;stdint.h: 63: typedef unsigned long int uint32_t;
-[; ;stdint.h: 71: typedef signed char int_least8_t;
-[; ;stdint.h: 78: typedef signed int int_least16_t;
-[; ;stdint.h: 90: typedef signed short long int int_least24_t;
-[; ;stdint.h: 98: typedef signed long int int_least32_t;
-[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
-[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
-[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
-[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
-[; ;stdint.h: 137: typedef signed char int_fast8_t;
-[; ;stdint.h: 144: typedef signed int int_fast16_t;
-[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
-[; ;stdint.h: 164: typedef signed long int int_fast32_t;
-[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
-[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
-[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
-[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
-[; ;stdint.h: 200: typedef int32_t intmax_t;
-[; ;stdint.h: 205: typedef uint32_t uintmax_t;
-[; ;stdint.h: 210: typedef int16_t intptr_t;
-[; ;stdint.h: 215: typedef uint16_t uintptr_t;
-[; ;stdbool.h: 12: typedef unsigned char bool;
 [; ;interrupt_manager.h: 108: void interrupt INTERRUPT_InterruptManager(void);
-[; ;__size_t.h: 4: typedef unsigned size_t;
-[; ;stdarg.h: 7: typedef void * va_list[1];
-[; ;stdarg.h: 10: extern void * __va_start(void);
-[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
-[; ;stdio.h: 43: struct __prbuf
-[; ;stdio.h: 44: {
-[; ;stdio.h: 45: char * ptr;
-[; ;stdio.h: 46: void (* func)(char);
-[; ;stdio.h: 47: };
-[; ;errno.h: 29: extern int errno;
-[; ;conio.h: 12: extern void init_uart(void);
-[; ;conio.h: 14: extern char getch(void);
-[; ;conio.h: 15: extern char getche(void);
-[; ;conio.h: 16: extern void putch(char);
-[; ;conio.h: 17: extern void ungetch(char);
-[; ;conio.h: 19: extern __bit kbhit(void);
-[; ;conio.h: 23: extern char * cgets(char *);
-[; ;conio.h: 24: extern void cputs(const char *);
-[; ;stdio.h: 88: extern int cprintf(char *, ...);
-[; ;stdio.h: 93: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-[; ;stdio.h: 183: extern char * gets(char *);
-[; ;stdio.h: 184: extern int puts(const char *);
-[; ;stdio.h: 185: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-[; ;stdio.h: 186: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-[; ;stdio.h: 187: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-[; ;stdio.h: 188: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-[; ;stdio.h: 189: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-[; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-[; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
-[; ;stdio.h: 195: extern int printf(const char *, ...);
 [; ;i2c_driver.h: 34: inline void i2c_driver_close(void);
 [; ;i2c_driver.h: 37: inline void mssp_enableIRQ(void);
 [; ;i2c_driver.h: 38: inline bit mssp_IRQisEnabled(void);
@@ -2815,83 +2824,675 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mcc.h: 72: void SYSTEM_Initialize(void);
 [; ;mcc.h: 85: void OSCILLATOR_Initialize(void);
 [; ;mcc.h: 98: void WDT_Initialize(void);
-"73 mcc_generated_files/mcc.c
-[v _SYSTEM_Initialize `(v ~T0 @X0 1 ef ]
-"74
+"30 mcc_generated_files/i2c_driver.c
+[p n 520 ]
+[v F2066 `(v ~T0 @X0 1 tf ]
+"32
+[v _i2c_driver_close `TF2066 ~T0 @X0 1 e ]
+"33
 {
-[; ;mcc.c: 73: void SYSTEM_Initialize(void)
-[; ;mcc.c: 74: {
-[e :U _SYSTEM_Initialize ]
+[; ;i2c_driver.c: 32: inline void i2c_driver_close(void)
+[; ;i2c_driver.c: 33: {
+[e :U _i2c_driver_close ]
 [f ]
-[; ;mcc.c: 76: PIN_MANAGER_Initialize();
-"76
-[e ( _PIN_MANAGER_Initialize ..  ]
-[; ;mcc.c: 77: OSCILLATOR_Initialize();
-"77
-[e ( _OSCILLATOR_Initialize ..  ]
-[; ;mcc.c: 78: WDT_Initialize();
-"78
-[e ( _WDT_Initialize ..  ]
-[; ;mcc.c: 79: USBDeviceInit();
-"79
-[e ( _USBDeviceInit ..  ]
-[; ;mcc.c: 80: USBDeviceAttach();
-"80
-[e ( _USBDeviceAttach ..  ]
-[; ;mcc.c: 81: }
-"81
+[; ;i2c_driver.c: 34: SSP1CON1bits.SSPEN = 0;
+"34
+[e = . . _SSP1CON1bits 0 5 -> -> 0 `i `uc ]
+[; ;i2c_driver.c: 35: }
+"35
 [e :UE 320 ]
 }
-"83
-[v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
-"84
+[v F2069 `(v ~T0 @X0 1 tf ]
+"38
+[v _mssp_enableIRQ `TF2069 ~T0 @X0 1 e ]
+"39
 {
-[; ;mcc.c: 83: void OSCILLATOR_Initialize(void)
-[; ;mcc.c: 84: {
-[e :U _OSCILLATOR_Initialize ]
+[; ;i2c_driver.c: 38: inline void mssp_enableIRQ(void)
+[; ;i2c_driver.c: 39: {
+[e :U _mssp_enableIRQ ]
 [f ]
-[; ;mcc.c: 86: OSCCON = 0x7C;
-"86
-[e = _OSCCON -> -> 124 `i `uc ]
-[; ;mcc.c: 88: OSCTUNE = 0x00;
-"88
-[e = _OSCTUNE -> -> 0 `i `uc ]
-[; ;mcc.c: 90: ACTCON = 0x00;
-"90
-[e = _ACTCON -> -> 0 `i `uc ]
-[; ;mcc.c: 92: BORCON = 0x00;
-"92
-[e = _BORCON -> -> 0 `i `uc ]
-[; ;mcc.c: 94: while(PLLRDY == 0)
-"94
-[e $U 322  ]
-[e :U 323 ]
-[; ;mcc.c: 95: {
-"95
-{
-"96
-}
-[e :U 322 ]
-"94
-[e $ == -> _PLLRDY `i -> 0 `i 323  ]
-[e :U 324 ]
-[; ;mcc.c: 96: }
-[; ;mcc.c: 97: }
-"97
+[; ;i2c_driver.c: 40: PIE1bits.SSP1IE = 1;
+"40
+[e = . . _PIE1bits 0 3 -> -> 1 `i `uc ]
+[; ;i2c_driver.c: 41: }
+"41
 [e :UE 321 ]
 }
+[v F2072 `(b ~T0 @X0 1 tf ]
+"43
+[v _mssp_IRQisEnabled `TF2072 ~T0 @X0 1 e ]
+"44
+{
+[; ;i2c_driver.c: 43: inline bit mssp_IRQisEnabled(void)
+[; ;i2c_driver.c: 44: {
+[e :U _mssp_IRQisEnabled ]
+[f ]
+[; ;i2c_driver.c: 45: return PIE1bits.SSP1IE;
+"45
+[e ) -> . . _PIE1bits 0 3 `b ]
+[e $UE 322  ]
+[; ;i2c_driver.c: 46: }
+"46
+[e :UE 322 ]
+}
+[v F2075 `(v ~T0 @X0 1 tf ]
+"48
+[v _mssp_disableIRQ `TF2075 ~T0 @X0 1 e ]
+"49
+{
+[; ;i2c_driver.c: 48: inline void mssp_disableIRQ(void)
+[; ;i2c_driver.c: 49: {
+[e :U _mssp_disableIRQ ]
+[f ]
+[; ;i2c_driver.c: 50: PIE1bits.SSP1IE = 0;
+"50
+[e = . . _PIE1bits 0 3 -> -> 0 `i `uc ]
+[; ;i2c_driver.c: 51: }
+"51
+[e :UE 323 ]
+}
+[v F2078 `(v ~T0 @X0 1 tf ]
+"53
+[v _mssp_clearIRQ `TF2078 ~T0 @X0 1 e ]
+"54
+{
+[; ;i2c_driver.c: 53: inline void mssp_clearIRQ(void)
+[; ;i2c_driver.c: 54: {
+[e :U _mssp_clearIRQ ]
+[f ]
+[; ;i2c_driver.c: 55: PIR1bits.SSP1IF = 0;
+"55
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+[; ;i2c_driver.c: 56: }
+"56
+[e :UE 324 ]
+}
+[v F2081 `(v ~T0 @X0 1 tf ]
+"58
+[v _mssp_setIRQ `TF2081 ~T0 @X0 1 e ]
+"59
+{
+[; ;i2c_driver.c: 58: inline void mssp_setIRQ(void)
+[; ;i2c_driver.c: 59: {
+[e :U _mssp_setIRQ ]
+[f ]
+[; ;i2c_driver.c: 60: PIR1bits.SSP1IF = 1;
+"60
+[e = . . _PIR1bits 0 3 -> -> 1 `i `uc ]
+[; ;i2c_driver.c: 61: }
+"61
+[e :UE 325 ]
+}
+[v F2084 `(b ~T0 @X0 1 tf ]
+"63
+[v _mssp_IRQisSet `TF2084 ~T0 @X0 1 e ]
+"64
+{
+[; ;i2c_driver.c: 63: inline bit mssp_IRQisSet(void)
+[; ;i2c_driver.c: 64: {
+[e :U _mssp_IRQisSet ]
+[f ]
+[; ;i2c_driver.c: 65: return PIR1bits.SSP1IF;
+"65
+[e ) -> . . _PIR1bits 0 3 `b ]
+[e $UE 326  ]
+[; ;i2c_driver.c: 66: }
+"66
+[e :UE 326 ]
+}
+[v F2087 `(v ~T0 @X0 1 tf1`*ui ]
+"68
+[v _mssp_waitForEvent `TF2087 ~T0 @X0 1 e ]
+"69
+{
+[; ;i2c_driver.c: 68: inline void mssp_waitForEvent(uint16_t *timeout)
+[; ;i2c_driver.c: 69: {
+[e :U _mssp_waitForEvent ]
+"68
+[v _timeout `*ui ~T0 @X0 1 r1 ]
+"69
+[f ]
+[; ;i2c_driver.c: 73: if(PIR1bits.SSP1IF == 0)
+"73
+[e $ ! == -> . . _PIR1bits 0 3 `i -> 0 `i 328  ]
+[; ;i2c_driver.c: 74: {
+"74
+{
+[; ;i2c_driver.c: 75: while(1)
+"75
+[e :U 330 ]
+[; ;i2c_driver.c: 76: {
+"76
+{
+[; ;i2c_driver.c: 77: if(PIR1bits.SSP1IF) break;
+"77
+[e $ ! != -> . . _PIR1bits 0 3 `i -> -> -> 0 `i `Vuc `i 332  ]
+[e $U 331  ]
+[e :U 332 ]
+[; ;i2c_driver.c: 78: _delay((unsigned long)((100)*(48000000/4000000.0)));
+"78
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 48000000 `l `d .4000000.0 `ul ]
+"79
+}
+[e :U 329 ]
+"75
+[e $U 330  ]
+[e :U 331 ]
+"80
+}
+[e :U 328 ]
+[; ;i2c_driver.c: 79: }
+[; ;i2c_driver.c: 80: }
+[; ;i2c_driver.c: 81: }
+"81
+[e :UE 327 ]
+}
+"83
+[v _i2c_driver_open `(b ~T0 @X0 1 ef ]
+"84
+{
+[; ;i2c_driver.c: 83: bit i2c_driver_open(void)
+[; ;i2c_driver.c: 84: {
+[e :U _i2c_driver_open ]
+[f ]
+[; ;i2c_driver.c: 85: if(!SSP1CON1bits.SSPEN)
+"85
+[e $ ! ! != -> . . _SSP1CON1bits 0 5 `i -> -> -> 0 `i `Vuc `i 334  ]
+[; ;i2c_driver.c: 86: {
+"86
+{
+[; ;i2c_driver.c: 87: SSP1STAT = 0x00;
+"87
+[e = _SSP1STAT -> -> 0 `i `uc ]
+[; ;i2c_driver.c: 88: SSP1CON1 = 0x28;
+"88
+[e = _SSP1CON1 -> -> 40 `i `uc ]
+[; ;i2c_driver.c: 89: SSP1CON2 = 0x00;
+"89
+[e = _SSP1CON2 -> -> 0 `i `uc ]
+[; ;i2c_driver.c: 90: SSP1ADD = 0x77;
+"90
+[e = _SSP1ADD -> -> 119 `i `uc ]
+[; ;i2c_driver.c: 91: return 1;
+"91
+[e ) -> -> 1 `i `b ]
+[e $UE 333  ]
+"92
+}
+[; ;i2c_driver.c: 92: }
+[e $U 335  ]
+"93
+[e :U 334 ]
+[; ;i2c_driver.c: 93: else
+[; ;i2c_driver.c: 94: return 0;
+"94
+[e ) -> -> 0 `i `b ]
+[e $UE 333  ]
+[e :U 335 ]
+[; ;i2c_driver.c: 95: }
+"95
+[e :UE 333 ]
+}
+"97
+[v _i2c_driver_initSlaveHardware `(b ~T0 @X0 1 ef ]
+"98
+{
+[; ;i2c_driver.c: 97: bit i2c_driver_initSlaveHardware(void)
+[; ;i2c_driver.c: 98: {
+[e :U _i2c_driver_initSlaveHardware ]
+[f ]
+[; ;i2c_driver.c: 99: if(!SSP1CON1bits.SSPEN)
 "99
-[v _WDT_Initialize `(v ~T0 @X0 1 ef ]
+[e $ ! ! != -> . . _SSP1CON1bits 0 5 `i -> -> -> 0 `i `Vuc `i 337  ]
+[; ;i2c_driver.c: 100: {
 "100
 {
-[; ;mcc.c: 99: void WDT_Initialize(void)
-[; ;mcc.c: 100: {
-[e :U _WDT_Initialize ]
+[; ;i2c_driver.c: 131: SSP1CON1 |= 0x06;
+"131
+[e =| _SSP1CON1 -> -> 6 `i `uc ]
+[; ;i2c_driver.c: 132: SSP1STAT = 0x00;
+"132
+[e = _SSP1STAT -> -> 0 `i `uc ]
+[; ;i2c_driver.c: 133: SSP1CON2 = 0x00;
+"133
+[e = _SSP1CON2 -> -> 0 `i `uc ]
+[; ;i2c_driver.c: 135: SSP1CON1bits.SSPEN = 1;
+"135
+[e = . . _SSP1CON1bits 0 5 -> -> 1 `i `uc ]
+[; ;i2c_driver.c: 136: return 1;
+"136
+[e ) -> -> 1 `i `b ]
+[e $UE 336  ]
+"137
+}
+[e :U 337 ]
+[; ;i2c_driver.c: 137: }
+[; ;i2c_driver.c: 138: return 0;
+"138
+[e ) -> -> 0 `i `b ]
+[e $UE 336  ]
+[; ;i2c_driver.c: 139: }
+"139
+[e :UE 336 ]
+}
+[v F2107 `(v ~T0 @X0 1 tf ]
+"141
+[v _i2c_driver_resetBus `TF2107 ~T0 @X0 1 e ]
+"142
+{
+[; ;i2c_driver.c: 141: inline void i2c_driver_resetBus(void)
+[; ;i2c_driver.c: 142: {
+[e :U _i2c_driver_resetBus ]
 [f ]
-[; ;mcc.c: 102: WDTCON = 0x16;
-"102
-[e = _WDTCON -> -> 22 `i `uc ]
-[; ;mcc.c: 103: }
-"103
-[e :UE 325 ]
+[; ;i2c_driver.c: 144: }
+"144
+[e :UE 338 ]
+}
+[v F2110 `(v ~T0 @X0 1 tf ]
+"146
+[v _i2c_driver_start `TF2110 ~T0 @X0 1 e ]
+"147
+{
+[; ;i2c_driver.c: 146: inline void i2c_driver_start(void)
+[; ;i2c_driver.c: 147: {
+[e :U _i2c_driver_start ]
+[f ]
+[; ;i2c_driver.c: 148: SSP1CON2bits.SEN = 1;
+"148
+[e = . . _SSP1CON2bits 0 0 -> -> 1 `i `uc ]
+[; ;i2c_driver.c: 149: }
+"149
+[e :UE 339 ]
+}
+[v F2113 `(v ~T0 @X0 1 tf ]
+"151
+[v _i2c_driver_restart `TF2113 ~T0 @X0 1 e ]
+"152
+{
+[; ;i2c_driver.c: 151: inline void i2c_driver_restart(void)
+[; ;i2c_driver.c: 152: {
+[e :U _i2c_driver_restart ]
+[f ]
+[; ;i2c_driver.c: 153: SSP1CON2bits.RSEN = 1;
+"153
+[e = . . _SSP1CON2bits 0 1 -> -> 1 `i `uc ]
+[; ;i2c_driver.c: 154: }
+"154
+[e :UE 340 ]
+}
+[v F2116 `(v ~T0 @X0 1 tf ]
+"156
+[v _i2c_driver_stop `TF2116 ~T0 @X0 1 e ]
+"157
+{
+[; ;i2c_driver.c: 156: inline void i2c_driver_stop(void)
+[; ;i2c_driver.c: 157: {
+[e :U _i2c_driver_stop ]
+[f ]
+[; ;i2c_driver.c: 158: SSP1CON2bits.PEN = 1;
+"158
+[e = . . _SSP1CON2bits 0 2 -> -> 1 `i `uc ]
+[; ;i2c_driver.c: 159: }
+"159
+[e :UE 341 ]
+}
+[v F2119 `(b ~T0 @X0 1 tf ]
+"161
+[v _i2c_driver_isNACK `TF2119 ~T0 @X0 1 e ]
+"162
+{
+[; ;i2c_driver.c: 161: inline bit i2c_driver_isNACK(void)
+[; ;i2c_driver.c: 162: {
+[e :U _i2c_driver_isNACK ]
+[f ]
+[; ;i2c_driver.c: 163: return SSP1CON2bits.ACKSTAT = 1;
+"163
+[e ) -> = . . _SSP1CON2bits 0 6 -> -> 1 `i `uc `b ]
+[e $UE 342  ]
+[; ;i2c_driver.c: 164: }
+"164
+[e :UE 342 ]
+}
+[v F2122 `(v ~T0 @X0 1 tf ]
+"166
+[v _i2c_driver_startRX `TF2122 ~T0 @X0 1 e ]
+"167
+{
+[; ;i2c_driver.c: 166: inline void i2c_driver_startRX(void)
+[; ;i2c_driver.c: 167: {
+[e :U _i2c_driver_startRX ]
+[f ]
+[; ;i2c_driver.c: 168: SSP1CON2bits.RCEN = 1;
+"168
+[e = . . _SSP1CON2bits 0 3 -> -> 1 `i `uc ]
+[; ;i2c_driver.c: 169: }
+"169
+[e :UE 343 ]
+}
+[v F2092 `(uc ~T0 @X0 1 tf ]
+"171
+[v _i2c_driver_getRXData `TF2092 ~T0 @X0 1 e ]
+"172
+{
+[; ;i2c_driver.c: 171: inline char i2c_driver_getRXData(void)
+[; ;i2c_driver.c: 172: {
+[e :U _i2c_driver_getRXData ]
+[f ]
+[; ;i2c_driver.c: 173: return SSP1BUF;
+"173
+[e ) _SSP1BUF ]
+[e $UE 344  ]
+[; ;i2c_driver.c: 174: }
+"174
+[e :UE 344 ]
+}
+[v F2098 `(v ~T0 @X0 1 tf1`uc ]
+"176
+[v _i2c_driver_setAddr `TF2098 ~T0 @X0 1 e ]
+"177
+{
+[; ;i2c_driver.c: 176: inline void i2c_driver_setAddr(char addr)
+[; ;i2c_driver.c: 177: {
+[e :U _i2c_driver_setAddr ]
+"176
+[v _addr `uc ~T0 @X0 1 r1 ]
+"177
+[f ]
+[; ;i2c_driver.c: 178: SSP1ADD = addr;
+"178
+[e = _SSP1ADD _addr ]
+[; ;i2c_driver.c: 179: }
+"179
+[e :UE 345 ]
+}
+[v F2101 `(v ~T0 @X0 1 tf1`uc ]
+"181
+[v _i2c_driver_setMask `TF2101 ~T0 @X0 1 e ]
+"182
+{
+[; ;i2c_driver.c: 181: inline void i2c_driver_setMask(char mask)
+[; ;i2c_driver.c: 182: {
+[e :U _i2c_driver_setMask ]
+"181
+[v _mask `uc ~T0 @X0 1 r1 ]
+"182
+[f ]
+[; ;i2c_driver.c: 183: SSP1MSK = mask;
+"183
+[e = _SSP1MSK _mask ]
+[; ;i2c_driver.c: 184: }
+"184
+[e :UE 346 ]
+}
+[v F2104 `(v ~T0 @X0 1 tf1`uc ]
+"186
+[v _i2c_driver_TXData `TF2104 ~T0 @X0 1 e ]
+"187
+{
+[; ;i2c_driver.c: 186: inline void i2c_driver_TXData(char d)
+[; ;i2c_driver.c: 187: {
+[e :U _i2c_driver_TXData ]
+"186
+[v _d `uc ~T0 @X0 1 r1 ]
+"187
+[f ]
+[; ;i2c_driver.c: 188: SSP1BUF = d;
+"188
+[e = _SSP1BUF _d ]
+[; ;i2c_driver.c: 189: }
+"189
+[e :UE 347 ]
+}
+[v F2095 `(uc ~T0 @X0 1 tf ]
+"191
+[v _i2c_driver_getAddr `TF2095 ~T0 @X0 1 e ]
+"192
+{
+[; ;i2c_driver.c: 191: inline char i2c_driver_getAddr(void)
+[; ;i2c_driver.c: 192: {
+[e :U _i2c_driver_getAddr ]
+[f ]
+[; ;i2c_driver.c: 193: return SSP1ADD;
+"193
+[e ) _SSP1ADD ]
+[e $UE 348  ]
+[; ;i2c_driver.c: 194: }
+"194
+[e :UE 348 ]
+}
+[v F2125 `(v ~T0 @X0 1 tf ]
+"196
+[v _i2c_driver_sendACK `TF2125 ~T0 @X0 1 e ]
+"197
+{
+[; ;i2c_driver.c: 196: inline void i2c_driver_sendACK(void)
+[; ;i2c_driver.c: 197: {
+[e :U _i2c_driver_sendACK ]
+[f ]
+[; ;i2c_driver.c: 198: SSP1CON2bits.ACKDT = 0;
+"198
+[e = . . _SSP1CON2bits 0 5 -> -> 0 `i `uc ]
+[; ;i2c_driver.c: 199: SSP1CON2bits.ACKEN = 1;
+"199
+[e = . . _SSP1CON2bits 0 4 -> -> 1 `i `uc ]
+[; ;i2c_driver.c: 200: }
+"200
+[e :UE 349 ]
+}
+[v F2128 `(v ~T0 @X0 1 tf ]
+"202
+[v _i2c_driver_sendNACK `TF2128 ~T0 @X0 1 e ]
+"203
+{
+[; ;i2c_driver.c: 202: inline void i2c_driver_sendNACK(void)
+[; ;i2c_driver.c: 203: {
+[e :U _i2c_driver_sendNACK ]
+[f ]
+[; ;i2c_driver.c: 204: SSP1CON2bits.ACKDT = 1;
+"204
+[e = . . _SSP1CON2bits 0 5 -> -> 1 `i `uc ]
+[; ;i2c_driver.c: 205: SSP1CON2bits.ACKEN = 1;
+"205
+[e = . . _SSP1CON2bits 0 4 -> -> 1 `i `uc ]
+[; ;i2c_driver.c: 206: }
+"206
+[e :UE 350 ]
+}
+[v F2136 `(v ~T0 @X0 1 tf ]
+"208
+[v _i2c_driver_releaseClock `TF2136 ~T0 @X0 1 e ]
+"209
+{
+[; ;i2c_driver.c: 208: inline void i2c_driver_releaseClock(void)
+[; ;i2c_driver.c: 209: {
+[e :U _i2c_driver_releaseClock ]
+[f ]
+[; ;i2c_driver.c: 210: SSP1CON1bits.CKP = 1;
+"210
+[e = . . _SSP1CON1bits 0 4 -> -> 1 `i `uc ]
+[; ;i2c_driver.c: 211: }
+"211
+[e :UE 351 ]
+}
+[v F2139 `(b ~T0 @X0 1 tf ]
+"213
+[v _i2c_driver_isBufferFull `TF2139 ~T0 @X0 1 e ]
+"214
+{
+[; ;i2c_driver.c: 213: inline bit i2c_driver_isBufferFull(void)
+[; ;i2c_driver.c: 214: {
+[e :U _i2c_driver_isBufferFull ]
+[f ]
+[; ;i2c_driver.c: 215: return SSP1STATbits.BF;
+"215
+[e ) -> . . _SSP1STATbits 0 0 `b ]
+[e $UE 352  ]
+[; ;i2c_driver.c: 216: }
+"216
+[e :UE 352 ]
+}
+[v F2142 `(b ~T0 @X0 1 tf ]
+"218
+[v _i2c_driver_isStart `TF2142 ~T0 @X0 1 e ]
+"219
+{
+[; ;i2c_driver.c: 218: inline bit i2c_driver_isStart(void)
+[; ;i2c_driver.c: 219: {
+[e :U _i2c_driver_isStart ]
+[f ]
+[; ;i2c_driver.c: 220: return SSP1STATbits.S;
+"220
+[e ) -> . . _SSP1STATbits 0 3 `b ]
+[e $UE 353  ]
+[; ;i2c_driver.c: 221: }
+"221
+[e :UE 353 ]
+}
+[v F2148 `(b ~T0 @X0 1 tf ]
+"223
+[v _i2c_driver_isAddress `TF2148 ~T0 @X0 1 e ]
+"224
+{
+[; ;i2c_driver.c: 223: inline bit i2c_driver_isAddress(void)
+[; ;i2c_driver.c: 224: {
+[e :U _i2c_driver_isAddress ]
+[f ]
+[; ;i2c_driver.c: 225: return !SSP1STATbits.D_nA;
+"225
+[e ) -> -> ! != -> . . _SSP1STATbits 0 5 `i -> -> -> 0 `i `Vuc `i `i `b ]
+[e $UE 354  ]
+[; ;i2c_driver.c: 226: }
+"226
+[e :UE 354 ]
+}
+[v F2145 `(b ~T0 @X0 1 tf ]
+"228
+[v _i2c_driver_isStop `TF2145 ~T0 @X0 1 e ]
+"229
+{
+[; ;i2c_driver.c: 228: inline bit i2c_driver_isStop(void)
+[; ;i2c_driver.c: 229: {
+[e :U _i2c_driver_isStop ]
+[f ]
+[; ;i2c_driver.c: 230: return SSP1STATbits.P;
+"230
+[e ) -> . . _SSP1STATbits 0 4 `b ]
+[e $UE 355  ]
+[; ;i2c_driver.c: 231: }
+"231
+[e :UE 355 ]
+}
+[v F2151 `(b ~T0 @X0 1 tf ]
+"233
+[v _i2c_driver_isData `TF2151 ~T0 @X0 1 e ]
+"234
+{
+[; ;i2c_driver.c: 233: inline bit i2c_driver_isData(void)
+[; ;i2c_driver.c: 234: {
+[e :U _i2c_driver_isData ]
+[f ]
+[; ;i2c_driver.c: 235: return SSP1STATbits.D_nA;
+"235
+[e ) -> . . _SSP1STATbits 0 5 `b ]
+[e $UE 356  ]
+[; ;i2c_driver.c: 236: }
+"236
+[e :UE 356 ]
+}
+[v F2154 `(b ~T0 @X0 1 tf ]
+"238
+[v _i2c_driver_isRead `TF2154 ~T0 @X0 1 e ]
+"239
+{
+[; ;i2c_driver.c: 238: inline bit i2c_driver_isRead(void)
+[; ;i2c_driver.c: 239: {
+[e :U _i2c_driver_isRead ]
+[f ]
+[; ;i2c_driver.c: 240: return SSP1STATbits.R_nW;
+"240
+[e ) -> . . _SSP1STATbits 0 2 `b ]
+[e $UE 357  ]
+[; ;i2c_driver.c: 241: }
+"241
+[e :UE 357 ]
+}
+[v F2157 `(b ~T0 @X0 1 tf ]
+"243
+[v _i2c_driver_isWriteCollision `TF2157 ~T0 @X0 1 e ]
+"244
+{
+[; ;i2c_driver.c: 243: inline bit i2c_driver_isWriteCollision(void)
+[; ;i2c_driver.c: 244: {
+[e :U _i2c_driver_isWriteCollision ]
+[f ]
+[; ;i2c_driver.c: 245: return SSP1CON1bits.WCOL;
+"245
+[e ) -> . . _SSP1CON1bits 0 7 `b ]
+[e $UE 358  ]
+[; ;i2c_driver.c: 246: }
+"246
+[e :UE 358 ]
+}
+[v F2160 `(b ~T0 @X0 1 tf ]
+"248
+[v _i2c_driver_isReceiveOverflow `TF2160 ~T0 @X0 1 e ]
+"249
+{
+[; ;i2c_driver.c: 248: inline bit i2c_driver_isReceiveOverflow(void)
+[; ;i2c_driver.c: 249: {
+[e :U _i2c_driver_isReceiveOverflow ]
+[f ]
+[; ;i2c_driver.c: 250: return SSP1CON1bits.SSPOV;
+"250
+[e ) -> . . _SSP1CON1bits 0 6 `b ]
+[e $UE 359  ]
+[; ;i2c_driver.c: 251: }
+"251
+[e :UE 359 ]
+}
+[v F2131 `(v ~T0 @X0 1 tf ]
+"253
+[v _i2c_driver_clearBusCollision `TF2131 ~T0 @X0 1 e ]
+"254
+{
+[; ;i2c_driver.c: 253: inline void i2c_driver_clearBusCollision(void)
+[; ;i2c_driver.c: 254: {
+[e :U _i2c_driver_clearBusCollision ]
+[f ]
+[; ;i2c_driver.c: 255: PIR2bits.BCL1IF = 0;
+"255
+[e = . . _PIR2bits 0 3 -> -> 0 `i `uc ]
+[; ;i2c_driver.c: 256: }
+"256
+[e :UE 360 ]
+}
+[v F2163 `(v ~T0 @X0 1 tf1`*v ]
+"258
+[v _i2c_driver_setBusCollisionISR `TF2163 ~T0 @X0 1 e ]
+{
+[; ;i2c_driver.c: 258: inline void i2c_driver_setBusCollisionISR(void *f){
+[e :U _i2c_driver_setBusCollisionISR ]
+[v _f `*v ~T0 @X0 1 r1 ]
+[f ]
+[; ;i2c_driver.c: 259: i2c_driver_busCollisionISR = f;
+"259
+[e = _i2c_driver_busCollisionISR -> _f `*F2168 ]
+[; ;i2c_driver.c: 260: }
+"260
+[e :UE 361 ]
+}
+[v F2166 `(v ~T0 @X0 1 tf1`*v ]
+"262
+[v _i2c_driver_setI2cISR `TF2166 ~T0 @X0 1 e ]
+{
+[; ;i2c_driver.c: 262: inline void i2c_driver_setI2cISR(void *f){
+[e :U _i2c_driver_setI2cISR ]
+[v _f `*v ~T0 @X0 1 r1 ]
+[f ]
+[; ;i2c_driver.c: 263: i2c_driver_i2cISR = f;
+"263
+[e = _i2c_driver_i2cISR -> _f `*F2171 ]
+[; ;i2c_driver.c: 264: }
+"264
+[e :UE 362 ]
 }

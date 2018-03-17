@@ -65,6 +65,34 @@
 // get/set RA1 procedures
 #define RA1_GetValue()         PORTAbits.RA1
 
+// get/set SCL aliases
+#define SCL_TRIS               TRISCbits.TRISC0
+#define SCL_LAT                LATCbits.LATC0
+#define SCL_PORT               PORTCbits.RC0
+#define SCL_ANS                ANSELCbits.ANSC0
+#define SCL_SetHigh()            do { LATCbits.LATC0 = 1; } while(0)
+#define SCL_SetLow()             do { LATCbits.LATC0 = 0; } while(0)
+#define SCL_Toggle()             do { LATCbits.LATC0 = ~LATCbits.LATC0; } while(0)
+#define SCL_GetValue()           PORTCbits.RC0
+#define SCL_SetDigitalInput()    do { TRISCbits.TRISC0 = 1; } while(0)
+#define SCL_SetDigitalOutput()   do { TRISCbits.TRISC0 = 0; } while(0)
+#define SCL_SetAnalogMode()  do { ANSELCbits.ANSC0 = 1; } while(0)
+#define SCL_SetDigitalMode() do { ANSELCbits.ANSC0 = 0; } while(0)
+
+// get/set SDA aliases
+#define SDA_TRIS               TRISCbits.TRISC1
+#define SDA_LAT                LATCbits.LATC1
+#define SDA_PORT               PORTCbits.RC1
+#define SDA_ANS                ANSELCbits.ANSC1
+#define SDA_SetHigh()            do { LATCbits.LATC1 = 1; } while(0)
+#define SDA_SetLow()             do { LATCbits.LATC1 = 0; } while(0)
+#define SDA_Toggle()             do { LATCbits.LATC1 = ~LATCbits.LATC1; } while(0)
+#define SDA_GetValue()           PORTCbits.RC1
+#define SDA_SetDigitalInput()    do { TRISCbits.TRISC1 = 1; } while(0)
+#define SDA_SetDigitalOutput()   do { TRISCbits.TRISC1 = 0; } while(0)
+#define SDA_SetAnalogMode()  do { ANSELCbits.ANSC1 = 1; } while(0)
+#define SDA_SetDigitalMode() do { ANSELCbits.ANSC1 = 0; } while(0)
+
 // get/set IO_RC3 aliases
 #define IO_RC3_TRIS               TRISCbits.TRISC3
 #define IO_RC3_LAT                LATCbits.LATC3

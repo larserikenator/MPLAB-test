@@ -87,7 +87,7 @@ void main(void)
         //application code.
         UserApplication();
             
-        
+        CDCTxService();
     }
 }
 
@@ -111,11 +111,18 @@ void UserApplication(void)
         uint8_t numBytesRead;
 
         numBytesRead = getsUSBUSART(readBuffer, sizeof(readBuffer));
-        if(numBytesRead > 0) {
-            if(!strcmp(readBuffer, "ON")) RC3 = 1;
-            else RC3 = 0;
-            
-            putrsUSBUSART(numBytesRead);
+        if(numBytesRead > 0) 
+        {
+            //Slaar paa LED om string inn inneholder "ON" eller "OFF" (foerste instans)
+            if(strstr(readBuffer, "ON")) RC3 = 1;
+            if(strstr(readBuffer, "OFF")) RC3 = 0;
+           
+            //TODO : Håndtere åpning av I2C
+            // Sette riktig kanal i i2c multiplexer
+            // Konfigurere hver enkel sensor
+            // Starte avlesning for hver sensor, basert på kommando, og skrive det til COM-port
+            // Alt dette på de resterende 1300 ord.. evt droppe USB firmware
+            // Evt bruke FTDI USB-2-serial chip (FT232RL eller liknednde)
         }
         
         
@@ -165,7 +172,7 @@ void UserApplication(void)
         }
     }*/
 
-    CDCTxService();
+    
 }
 
 /**

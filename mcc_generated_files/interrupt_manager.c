@@ -57,6 +57,14 @@ void interrupt INTERRUPT_InterruptManager (void)
         {
             USB_USBDeviceTasks();
         } 
+        else if(PIE2bits.BCL1IE == 1 && PIR2bits.BCL1IF == 1)
+        {
+            i2c_driver_busCollisionISR();
+        } 
+        else if(PIE1bits.SSP1IE == 1 && PIR1bits.SSP1IF == 1)
+        {
+            i2c_driver_i2cISR();
+        } 
         else
         {
             //Unhandled Interrupt

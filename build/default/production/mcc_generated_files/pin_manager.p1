@@ -2006,8 +2006,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 193: extern __bank0 unsigned char __resetbits;
 [; ;pic.h: 194: extern __bank0 __bit __powerdown;
 [; ;pic.h: 195: extern __bank0 __bit __timeout;
-[; ;pin_manager.h: 92: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 104: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 120: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 132: void PIN_MANAGER_IOC(void);
 [; ;stdbool.h: 12: typedef unsigned char bool;
 "52 mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 1 ef ]
@@ -2029,9 +2029,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pin_manager.c: 64: TRISC = 0x37;
 "64
 [e = _TRISC -> -> 55 `i `uc ]
-[; ;pin_manager.c: 69: ANSELC = 0x0F;
+[; ;pin_manager.c: 69: ANSELC = 0x0C;
 "69
-[e = _ANSELC -> -> 15 `i `uc ]
+[e = _ANSELC -> -> 12 `i `uc ]
 [; ;pin_manager.c: 70: ANSELA = 0x10;
 "70
 [e = _ANSELA -> -> 16 `i `uc ]

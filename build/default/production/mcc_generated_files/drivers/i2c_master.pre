@@ -1,8 +1,5 @@
 
-# 1 "mcc_generated_files/interrupt_manager.c"
-
-# 108 "mcc_generated_files/interrupt_manager.h"
-void interrupt INTERRUPT_InterruptManager(void);
+# 1 "mcc_generated_files/drivers/i2c_master.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -2695,11 +2692,80 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 120 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdbool.h"
+typedef unsigned char bool;
 
-# 132
-void PIN_MANAGER_IOC(void);
+# 4 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\__size_t.h"
+typedef unsigned size_t;
+
+# 7 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdlib.h"
+typedef unsigned short wchar_t;
+
+# 15
+typedef struct {
+int rem;
+int quot;
+} div_t;
+typedef struct {
+unsigned rem;
+unsigned quot;
+} udiv_t;
+typedef struct {
+long quot;
+long rem;
+} ldiv_t;
+typedef struct {
+unsigned long quot;
+unsigned long rem;
+} uldiv_t;
+
+# 53
+extern double atof(const char *);
+extern double strtod(const char *, const char **);
+extern int atoi(const char *);
+extern unsigned xtoi(const char *);
+extern long atol(const char *);
+extern long strtol(const char *, char **, int);
+
+extern int rand(void);
+extern void srand(unsigned int);
+extern void * calloc(size_t, size_t);
+extern div_t div(int numer, int denom);
+extern udiv_t udiv(unsigned numer, unsigned denom);
+extern ldiv_t ldiv(long numer, long denom);
+extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
+extern unsigned long _lrotl(unsigned long value, unsigned int shift);
+extern unsigned long _lrotr(unsigned long value, unsigned int shift);
+extern unsigned int _rotl(unsigned int value, unsigned int shift);
+extern unsigned int _rotr(unsigned int value, unsigned int shift);
+
+
+
+
+extern void * malloc(size_t);
+extern void free(void *);
+extern void * realloc(void *, size_t);
+
+# 86
+extern int atexit(void (*)(void));
+extern char * getenv(const char *);
+extern char ** environ;
+extern int system(char *);
+extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
+extern int abs(int);
+extern long labs(long);
+
+extern char * itoa(char * buf, int val, int base);
+extern char * utoa(char * buf, unsigned val, int base);
+
+
+
+
+extern char * ltoa(char * buf, long val, int base);
+extern char * ultoa(char * buf, unsigned long val, int base);
+
+extern char * ftoa(float f, int * status);
 
 # 13 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdint.h"
 typedef signed char int8_t;
@@ -2791,12 +2857,6 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdbool.h"
-typedef unsigned char bool;
-
-# 4 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\__size_t.h"
-typedef unsigned size_t;
-
 # 7 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdarg.h"
 typedef void * va_list[1];
 
@@ -2857,1020 +2917,6 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
-# 34 "mcc_generated_files/i2c_driver.h"
-inline void i2c_driver_close(void);
-
-
-inline void mssp_enableIRQ(void);
-inline bit mssp_IRQisEnabled(void);
-inline void mssp_disableIRQ(void);
-inline void mssp_clearIRQ(void);
-inline void mssp_setIRQ(void);
-inline bit mssp_IRQisSet(void);
-inline void mssp_waitForEvent(uint16_t*);
-
-
-bit i2c_driver_open(void);
-inline char i2c_driver_getRXData(void);
-inline char i2c_driver_getAddr(void);
-inline void i2c_driver_setAddr(char addr);
-inline void i2c_driver_setMask(char mask);
-inline void i2c_driver_TXData(char d);
-inline void i2c_driver_resetBus(void);
-inline void i2c_driver_start(void);
-inline void i2c_driver_restart(void);
-inline void i2c_driver_stop(void);
-inline bit i2c_driver_isNACK(void);
-inline void i2c_driver_startRX(void);
-inline void i2c_driver_sendACK(void);
-inline void i2c_driver_sendNACK(void);
-inline void i2c_driver_clearBusCollision(void);
-
-bit i2c_driver_initSlaveHardware(void);
-inline void i2c_driver_releaseClock(void);
-inline bit i2c_driver_isBufferFull(void);
-inline bit i2c_driver_isStart(void);
-inline bit i2c_driver_isStop(void);
-inline bit i2c_driver_isAddress(void);
-inline bit i2c_driver_isData(void);
-inline bit i2c_driver_isRead(void);
-inline bit i2c_driver_isWriteCollision(void);
-inline bit i2c_driver_isReceiveOverflow(void);
-
-inline void i2c_driver_setBusCollisionISR(void *f);
-inline void i2c_driver_setI2cISR(void *f);
-void (*i2c_driver_busCollisionISR)(void);
-void (*i2c_driver_i2cISR)(void);
-
-# 132 "mcc_generated_files/usb/usb_common.h"
-typedef union
-{
-uint8_t bitmap;
-struct
-{
-uint8_t ep_num: 4;
-uint8_t zero_pkt: 1;
-uint8_t dts: 1;
-uint8_t force_dts: 1;
-uint8_t direction: 1;
-}field;
-
-} TRANSFER_FLAGS;
-
-# 206
-typedef enum
-{
-
-EVENT_NONE = 0,
-
-EVENT_DEVICE_STACK_BASE = 1,
-
-EVENT_HOST_STACK_BASE = 100,
-
-
-EVENT_HUB_ATTACH,
-
-
-EVENT_STALL,
-
-
-EVENT_VBUS_SES_REQUEST,
-
-
-
-
-EVENT_VBUS_OVERCURRENT,
-
-# 233
-EVENT_VBUS_REQUEST_POWER,
-
-
-
-
-EVENT_VBUS_RELEASE_POWER,
-
-# 247
-EVENT_VBUS_POWER_AVAILABLE,
-
-
-
-EVENT_UNSUPPORTED_DEVICE,
-
-
-
-EVENT_CANNOT_ENUMERATE,
-
-
-
-EVENT_CLIENT_INIT_ERROR,
-
-# 265
-EVENT_OUT_OF_MEMORY,
-
-
-EVENT_UNSPECIFIED_ERROR,
-
-
-
-EVENT_DETACH,
-
-
-
-
-EVENT_TRANSFER,
-
-
-
-EVENT_SOF,
-
-
-EVENT_RESUME,
-
-
-
-EVENT_SUSPEND,
-
-
-
-EVENT_RESET,
-
-# 298
-EVENT_DATA_ISOC_READ,
-
-# 304
-EVENT_DATA_ISOC_WRITE,
-
-# 314
-EVENT_OVERRIDE_CLIENT_DRIVER_SELECTION,
-
-# 322
-EVENT_1MS,
-
-# 328
-EVENT_ALT_INTERFACE,
-
-# 335
-EVENT_HOLD_BEFORE_CONFIGURATION,
-
-
-EVENT_GENERIC_BASE = 400,
-
-EVENT_MSD_BASE = 500,
-
-EVENT_HID_BASE = 600,
-
-EVENT_PRINTER_BASE = 700,
-
-EVENT_CDC_BASE = 800,
-
-EVENT_CHARGER_BASE = 900,
-
-EVENT_AUDIO_BASE = 1000,
-
-EVENT_USER_BASE = 10000,
-
-
-
-
-EVENT_BUS_ERROR = 32767
-
-} USB_EVENT;
-
-# 371
-typedef struct _transfer_event_data
-{
-TRANSFER_FLAGS flags;
-uint32_t size;
-uint8_t pid;
-
-} USB_TRANSFER_EVENT_DATA;
-
-# 388
-typedef struct _vbus_power_data
-{
-uint8_t port;
-uint8_t current;
-} USB_VBUS_POWER_EVENT_DATA;
-
-# 401
-typedef struct _override_client_driver_data
-{
-uint16_t idVendor;
-uint16_t idProduct;
-uint8_t bDeviceClass;
-uint8_t bDeviceSubClass;
-uint8_t bDeviceProtocol;
-} USB_OVERRIDE_CLIENT_DRIVER_EVENT_DATA;
-
-# 463
-typedef bool (*USB_EVENT_HANDLER) ( USB_EVENT event, void *data, unsigned int size );
-
-# 69 "mcc_generated_files/usb/usb_ch9.h"
-typedef struct  _USB_DEVICE_DESCRIPTOR
-{
-uint8_t bLength;
-uint8_t bDescriptorType;
-uint16_t bcdUSB;
-uint8_t bDeviceClass;
-uint8_t bDeviceSubClass;
-uint8_t bDeviceProtocol;
-uint8_t bMaxPacketSize0;
-uint16_t idVendor;
-uint16_t idProduct;
-uint16_t bcdDevice;
-uint8_t iManufacturer;
-uint8_t iProduct;
-uint8_t iSerialNumber;
-uint8_t bNumConfigurations;
-} USB_DEVICE_DESCRIPTOR;
-
-# 93
-typedef struct  _USB_CONFIGURATION_DESCRIPTOR
-{
-uint8_t bLength;
-uint8_t bDescriptorType;
-uint16_t wTotalLength;
-uint8_t bNumInterfaces;
-uint8_t bConfigurationValue;
-uint8_t iConfiguration;
-uint8_t bmAttributes;
-uint8_t bMaxPower;
-} USB_CONFIGURATION_DESCRIPTOR;
-
-# 116
-typedef struct  _USB_INTERFACE_DESCRIPTOR
-{
-uint8_t bLength;
-uint8_t bDescriptorType;
-uint8_t bInterfaceNumber;
-uint8_t bAlternateSetting;
-uint8_t bNumEndpoints;
-uint8_t bInterfaceClass;
-uint8_t bInterfaceSubClass;
-uint8_t bInterfaceProtocol;
-uint8_t iInterface;
-} USB_INTERFACE_DESCRIPTOR;
-
-# 135
-typedef struct  _USB_ENDPOINT_DESCRIPTOR
-{
-uint8_t bLength;
-uint8_t bDescriptorType;
-uint8_t bEndpointAddress;
-uint8_t bmAttributes;
-uint16_t wMaxPacketSize;
-uint8_t bInterval;
-} USB_ENDPOINT_DESCRIPTOR;
-
-# 185
-typedef struct
-{
-uint8_t index;
-uint8_t type;
-uint16_t language_id;
-
-} DESCRIPTOR_ID;
-
-# 200
-typedef struct  _USB_OTG_DESCRIPTOR
-{
-uint8_t bLength;
-uint8_t bDescriptorType;
-uint8_t bmAttributes;
-} USB_OTG_DESCRIPTOR;
-
-# 224
-typedef struct  _USB_STRING_DSC
-{
-uint8_t bLength;
-uint8_t bDescriptorType;
-
-} USB_STRING_DESCRIPTOR;
-
-# 243
-typedef struct  _USB_DEVICE_QUALIFIER_DESCRIPTOR
-{
-uint8_t bLength;
-uint8_t bType;
-uint16_t bcdUSB;
-uint8_t bDeviceClass;
-uint8_t bDeviceSubClass;
-uint8_t bDeviceProtocol;
-uint8_t bMaxPacketSize0;
-uint8_t bNumConfigurations;
-uint8_t bReserved;
-
-} USB_DEVICE_QUALIFIER_DESCRIPTOR;
-
-# 266
-typedef union 
-{
-
-struct 
-{
-uint8_t bmRequestType;
-uint8_t bRequest;
-uint16_t wValue;
-uint16_t wIndex;
-uint16_t wLength;
-};
-struct 
-{
-unsigned :8;
-unsigned :8;
-union
-{
-uint16_t Val;
-uint8_t v[2];
-struct
-{
-uint8_t LB;
-uint8_t HB;
-} byte;
-} W_Value;
-
-union
-{
-uint16_t Val;
-uint8_t v[2];
-struct
-{
-uint8_t LB;
-uint8_t HB;
-} byte;
-} W_Index;
-
-union
-{
-uint16_t Val;
-uint8_t v[2];
-struct
-{
-uint8_t LB;
-uint8_t HB;
-} byte;
-} W_Length;
-};
-struct 
-{
-unsigned Recipient:5;
-unsigned RequestType:2;
-unsigned DataDir:1;
-unsigned :8;
-uint8_t bFeature;
-unsigned :8;
-unsigned :8;
-unsigned :8;
-unsigned :8;
-unsigned :8;
-};
-struct 
-{
-union
-{
-uint8_t bmRequestType;
-struct
-{
-uint8_t recipient: 5;
-uint8_t type: 2;
-uint8_t direction: 1;
-};
-}requestInfo;
-};
-struct 
-{
-unsigned :8;
-unsigned :8;
-uint8_t bDscIndex;
-uint8_t bDescriptorType;
-uint16_t wLangID;
-unsigned :8;
-unsigned :8;
-};
-struct 
-{
-unsigned :8;
-unsigned :8;
-uint8_t bDevADR;
-uint8_t bDevADRH;
-unsigned :8;
-unsigned :8;
-unsigned :8;
-unsigned :8;
-};
-struct 
-{
-unsigned :8;
-unsigned :8;
-uint8_t bConfigurationValue;
-uint8_t bCfgRSD;
-unsigned :8;
-unsigned :8;
-unsigned :8;
-unsigned :8;
-};
-struct 
-{
-unsigned :8;
-unsigned :8;
-uint8_t bAltID;
-uint8_t bAltID_H;
-uint8_t bIntfID;
-uint8_t bIntfID_H;
-unsigned :8;
-unsigned :8;
-};
-struct 
-{
-unsigned :8;
-unsigned :8;
-unsigned :8;
-unsigned :8;
-uint8_t bEPID;
-uint8_t bEPID_H;
-unsigned :8;
-unsigned :8;
-};
-struct 
-{
-unsigned :8;
-unsigned :8;
-unsigned :8;
-unsigned :8;
-unsigned EPNum:4;
-unsigned :3;
-unsigned EPDir:1;
-unsigned :8;
-unsigned :8;
-unsigned :8;
-};
-
-
-
-} CTRL_TRF_SETUP, SETUP_PKT, *PSETUP_PKT;
-
-# 73 "mcc_generated_files/usb/usb_device.h"
-typedef enum
-{
-
-# 78
-DETACHED_STATE
-= 0x00 ,
-
-# 82
-ATTACHED_STATE
-= 0x01 ,
-
-# 86
-POWERED_STATE
-= 0x02 ,
-
-# 90
-DEFAULT_STATE
-= 0x04 ,
-
-# 97
-ADR_PENDING_STATE
-= 0x08 ,
-
-# 101
-ADDRESS_STATE
-= 0x10 ,
-
-# 108
-CONFIGURED_STATE
-= 0x20
-} USB_DEVICE_STATE;
-
-
-
-typedef enum
-{
-
-EVENT_CONFIGURED
-= EVENT_DEVICE_STACK_BASE ,
-
-
-EVENT_SET_DESCRIPTOR,
-
-# 127
-EVENT_EP0_REQUEST,
-
-# 156
-EVENT_ATTACH,
-
-
-
-
-EVENT_TRANSFER_TERMINATED
-
-} USB_DEVICE_STACK_EVENTS;
-
-# 195
-void USBDeviceInit(void);
-
-# 299
-void USBDeviceTasks(void);
-
-# 351
-void USBEnableEndpoint(uint8_t ep, uint8_t options);
-
-# 444
-void* USBTransferOnePacket(uint8_t ep,uint8_t dir,uint8_t* data,uint8_t len);
-
-# 469
-void USBStallEndpoint(uint8_t ep, uint8_t dir);
-
-# 493
-void USBCancelIO(uint8_t endpoint);
-
-# 590
-void USBDeviceDetach(void);
-
-# 635
-void USBDeviceAttach(void);
-
-# 674
-void USBCtrlEPAllowStatusStage(void);
-
-# 704
-void USBCtrlEPAllowDataStage(void);
-
-# 780
-void USBDeferOUTDataStage(void);
-extern volatile bool USBDeferOUTDataStagePackets;
-
-# 850
-void USBDeferStatusStage(void);
-extern volatile bool USBDeferStatusStagePacket;
-
-# 902
-bool USBOUTDataStageDeferred(void);
-
-# 985
-void USBDeferINDataStage(void);
-extern volatile bool USBDeferINDataStagePackets;
-
-# 1039
-bool USBINDataStageDeferred(void);
-
-# 1109
-bool USBGetRemoteWakeupStatus(void);
-
-# 1166
-USB_DEVICE_STATE USBGetDeviceState(void);
-
-# 1222
-bool USBGetSuspendState(void);
-
-# 1257
-bool USBIsDeviceSuspended(void);
-
-# 1300
-bool USBIsBusSuspended(void);
-
-# 1326
-void USBSoftDetach(void);
-
-# 1364
-bool USBHandleBusy(void* handle);
-
-# 1402
-uint16_t USBHandleGetLength(void* handle);
-
-# 1434
-uint16_t USBHandleGetAddr(void*);
-
-# 1534
-void* USBGetNextHandle(uint8_t ep_num, uint8_t ep_dir);
-
-# 1567
-void USBEP0Transmit(uint8_t options);
-
-# 1595
-void USBEP0SendRAMPtr(uint8_t* src, uint16_t size, uint8_t Options);
-
-# 1627
-void USBEP0SendROMPtr(uint8_t* src, uint16_t size, uint8_t Options);
-
-# 1655
-void USBEP0Receive(uint8_t* dest, uint16_t size, void (*function));
-
-# 1690
-void* USBTxOnePacket(uint8_t ep, uint8_t* data, uint16_t len);
-
-# 1727
-void* USBRxOnePacket(uint8_t ep, uint8_t* data, uint16_t len);
-
-# 1759
-bool USB_APPLICATION_EVENT_HANDLER(uint8_t address, USB_EVENT event, void *pdata, uint16_t size);
-
-# 1804
-void USBIncrement1msInternalTimers(void);
-
-# 1863
-uint32_t USBGet1msTickCount(void);
-
-# 1904
-uint8_t USBGetTicksSinceSuspendEnd(void);
-
-# 1976
-typedef union
-{
-uint16_t Val;
-uint8_t v[2];
-struct
-{
-uint8_t LB;
-uint8_t HB;
-} byte;
-} uint16_t_VAL;
-
-
-
-
-typedef struct 
-{
-union 
-{
-
-
-uint8_t *bRam;
-const uint8_t *bRom;
-uint16_t *wRam;
-const uint16_t *wRom;
-}pSrc;
-union 
-{
-struct 
-{
-
-uint8_t ctrl_trf_mem :1;
-uint8_t reserved :5;
-
-
-uint8_t includeZero :1;
-
-uint8_t busy :1;
-}bits;
-uint8_t Val;
-}info;
-uint16_t_VAL  wCount;
-}IN_PIPE;
-
-extern volatile IN_PIPE inPipes[];
-
-typedef struct 
-{
-union 
-{
-
-
-uint8_t *bRam;
-uint16_t *wRam;
-}pDst;
-union 
-{
-struct 
-{
-uint8_t reserved :7;
-
-uint8_t busy :1;
-}bits;
-uint8_t Val;
-}info;
-uint16_t_VAL wCount;
-void (*pFunc)(void);
-}OUT_PIPE;
-
-extern volatile bool RemoteWakeup;
-extern volatile bool USBBusIsSuspended;
-extern volatile USB_DEVICE_STATE USBDeviceState;
-extern volatile uint8_t USBActiveConfiguration;
-extern volatile uint8_t USBTicksSinceSuspendEnd;
-
-# 14 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\string.h"
-extern void * memcpy(void *, const void *, size_t);
-extern void * memmove(void *, const void *, size_t);
-extern void * memset(void *, int, size_t);
-
-
-
-
-extern void * __builtin_memcpy(void *, const void *, size_t);
-#pragma intrinsic(__builtin_memcpy)
-
-# 36
-extern char * strcat(char *, const char *);
-extern char * strcpy(char *, const char *);
-extern char * strncat(char *, const char *, size_t);
-extern char * strncpy(char *, const char *, size_t);
-extern char * strdup(const char *);
-extern char * strtok(char *, const char *);
-
-
-extern int memcmp(const void *, const void *, size_t);
-extern int strcmp(const char *, const char *);
-extern int stricmp(const char *, const char *);
-extern int strncmp(const char *, const char *, size_t);
-extern int strnicmp(const char *, const char *, size_t);
-extern void * memchr(const void *, int, size_t);
-extern size_t strcspn(const char *, const char *);
-extern char * strpbrk(const char *, const char *);
-extern size_t strspn(const char *, const char *);
-extern char * strstr(const char *, const char *);
-extern char * stristr(const char *, const char *);
-extern char * strerror(int);
-extern size_t strlen(const char *);
-extern char * strchr(const char *, int);
-extern char * strichr(const char *, int);
-extern char * strrchr(const char *, int);
-extern char * strrichr(const char *, int);
-
-# 223 "mcc_generated_files/usb/usb_hal_pic16f1.h"
-typedef union _BD_STAT
-{
-uint8_t Val;
-struct{
-
-unsigned BC8:1;
-unsigned BC9:1;
-unsigned BSTALL:1;
-unsigned DTSEN:1;
-unsigned INCDIS:1;
-unsigned KEN:1;
-unsigned DTS:1;
-unsigned UOWN:1;
-};
-struct{
-
-
-unsigned :2;
-unsigned PID0:1;
-unsigned PID1:1;
-unsigned PID2:1;
-unsigned PID3:1;
-unsigned :1;
-};
-struct{
-unsigned :2;
-unsigned PID:4;
-unsigned :2;
-};
-} BD_STAT;
-
-
-typedef union __BDT
-{
-struct
-{
-BD_STAT STAT;
-uint8_t CNT;
-uint8_t ADRL;
-uint8_t ADRH;
-};
-struct
-{
-unsigned filler1:8;
-unsigned filler2:8;
-uint16_t ADR;
-};
-uint32_t Val;
-uint8_t v[4];
-} BDT_ENTRY;
-
-
-typedef union __USTAT
-{
-struct
-{
-unsigned char filler1:1;
-unsigned char ping_pong:1;
-unsigned char direction:1;
-unsigned char endpoint_number:4;
-};
-uint8_t Val;
-} USTAT_FIELDS;
-
-# 293
-typedef union _POINTER
-{
-struct
-{
-uint8_t bLow;
-uint8_t bHigh;
-
-};
-uint16_t _word;
-
-
-
-uint8_t* bRam;
-
-uint16_t* wRam;
-
-
-const uint8_t* bRom;
-const uint16_t* wRom;
-
-
-
-
-} POINTER;
-
-# 511
-extern volatile uint8_t USBActiveConfiguration;
-extern volatile IN_PIPE inPipes[1];
-extern volatile OUT_PIPE outPipes[1];
-
-
-extern volatile BDT_ENTRY* pBDTEntryOut[2+1];
-extern volatile BDT_ENTRY* pBDTEntryIn[2+1];
-
-# 167 "mcc_generated_files/usb/usb_hal.h"
-void OTGCORE_SetDeviceAddr( uint8_t addr );
-
-# 203
-void USBHALControlUsbResistors( uint8_t flags );
-
-# 237
-bool USBHALSessionIsValid( void );
-
-# 263
-bool USBHALControlBusPower( uint8_t cmd );
-
-# 293
-unsigned long USBHALGetLastError( void );
-
-# 326
-void USBHALHandleBusEvent ( void );
-
-# 367
-bool OTGCORE_StallPipe( TRANSFER_FLAGS pipe );
-
-# 404
-bool OTGCORE_UnstallPipe( TRANSFER_FLAGS pipe );
-
-# 438
-uint16_t OTGCORE_GetStalledEndpoints ( void );
-
-# 475
-bool USBHALFlushPipe( TRANSFER_FLAGS pipe );
-
-# 535
-bool USBHALTransferData ( TRANSFER_FLAGS flags,
-void *buffer,
-unsigned int size );
-
-# 575
-bool USBHALSetEpConfiguration ( uint8_t ep_num, uint16_t max_pkt_size, uint16_t flags );
-
-# 603
-bool USBHALInitialize ( unsigned long flags );
-
-# 536 "mcc_generated_files/usb/usb_device_cdc.h"
-void CDCInitEP(void);
-
-# 562
-void USBCheckCDCRequest(void);
-
-# 580
-void CDCNotificationHandler(void);
-
-# 606
-bool USBCDCEventHandler(USB_EVENT event, void *pdata, uint16_t size);
-
-# 653
-uint8_t getsUSBUSART(uint8_t *buffer, uint8_t len);
-
-# 695
-void putUSBUSART(uint8_t *data, uint8_t Length);
-
-# 736
-void putsUSBUSART(char *data);
-
-# 779
-void putrsUSBUSART(const const char *data);
-
-# 831
-void CDCTxService(void);
-
-# 839
-typedef union _LINE_CODING
-{
-struct
-{
-uint8_t _byte[0x07];
-};
-struct
-{
-uint32_t dwDTERate;
-uint8_t bCharFormat;
-uint8_t bParityType;
-uint8_t bDataBits;
-};
-} LINE_CODING;
-
-typedef union _CONTROL_SIGNAL_BITMAP
-{
-uint8_t _byte;
-struct
-{
-unsigned DTE_PRESENT:1;
-unsigned CARRIER_CONTROL:1;
-};
-} CONTROL_SIGNAL_BITMAP;
-
-# 868
-typedef struct  _USB_CDC_HEADER_FN_DSC
-{
-uint8_t bFNLength;
-uint8_t bDscType;
-uint8_t bDscSubType;
-uint16_t bcdCDC;
-} USB_CDC_HEADER_FN_DSC;
-
-
-typedef struct  _USB_CDC_ACM_FN_DSC
-{
-uint8_t bFNLength;
-uint8_t bDscType;
-uint8_t bDscSubType;
-uint8_t bmCapabilities;
-} USB_CDC_ACM_FN_DSC;
-
-
-typedef struct  _USB_CDC_UNION_FN_DSC
-{
-uint8_t bFNLength;
-uint8_t bDscType;
-uint8_t bDscSubType;
-uint8_t bMasterIntf;
-uint8_t bSaveIntf0;
-} USB_CDC_UNION_FN_DSC;
-
-
-typedef struct  _USB_CDC_CALL_MGT_FN_DSC
-{
-uint8_t bFNLength;
-uint8_t bDscType;
-uint8_t bDscSubType;
-uint8_t bmCapabilities;
-uint8_t bDataInterface;
-} USB_CDC_CALL_MGT_FN_DSC;
-
-typedef union  _CDC_NOTICE
-{
-LINE_CODING GetLineCoding;
-LINE_CODING SetLineCoding;
-unsigned char packet[10];
-} CDC_NOTICE, *PCDC_NOTICE;
-
-
-typedef union
-{
-uint8_t byte;
-struct
-{
-uint8_t DCD :1;
-uint8_t DSR :1;
-uint8_t BreakState :1;
-uint8_t RingDetect :1;
-uint8_t FramingError :1;
-uint8_t ParityError :1;
-uint8_t Overrun :1;
-uint8_t Reserved :1;
-}bits;
-}BM_SERIAL_STATE;
-
-
-typedef struct
-{
-uint8_t bmRequestType;
-uint8_t bNotification;
-uint16_t wValue;
-uint16_t wIndex;
-uint16_t wLength;
-BM_SERIAL_STATE SerialState;
-uint8_t Reserved;
-}SERIAL_STATE_NOTIFICATION;
-
-
-
-extern uint8_t cdc_rx_len;
-extern void* lastTransmission;
-
-extern uint8_t cdc_trf_state;
-extern POINTER pCDCSrc;
-extern uint8_t cdc_tx_len;
-extern uint8_t cdc_mem_type;
-
-extern CDC_NOTICE cdc_notice;
-extern LINE_CODING line_coding;
-
-extern volatile CTRL_TRF_SETUP SetupPkt;
-extern const uint8_t configDescriptor1[];
-
 # 29 "mcc_generated_files/drivers/i2c_types.h"
 typedef enum {
 I2C_NOERR,
@@ -3925,51 +2971,480 @@ void i2c_setTimeOutCallback(i2c_callback cb, void *p);
 void i2c_ISR(void);
 void i2c_busCollisionISR(void);
 
-# 29 "mcc_generated_files/drivers/i2c_simple_master.h"
-uint8_t i2c_read1ByteRegister(i2c_address_t address, uint8_t reg);
-uint16_t i2c_read2ByteRegister(i2c_address_t address, uint8_t reg);
-void i2c_write1ByteRegister(i2c_address_t address, uint8_t reg, uint8_t data);
-void i2c_write2ByteRegister(i2c_address_t address, uint8_t reg, uint16_t data);
+# 34 "mcc_generated_files/drivers/../i2c_driver.h"
+inline void i2c_driver_close(void);
 
-void i2c_writeNBytes(i2c_address_t address, void* data, size_t len);
-void i2c_readDataBlock(i2c_address_t address, uint8_t reg, void *data, size_t len);
-void i2c_readNBytes(i2c_address_t address, void *data, size_t len);
 
-# 72 "mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(void);
+inline void mssp_enableIRQ(void);
+inline bit mssp_IRQisEnabled(void);
+inline void mssp_disableIRQ(void);
+inline void mssp_clearIRQ(void);
+inline void mssp_setIRQ(void);
+inline bit mssp_IRQisSet(void);
+inline void mssp_waitForEvent(uint16_t*);
 
-# 85
-void OSCILLATOR_Initialize(void);
 
-# 98
-void WDT_Initialize(void);
+bit i2c_driver_open(void);
+inline char i2c_driver_getRXData(void);
+inline char i2c_driver_getAddr(void);
+inline void i2c_driver_setAddr(char addr);
+inline void i2c_driver_setMask(char mask);
+inline void i2c_driver_TXData(char d);
+inline void i2c_driver_resetBus(void);
+inline void i2c_driver_start(void);
+inline void i2c_driver_restart(void);
+inline void i2c_driver_stop(void);
+inline bit i2c_driver_isNACK(void);
+inline void i2c_driver_startRX(void);
+inline void i2c_driver_sendACK(void);
+inline void i2c_driver_sendNACK(void);
+inline void i2c_driver_clearBusCollision(void);
 
-# 51 "mcc_generated_files/interrupt_manager.c"
-void interrupt INTERRUPT_InterruptManager (void)
+bit i2c_driver_initSlaveHardware(void);
+inline void i2c_driver_releaseClock(void);
+inline bit i2c_driver_isBufferFull(void);
+inline bit i2c_driver_isStart(void);
+inline bit i2c_driver_isStop(void);
+inline bit i2c_driver_isAddress(void);
+inline bit i2c_driver_isData(void);
+inline bit i2c_driver_isRead(void);
+inline bit i2c_driver_isWriteCollision(void);
+inline bit i2c_driver_isReceiveOverflow(void);
+
+inline void i2c_driver_setBusCollisionISR(void *f);
+inline void i2c_driver_setI2cISR(void *f);
+void (*i2c_driver_busCollisionISR)(void);
+void (*i2c_driver_i2cISR)(void);
+
+# 32 "mcc_generated_files/drivers/i2c_master.c"
+typedef enum {
+I2C_IDLE = 0,
+I2C_SEND_ADR_READ,
+I2C_SEND_ADR_WRITE,
+I2C_TX,
+I2C_RX,
+I2C_RCEN,
+I2C_TX_EMPTY,
+I2C_SEND_RESTART_READ,
+I2C_SEND_RESTART_WRITE,
+I2C_SEND_RESTART,
+I2C_SEND_STOP,
+I2C_RX_DO_ACK,
+I2C_RX_DO_NACK_STOP,
+I2C_RX_DO_NACK_RESTART,
+I2C_RESET,
+I2C_ADDRESS_NACK
+} i2c_fsm_states_t;
+
+
+typedef enum
 {
+i2c_dataComplete = 0,
+i2c_writeCollision,
+i2c_addressNACK,
+i2c_dataNACK,
+i2c_timeOut,
+i2c_NULL
+} i2c_callbackIndex;
 
-if(INTCONbits.PEIE == 1)
+
+typedef struct
 {
-if(PIE2bits.USBIE == 1 && PIR2bits.USBIF == 1)
+unsigned busy:1;
+unsigned inUse:1;
+unsigned bufferFree:1;
+unsigned addressNACKCheck:1;
+i2c_address_t address;
+uint8_t *data_ptr;
+size_t data_length;
+uint16_t time_out;
+uint16_t time_out_value;
+i2c_fsm_states_t state;
+i2c_error_t error;
+i2c_callback callbackTable[6];
+void *callbackPayload[6];
+} i2c_status_t;
+
+i2c_status_t i2c_status = {0};
+
+static void setCallBack(i2c_callbackIndex idx, i2c_callback cb, void *p);
+static i2c_operations_t returnStop(void *p);
+static i2c_operations_t returnReset(void *p);
+
+inline void i2c_poller(void);
+
+
+void i2c_setDataCompleteCallback(i2c_callback cb, void *p)
 {
-USBDeviceTasks();
+setCallBack(i2c_dataComplete,cb,p);
 }
-else if(PIE2bits.BCL1IE == 1 && PIR2bits.BCL1IF == 1)
+
+void i2c_setWriteCollisionCallback(i2c_callback cb, void *p)
 {
-i2c_driver_busCollisionISR();
+setCallBack(i2c_writeCollision,cb,p);
 }
-else if(PIE1bits.SSP1IE == 1 && PIR1bits.SSP1IF == 1)
+
+void i2c_setAddressNACKCallback(i2c_callback cb, void *p)
 {
-i2c_driver_i2cISR();
+setCallBack(i2c_addressNACK,cb,p);
+}
+
+void i2c_setDataNACKCallback(i2c_callback cb, void *p)
+{
+setCallBack(i2c_dataNACK,cb,p);
+}
+
+void i2c_setTimeOutCallback(i2c_callback cb, void *p)
+{
+setCallBack(i2c_timeOut,cb,p);
+}
+
+
+
+i2c_error_t i2c_open(i2c_address_t address)
+{
+i2c_error_t ret = I2C_BUSY;
+
+if(!i2c_status.inUse)
+{
+i2c_status.address = address;
+i2c_status.busy = 0;
+i2c_status.inUse = 1;
+i2c_status.addressNACKCheck = 0;
+i2c_status.state = I2C_RESET;
+i2c_status.time_out_value = 500;
+i2c_status.bufferFree = 1;
+
+
+i2c_status.callbackTable[i2c_dataComplete]=returnStop;
+i2c_status.callbackPayload[i2c_dataComplete] = (0);
+i2c_status.callbackTable[i2c_writeCollision]=returnStop;
+i2c_status.callbackPayload[i2c_writeCollision] = (0);
+i2c_status.callbackTable[i2c_addressNACK]=returnStop;
+i2c_status.callbackPayload[i2c_addressNACK] = (0);
+i2c_status.callbackTable[i2c_dataNACK]=returnStop;
+i2c_status.callbackPayload[i2c_dataNACK] = (0);
+i2c_status.callbackTable[i2c_timeOut]=returnReset;
+i2c_status.callbackPayload[i2c_timeOut] = (0);
+
+i2c_driver_open();
+mssp_clearIRQ();
+
+i2c_driver_setBusCollisionISR(i2c_busCollisionISR);
+i2c_driver_setI2cISR(i2c_ISR);
+
+
+
+
+ret = I2C_NOERR;
+}
+return ret;
+}
+
+void i2c_setAddress(i2c_address_t address)
+{
+i2c_status.address = address;
+}
+
+
+i2c_error_t i2c_close(void)
+{
+i2c_error_t ret = I2C_BUSY;
+if(!i2c_status.busy)
+{
+i2c_status.inUse = 0;
+
+i2c_status.address = 0xff;
+mssp_clearIRQ();
+mssp_disableIRQ();
+ret = i2c_status.error;
+}
+return ret;
+}
+
+void i2c_setTimeOut(uint8_t to)
+{
+mssp_disableIRQ();
+i2c_status.time_out_value = to;
+mssp_enableIRQ();
+}
+
+void i2c_setBuffer(void *buffer, size_t bufferSize)
+{
+if(i2c_status.bufferFree)
+{
+i2c_status.data_ptr = buffer;
+i2c_status.data_length = bufferSize;
+i2c_status.bufferFree = 0;
+}
+}
+i2c_error_t i2c_masterOperation(bool read)
+{
+i2c_error_t ret = I2C_BUSY;
+if(!i2c_status.busy)
+{
+i2c_status.busy = 1;
+ret = I2C_NOERR;
+
+if(read)
+{
+i2c_status.state = I2C_SEND_ADR_READ;
 }
 else
 {
+i2c_status.state = I2C_SEND_ADR_WRITE;
+}
+i2c_driver_start();
 
+if(! mssp_IRQisEnabled())
+i2c_poller();
+}
+return ret;
+}
+
+i2c_error_t i2c_masterRead(void)
+{
+return i2c_masterOperation(1);
+}
+
+i2c_error_t i2c_masterWrite(void)
+{
+return i2c_masterOperation(0);
+}
+
+
+
+
+inline void i2c_poller(void)
+{
+while(i2c_status.busy)
+{
+mssp_waitForEvent((0));
+i2c_ISR();
+}
+}
+
+static i2c_fsm_states_t do_I2C_RESET(void)
+{
+i2c_driver_resetBus();
+i2c_status.busy = 0;
+i2c_status.error = I2C_NOERR;
+return I2C_RESET;
+}
+
+static i2c_fsm_states_t do_I2C_IDLE(void)
+{
+i2c_status.busy = 0;
+i2c_status.error = I2C_NOERR;
+return I2C_RESET;
+}
+
+static i2c_fsm_states_t do_I2C_SEND_RESTART_READ(void)
+{
+i2c_driver_restart();
+return I2C_SEND_ADR_READ;
+}
+
+static i2c_fsm_states_t do_I2C_SEND_RESTART_WRITE(void)
+{
+i2c_driver_restart();
+return I2C_SEND_ADR_WRITE;
+}
+
+static i2c_fsm_states_t do_I2C_SEND_RESTART(void)
+{
+i2c_driver_restart();
+return I2C_SEND_ADR_READ;
+}
+
+static i2c_fsm_states_t do_I2C_SEND_STOP(void)
+{
+i2c_driver_stop();
+return I2C_IDLE;
+}
+
+static i2c_fsm_states_t do_I2C_SEND_ADR_READ(void)
+{
+i2c_status.addressNACKCheck = 1;
+i2c_driver_TXData(i2c_status.address << 1 | 1);
+return I2C_RCEN;
+}
+
+static i2c_fsm_states_t do_I2C_SEND_ADR_WRITE(void)
+{
+i2c_status.addressNACKCheck = 1;
+i2c_driver_TXData(i2c_status.address << 1);
+return I2C_TX;
+}
+
+static i2c_fsm_states_t do_I2C_RCEN(void)
+{
+i2c_status.addressNACKCheck = 0;
+i2c_driver_startRX();
+return I2C_RX;
+}
+
+static i2c_fsm_states_t do_I2C_DO_ACK(void)
+{
+i2c_driver_sendACK();
+return I2C_RCEN;
+}
+
+static i2c_fsm_states_t do_I2C_DO_NACK_STOP(void)
+{
+i2c_driver_sendNACK();
+return I2C_SEND_STOP;
+}
+
+static i2c_fsm_states_t do_I2C_DO_NACK_RESTART(void)
+{
+i2c_driver_sendNACK();
+return I2C_SEND_RESTART;
+}
+
+
+
+static i2c_fsm_states_t do_I2C_DO_ADDRESS_NACK(void)
+{
+i2c_status.addressNACKCheck = 0;
+i2c_status.error = I2C_FAIL;
+switch(i2c_status.callbackTable[i2c_addressNACK](i2c_status.callbackPayload[i2c_addressNACK]))
+{
+case i2c_restart_read:
+case i2c_restart_write:
+return do_I2C_SEND_RESTART();
+default:
+return do_I2C_SEND_STOP();
+}
+}
+
+static i2c_fsm_states_t do_I2C_TX(void)
+{
+if(i2c_driver_isNACK())
+{
+switch(i2c_status.callbackTable[i2c_dataNACK](i2c_status.callbackPayload[i2c_dataNACK]))
+{
+case i2c_restart_read:
+return do_I2C_SEND_RESTART_READ();
+case i2c_restart_write:
+return do_I2C_SEND_RESTART_WRITE();
+default:
+case i2c_continue:
+case i2c_stop:
+return do_I2C_SEND_STOP();
 }
 }
 else
 {
+i2c_status.addressNACKCheck = 0;
+i2c_driver_TXData(*i2c_status.data_ptr++);
+return (--i2c_status.data_length)?I2C_TX:I2C_TX_EMPTY;
+}
+}
+
+static i2c_fsm_states_t do_I2C_RX(void)
+{
+*i2c_status.data_ptr++ = i2c_driver_getRXData();
+if(--i2c_status.data_length)
+{
+i2c_driver_sendACK();
+return I2C_RCEN;
+}
+else
+{
+i2c_status.bufferFree = 1;
+switch(i2c_status.callbackTable[i2c_dataComplete](i2c_status.callbackPayload[i2c_dataComplete]))
+{
+case i2c_restart_write:
+case i2c_restart_read:
+return do_I2C_DO_NACK_RESTART();
+default:
+case i2c_continue:
+case i2c_stop:
+return do_I2C_DO_NACK_STOP();
+}
 
 }
 }
 
+static i2c_fsm_states_t do_I2C_TX_EMPTY(void)
+{
+i2c_status.bufferFree = 1;
+switch(i2c_status.callbackTable[i2c_dataComplete](i2c_status.callbackPayload[i2c_dataComplete]))
+{
+case i2c_restart_read:
+case i2c_restart_write:
+return do_I2C_SEND_RESTART();
+case i2c_continue:
+mssp_setIRQ();
+return I2C_TX;
+default:
+case i2c_stop:
+return do_I2C_SEND_STOP();
+}
+}
+
+typedef i2c_fsm_states_t (stateHandlerFunction)(void);
+const stateHandlerFunction *fsmStateTable[] = {
+do_I2C_IDLE,
+do_I2C_SEND_ADR_READ,
+do_I2C_SEND_ADR_WRITE,
+do_I2C_TX,
+do_I2C_RX,
+do_I2C_RCEN,
+do_I2C_TX_EMPTY,
+do_I2C_SEND_RESTART_READ,
+do_I2C_SEND_RESTART_WRITE,
+do_I2C_SEND_RESTART,
+do_I2C_SEND_STOP,
+do_I2C_DO_ACK,
+do_I2C_DO_NACK_STOP,
+do_I2C_DO_NACK_RESTART,
+do_I2C_RESET,
+do_I2C_DO_ADDRESS_NACK
+};
+
+void i2c_ISR(void)
+{
+mssp_clearIRQ();
+
+# 427
+if(i2c_status.addressNACKCheck && i2c_driver_isNACK())
+{
+i2c_status.state = I2C_ADDRESS_NACK;
+}
+
+i2c_status.state = fsmStateTable[i2c_status.state]();
+}
+
+void i2c_busCollisionISR(void)
+{
+i2c_driver_clearBusCollision();
+}
+
+
+
+
+static i2c_operations_t returnStop(void *p)
+{
+return i2c_stop;
+}
+
+static i2c_operations_t returnReset(void *p)
+{
+return i2c_reset_link;
+}
+
+static void setCallBack(i2c_callbackIndex idx, i2c_callback cb, void *p)
+{
+if(cb)
+{
+i2c_status.callbackTable[idx] = cb;
+i2c_status.callbackPayload[idx] = p;
+}
+else
+{
+i2c_status.callbackTable[idx] = returnStop;
+i2c_status.callbackPayload[idx] = (0);
+}
+}

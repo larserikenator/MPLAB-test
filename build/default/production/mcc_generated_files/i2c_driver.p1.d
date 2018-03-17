@@ -1,6 +1,6 @@
- build/default/production/mcc_generated_files/interrupt_manager.d  \
- build/default/production/mcc_generated_files/interrupt_manager.p1:  \
- mcc_generated_files/interrupt_manager.c  \
+ build/default/production/mcc_generated_files/i2c_driver.d  \
+ build/default/production/mcc_generated_files/i2c_driver.p1:  \
+ mcc_generated_files/i2c_driver.c  \
 mcc_generated_files/usb/usb_common.h  \
 mcc_generated_files/usb/usb_hal_pic16f1.h  \
 mcc_generated_files/usb/usb_ch9.h  \

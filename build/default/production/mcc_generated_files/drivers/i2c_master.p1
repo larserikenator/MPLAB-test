@@ -1,64 +1,92 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[v F2168 `(v ~T0 @X0 0 tf ]
-[v F2171 `(v ~T0 @X0 0 tf ]
-"120 mcc_generated_files/pin_manager.h
-[v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
-"85 mcc_generated_files/mcc.h
-[v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
-"98
-[v _WDT_Initialize `(v ~T0 @X0 0 ef ]
-"195 mcc_generated_files/usb/usb_device.h
-[v _USBDeviceInit `(v ~T0 @X0 0 ef ]
-"635
-[v _USBDeviceAttach `(v ~T0 @X0 0 ef ]
-"1366 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1454.h
-[v _OSCCON `Vuc ~T0 @X0 0 e@153 ]
-"1302
-[v _OSCTUNE `Vuc ~T0 @X0 0 e@152 ]
-"3208
-[v _ACTCON `Vuc ~T0 @X0 0 e@923 ]
-"1570
-[v _BORCON `Vuc ~T0 @X0 0 e@278 ]
-"5024
-[v _PLLRDY `Vb ~T0 @X0 0 e@1238 ]
-"1243
-[v _WDTCON `Vuc ~T0 @X0 0 e@151 ]
-"49 mcc_generated_files/mcc.c
-[p x FOSC=INTOSC ]
-"50
-[p x WDTE=OFF ]
-"51
-[p x PWRTE=OFF ]
-"52
-[p x MCLRE=ON ]
-"53
-[p x CP=OFF ]
-"54
-[p x BOREN=ON ]
-"55
-[p x CLKOUTEN=OFF ]
-"56
-[p x IESO=ON ]
-"57
-[p x FCMEN=ON ]
-"60
-[p x WRT=OFF ]
-"61
-[p x CPUDIV=NOCLKDIV ]
-"62
-[p x USBLSCLK=48MHz ]
-"63
-[p x PLLMULT=3x ]
+[v F2342 `(v ~T0 @X0 0 tf ]
+[v F2345 `(v ~T0 @X0 0 tf ]
+"80 mcc_generated_files/drivers/i2c_master.c
+[c E2347 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 .. ]
+[n E2347 . I2C_IDLE I2C_SEND_ADR_READ I2C_SEND_ADR_WRITE I2C_TX I2C_RX I2C_RCEN I2C_TX_EMPTY I2C_SEND_RESTART_READ I2C_SEND_RESTART_WRITE I2C_SEND_RESTART I2C_SEND_STOP I2C_RX_DO_ACK I2C_RX_DO_NACK_STOP I2C_RX_DO_NACK_RESTART I2C_RESET I2C_ADDRESS_NACK  ]
+[c E2176 0 1 2 .. ]
+[n E2176 . I2C_NOERR I2C_BUSY I2C_FAIL  ]
+[c E2181 1 2 3 4 5 .. ]
+[n E2181 . i2c_stop i2c_restart_read i2c_restart_write i2c_continue i2c_reset_link  ]
+[v F2189 `(E2181 ~T0 @X0 0 tf1`*v ]
 "64
-[p x PLLEN=ENABLED ]
-"65
-[p x STVREN=ON ]
-"66
-[p x BORV=LO ]
-"67
-[p x LPBOR=OFF ]
-"68
-[p x LVP=ON ]
+[s S258 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 `uc 1 `*uc 1 `ui 1 `ui 1 `ui 1 `E2347 1 `E2176 1 `*F2189 -> 6 `i `*v -> 6 `i ]
+[n S258 . busy inUse bufferFree addressNACKCheck address data_ptr data_length time_out time_out_value state error callbackTable callbackPayload ]
+"91
+[c E2365 0 1 2 3 4 5 .. ]
+[n E2365 . i2c_dataComplete i2c_writeCollision i2c_addressNACK i2c_dataNACK i2c_timeOut i2c_NULL  ]
+"82
+[v _setCallBack `(v ~T0 @X0 0 sf3`E2365`*F2189`*v ]
+"83
+[v _returnStop `(E2181 ~T0 @X0 0 sf1`*v ]
+"84
+[v _returnReset `(E2181 ~T0 @X0 0 sf1`*v ]
+"46 mcc_generated_files/drivers/../i2c_driver.h
+[v _i2c_driver_open `(b ~T0 @X0 0 ef ]
+[v F2252 `(v ~T0 @X0 1 tf ]
+"40
+[v _mssp_clearIRQ `TF2252 ~T0 @X0 0 e ]
+[v F2337 `(v ~T0 @X0 1 tf1`*v ]
+"73
+[v _i2c_driver_setBusCollisionISR `TF2337 ~T0 @X0 0 e ]
+"54 mcc_generated_files/drivers/i2c_master.h
+[v _i2c_busCollisionISR `(v ~T0 @X0 0 ef ]
+[v F2340 `(v ~T0 @X0 1 tf1`*v ]
+"74 mcc_generated_files/drivers/../i2c_driver.h
+[v _i2c_driver_setI2cISR `TF2340 ~T0 @X0 0 e ]
+"53 mcc_generated_files/drivers/i2c_master.h
+[v _i2c_ISR `(v ~T0 @X0 0 ef ]
+[v F2249 `(v ~T0 @X0 1 tf ]
+"39 mcc_generated_files/drivers/../i2c_driver.h
+[v _mssp_disableIRQ `TF2249 ~T0 @X0 0 e ]
+[v F2243 `(v ~T0 @X0 1 tf ]
+"37
+[v _mssp_enableIRQ `TF2243 ~T0 @X0 0 e ]
+[v F2284 `(v ~T0 @X0 1 tf ]
+"53
+[v _i2c_driver_start `TF2284 ~T0 @X0 0 e ]
+[v F2246 `(b ~T0 @X0 1 tf ]
+"38
+[v _mssp_IRQisEnabled `TF2246 ~T0 @X0 0 e ]
+[v F2399 `(v ~T0 @X0 1 tf ]
+"86 mcc_generated_files/drivers/i2c_master.c
+[v _i2c_poller `TF2399 ~T0 @X0 0 e ]
+[v F2261 `(v ~T0 @X0 1 tf1`*ui ]
+"43 mcc_generated_files/drivers/../i2c_driver.h
+[v _mssp_waitForEvent `TF2261 ~T0 @X0 0 e ]
+[v F2281 `(v ~T0 @X0 1 tf ]
+"52
+[v _i2c_driver_resetBus `TF2281 ~T0 @X0 0 e ]
+[v F2287 `(v ~T0 @X0 1 tf ]
+"54
+[v _i2c_driver_restart `TF2287 ~T0 @X0 0 e ]
+[v F2290 `(v ~T0 @X0 1 tf ]
+"55
+[v _i2c_driver_stop `TF2290 ~T0 @X0 0 e ]
+[v F2278 `(v ~T0 @X0 1 tf1`uc ]
+"51
+[v _i2c_driver_TXData `TF2278 ~T0 @X0 0 e ]
+[v F2296 `(v ~T0 @X0 1 tf ]
+"57
+[v _i2c_driver_startRX `TF2296 ~T0 @X0 0 e ]
+[v F2299 `(v ~T0 @X0 1 tf ]
+"58
+[v _i2c_driver_sendACK `TF2299 ~T0 @X0 0 e ]
+[v F2302 `(v ~T0 @X0 1 tf ]
+"59
+[v _i2c_driver_sendNACK `TF2302 ~T0 @X0 0 e ]
+[v F2293 `(b ~T0 @X0 1 tf ]
+"56
+[v _i2c_driver_isNACK `TF2293 ~T0 @X0 0 e ]
+[v F2266 `(uc ~T0 @X0 1 tf ]
+"47
+[v _i2c_driver_getRXData `TF2266 ~T0 @X0 0 e ]
+[v F2255 `(v ~T0 @X0 1 tf ]
+"41
+[v _mssp_setIRQ `TF2255 ~T0 @X0 0 e ]
+[v F2305 `(v ~T0 @X0 1 tf ]
+"60
+[v _i2c_driver_clearBusCollision `TF2305 ~T0 @X0 0 e ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -2039,8 +2067,58 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 193: extern __bank0 unsigned char __resetbits;
 [; ;pic.h: 194: extern __bank0 __bit __powerdown;
 [; ;pic.h: 195: extern __bank0 __bit __timeout;
-[; ;pin_manager.h: 120: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 132: void PIN_MANAGER_IOC(void);
+[; ;stdbool.h: 12: typedef unsigned char bool;
+[; ;__size_t.h: 4: typedef unsigned size_t;
+[; ;stdlib.h: 7: typedef unsigned short wchar_t;
+[; ;stdlib.h: 15: typedef struct {
+[; ;stdlib.h: 16: int rem;
+[; ;stdlib.h: 17: int quot;
+[; ;stdlib.h: 18: } div_t;
+[; ;stdlib.h: 19: typedef struct {
+[; ;stdlib.h: 20: unsigned rem;
+[; ;stdlib.h: 21: unsigned quot;
+[; ;stdlib.h: 22: } udiv_t;
+[; ;stdlib.h: 23: typedef struct {
+[; ;stdlib.h: 24: long quot;
+[; ;stdlib.h: 25: long rem;
+[; ;stdlib.h: 26: } ldiv_t;
+[; ;stdlib.h: 27: typedef struct {
+[; ;stdlib.h: 28: unsigned long quot;
+[; ;stdlib.h: 29: unsigned long rem;
+[; ;stdlib.h: 30: } uldiv_t;
+[; ;stdlib.h: 53: extern double atof(const char *);
+[; ;stdlib.h: 54: extern double strtod(const char *, const char **);
+[; ;stdlib.h: 55: extern int atoi(const char *);
+[; ;stdlib.h: 56: extern unsigned xtoi(const char *);
+[; ;stdlib.h: 57: extern long atol(const char *);
+[; ;stdlib.h: 58: extern long strtol(const char *, char **, int);
+[; ;stdlib.h: 60: extern int rand(void);
+[; ;stdlib.h: 61: extern void srand(unsigned int);
+[; ;stdlib.h: 62: extern void * calloc(size_t, size_t);
+[; ;stdlib.h: 63: extern div_t div(int numer, int denom);
+[; ;stdlib.h: 64: extern udiv_t udiv(unsigned numer, unsigned denom);
+[; ;stdlib.h: 65: extern ldiv_t ldiv(long numer, long denom);
+[; ;stdlib.h: 66: extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
+[; ;stdlib.h: 67: extern unsigned long _lrotl(unsigned long value, unsigned int shift);
+[; ;stdlib.h: 68: extern unsigned long _lrotr(unsigned long value, unsigned int shift);
+[; ;stdlib.h: 69: extern unsigned int _rotl(unsigned int value, unsigned int shift);
+[; ;stdlib.h: 70: extern unsigned int _rotr(unsigned int value, unsigned int shift);
+[; ;stdlib.h: 75: extern void * malloc(size_t);
+[; ;stdlib.h: 76: extern void free(void *);
+[; ;stdlib.h: 77: extern void * realloc(void *, size_t);
+[; ;stdlib.h: 86: extern int atexit(void (*)(void));
+[; ;stdlib.h: 87: extern char * getenv(const char *);
+[; ;stdlib.h: 88: extern char ** environ;
+[; ;stdlib.h: 89: extern int system(char *);
+[; ;stdlib.h: 90: extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+[; ;stdlib.h: 91: extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
+[; ;stdlib.h: 92: extern int abs(int);
+[; ;stdlib.h: 93: extern long labs(long);
+[; ;stdlib.h: 95: extern char * itoa(char * buf, int val, int base);
+[; ;stdlib.h: 96: extern char * utoa(char * buf, unsigned val, int base);
+[; ;stdlib.h: 101: extern char * ltoa(char * buf, long val, int base);
+[; ;stdlib.h: 102: extern char * ultoa(char * buf, unsigned long val, int base);
+[; ;stdlib.h: 104: extern char * ftoa(float f, int * status);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 28: typedef signed short long int int24_t;
@@ -2069,9 +2147,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 205: typedef uint32_t uintmax_t;
 [; ;stdint.h: 210: typedef int16_t intptr_t;
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
-[; ;stdbool.h: 12: typedef unsigned char bool;
-[; ;interrupt_manager.h: 108: void interrupt INTERRUPT_InterruptManager(void);
-[; ;__size_t.h: 4: typedef unsigned size_t;
 [; ;stdarg.h: 7: typedef void * va_list[1];
 [; ;stdarg.h: 10: extern void * __va_start(void);
 [; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
@@ -2101,675 +2176,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
 [; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
 [; ;stdio.h: 195: extern int printf(const char *, ...);
-[; ;i2c_driver.h: 34: inline void i2c_driver_close(void);
-[; ;i2c_driver.h: 37: inline void mssp_enableIRQ(void);
-[; ;i2c_driver.h: 38: inline bit mssp_IRQisEnabled(void);
-[; ;i2c_driver.h: 39: inline void mssp_disableIRQ(void);
-[; ;i2c_driver.h: 40: inline void mssp_clearIRQ(void);
-[; ;i2c_driver.h: 41: inline void mssp_setIRQ(void);
-[; ;i2c_driver.h: 42: inline bit mssp_IRQisSet(void);
-[; ;i2c_driver.h: 43: inline void mssp_waitForEvent(uint16_t*);
-[; ;i2c_driver.h: 46: bit i2c_driver_open(void);
-[; ;i2c_driver.h: 47: inline char i2c_driver_getRXData(void);
-[; ;i2c_driver.h: 48: inline char i2c_driver_getAddr(void);
-[; ;i2c_driver.h: 49: inline void i2c_driver_setAddr(char addr);
-[; ;i2c_driver.h: 50: inline void i2c_driver_setMask(char mask);
-[; ;i2c_driver.h: 51: inline void i2c_driver_TXData(char d);
-[; ;i2c_driver.h: 52: inline void i2c_driver_resetBus(void);
-[; ;i2c_driver.h: 53: inline void i2c_driver_start(void);
-[; ;i2c_driver.h: 54: inline void i2c_driver_restart(void);
-[; ;i2c_driver.h: 55: inline void i2c_driver_stop(void);
-[; ;i2c_driver.h: 56: inline bit i2c_driver_isNACK(void);
-[; ;i2c_driver.h: 57: inline void i2c_driver_startRX(void);
-[; ;i2c_driver.h: 58: inline void i2c_driver_sendACK(void);
-[; ;i2c_driver.h: 59: inline void i2c_driver_sendNACK(void);
-[; ;i2c_driver.h: 60: inline void i2c_driver_clearBusCollision(void);
-[; ;i2c_driver.h: 62: bit i2c_driver_initSlaveHardware(void);
-[; ;i2c_driver.h: 63: inline void i2c_driver_releaseClock(void);
-[; ;i2c_driver.h: 64: inline bit i2c_driver_isBufferFull(void);
-[; ;i2c_driver.h: 65: inline bit i2c_driver_isStart(void);
-[; ;i2c_driver.h: 66: inline bit i2c_driver_isStop(void);
-[; ;i2c_driver.h: 67: inline bit i2c_driver_isAddress(void);
-[; ;i2c_driver.h: 68: inline bit i2c_driver_isData(void);
-[; ;i2c_driver.h: 69: inline bit i2c_driver_isRead(void);
-[; ;i2c_driver.h: 70: inline bit i2c_driver_isWriteCollision(void);
-[; ;i2c_driver.h: 71: inline bit i2c_driver_isReceiveOverflow(void);
-[; ;i2c_driver.h: 73: inline void i2c_driver_setBusCollisionISR(void *f);
-[; ;i2c_driver.h: 74: inline void i2c_driver_setI2cISR(void *f);
-"75 mcc_generated_files/i2c_driver.h
-[v _i2c_driver_busCollisionISR `*F2168 ~T0 @X0 1 e ]
-[; ;i2c_driver.h: 75: void (*i2c_driver_busCollisionISR)(void);
-"76
-[v _i2c_driver_i2cISR `*F2171 ~T0 @X0 1 e ]
-[; ;i2c_driver.h: 76: void (*i2c_driver_i2cISR)(void);
-[; ;usb_common.h: 132: typedef union
-[; ;usb_common.h: 133: {
-[; ;usb_common.h: 134: uint8_t bitmap;
-[; ;usb_common.h: 135: struct
-[; ;usb_common.h: 136: {
-[; ;usb_common.h: 137: uint8_t ep_num: 4;
-[; ;usb_common.h: 138: uint8_t zero_pkt: 1;
-[; ;usb_common.h: 139: uint8_t dts: 1;
-[; ;usb_common.h: 140: uint8_t force_dts: 1;
-[; ;usb_common.h: 141: uint8_t direction: 1;
-[; ;usb_common.h: 142: }field;
-[; ;usb_common.h: 144: } TRANSFER_FLAGS;
-[; ;usb_common.h: 206: typedef enum
-[; ;usb_common.h: 207: {
-[; ;usb_common.h: 209: EVENT_NONE = 0,
-[; ;usb_common.h: 211: EVENT_DEVICE_STACK_BASE = 1,
-[; ;usb_common.h: 213: EVENT_HOST_STACK_BASE = 100,
-[; ;usb_common.h: 216: EVENT_HUB_ATTACH,
-[; ;usb_common.h: 219: EVENT_STALL,
-[; ;usb_common.h: 222: EVENT_VBUS_SES_REQUEST,
-[; ;usb_common.h: 227: EVENT_VBUS_OVERCURRENT,
-[; ;usb_common.h: 233: EVENT_VBUS_REQUEST_POWER,
-[; ;usb_common.h: 238: EVENT_VBUS_RELEASE_POWER,
-[; ;usb_common.h: 247: EVENT_VBUS_POWER_AVAILABLE,
-[; ;usb_common.h: 251: EVENT_UNSUPPORTED_DEVICE,
-[; ;usb_common.h: 255: EVENT_CANNOT_ENUMERATE,
-[; ;usb_common.h: 259: EVENT_CLIENT_INIT_ERROR,
-[; ;usb_common.h: 265: EVENT_OUT_OF_MEMORY,
-[; ;usb_common.h: 268: EVENT_UNSPECIFIED_ERROR,
-[; ;usb_common.h: 272: EVENT_DETACH,
-[; ;usb_common.h: 277: EVENT_TRANSFER,
-[; ;usb_common.h: 281: EVENT_SOF,
-[; ;usb_common.h: 284: EVENT_RESUME,
-[; ;usb_common.h: 288: EVENT_SUSPEND,
-[; ;usb_common.h: 292: EVENT_RESET,
-[; ;usb_common.h: 298: EVENT_DATA_ISOC_READ,
-[; ;usb_common.h: 304: EVENT_DATA_ISOC_WRITE,
-[; ;usb_common.h: 314: EVENT_OVERRIDE_CLIENT_DRIVER_SELECTION,
-[; ;usb_common.h: 322: EVENT_1MS,
-[; ;usb_common.h: 328: EVENT_ALT_INTERFACE,
-[; ;usb_common.h: 335: EVENT_HOLD_BEFORE_CONFIGURATION,
-[; ;usb_common.h: 338: EVENT_GENERIC_BASE = 400,
-[; ;usb_common.h: 340: EVENT_MSD_BASE = 500,
-[; ;usb_common.h: 342: EVENT_HID_BASE = 600,
-[; ;usb_common.h: 344: EVENT_PRINTER_BASE = 700,
-[; ;usb_common.h: 346: EVENT_CDC_BASE = 800,
-[; ;usb_common.h: 348: EVENT_CHARGER_BASE = 900,
-[; ;usb_common.h: 350: EVENT_AUDIO_BASE = 1000,
-[; ;usb_common.h: 352: EVENT_USER_BASE = 10000,
-[; ;usb_common.h: 357: EVENT_BUS_ERROR = 32767
-[; ;usb_common.h: 359: } USB_EVENT;
-[; ;usb_common.h: 371: typedef struct _transfer_event_data
-[; ;usb_common.h: 372: {
-[; ;usb_common.h: 373: TRANSFER_FLAGS flags;
-[; ;usb_common.h: 374: uint32_t size;
-[; ;usb_common.h: 375: uint8_t pid;
-[; ;usb_common.h: 377: } USB_TRANSFER_EVENT_DATA;
-[; ;usb_common.h: 388: typedef struct _vbus_power_data
-[; ;usb_common.h: 389: {
-[; ;usb_common.h: 390: uint8_t port;
-[; ;usb_common.h: 391: uint8_t current;
-[; ;usb_common.h: 392: } USB_VBUS_POWER_EVENT_DATA;
-[; ;usb_common.h: 401: typedef struct _override_client_driver_data
-[; ;usb_common.h: 402: {
-[; ;usb_common.h: 403: uint16_t idVendor;
-[; ;usb_common.h: 404: uint16_t idProduct;
-[; ;usb_common.h: 405: uint8_t bDeviceClass;
-[; ;usb_common.h: 406: uint8_t bDeviceSubClass;
-[; ;usb_common.h: 407: uint8_t bDeviceProtocol;
-[; ;usb_common.h: 408: } USB_OVERRIDE_CLIENT_DRIVER_EVENT_DATA;
-[; ;usb_common.h: 463: typedef bool (*USB_EVENT_HANDLER) ( USB_EVENT event, void *data, unsigned int size );
-[; ;usb_ch9.h: 69: typedef struct  _USB_DEVICE_DESCRIPTOR
-[; ;usb_ch9.h: 70: {
-[; ;usb_ch9.h: 71: uint8_t bLength;
-[; ;usb_ch9.h: 72: uint8_t bDescriptorType;
-[; ;usb_ch9.h: 73: uint16_t bcdUSB;
-[; ;usb_ch9.h: 74: uint8_t bDeviceClass;
-[; ;usb_ch9.h: 75: uint8_t bDeviceSubClass;
-[; ;usb_ch9.h: 76: uint8_t bDeviceProtocol;
-[; ;usb_ch9.h: 77: uint8_t bMaxPacketSize0;
-[; ;usb_ch9.h: 78: uint16_t idVendor;
-[; ;usb_ch9.h: 79: uint16_t idProduct;
-[; ;usb_ch9.h: 80: uint16_t bcdDevice;
-[; ;usb_ch9.h: 81: uint8_t iManufacturer;
-[; ;usb_ch9.h: 82: uint8_t iProduct;
-[; ;usb_ch9.h: 83: uint8_t iSerialNumber;
-[; ;usb_ch9.h: 84: uint8_t bNumConfigurations;
-[; ;usb_ch9.h: 85: } USB_DEVICE_DESCRIPTOR;
-[; ;usb_ch9.h: 93: typedef struct  _USB_CONFIGURATION_DESCRIPTOR
-[; ;usb_ch9.h: 94: {
-[; ;usb_ch9.h: 95: uint8_t bLength;
-[; ;usb_ch9.h: 96: uint8_t bDescriptorType;
-[; ;usb_ch9.h: 97: uint16_t wTotalLength;
-[; ;usb_ch9.h: 98: uint8_t bNumInterfaces;
-[; ;usb_ch9.h: 99: uint8_t bConfigurationValue;
-[; ;usb_ch9.h: 100: uint8_t iConfiguration;
-[; ;usb_ch9.h: 101: uint8_t bmAttributes;
-[; ;usb_ch9.h: 102: uint8_t bMaxPower;
-[; ;usb_ch9.h: 103: } USB_CONFIGURATION_DESCRIPTOR;
-[; ;usb_ch9.h: 116: typedef struct  _USB_INTERFACE_DESCRIPTOR
-[; ;usb_ch9.h: 117: {
-[; ;usb_ch9.h: 118: uint8_t bLength;
-[; ;usb_ch9.h: 119: uint8_t bDescriptorType;
-[; ;usb_ch9.h: 120: uint8_t bInterfaceNumber;
-[; ;usb_ch9.h: 121: uint8_t bAlternateSetting;
-[; ;usb_ch9.h: 122: uint8_t bNumEndpoints;
-[; ;usb_ch9.h: 123: uint8_t bInterfaceClass;
-[; ;usb_ch9.h: 124: uint8_t bInterfaceSubClass;
-[; ;usb_ch9.h: 125: uint8_t bInterfaceProtocol;
-[; ;usb_ch9.h: 126: uint8_t iInterface;
-[; ;usb_ch9.h: 127: } USB_INTERFACE_DESCRIPTOR;
-[; ;usb_ch9.h: 135: typedef struct  _USB_ENDPOINT_DESCRIPTOR
-[; ;usb_ch9.h: 136: {
-[; ;usb_ch9.h: 137: uint8_t bLength;
-[; ;usb_ch9.h: 138: uint8_t bDescriptorType;
-[; ;usb_ch9.h: 139: uint8_t bEndpointAddress;
-[; ;usb_ch9.h: 140: uint8_t bmAttributes;
-[; ;usb_ch9.h: 141: uint16_t wMaxPacketSize;
-[; ;usb_ch9.h: 142: uint8_t bInterval;
-[; ;usb_ch9.h: 143: } USB_ENDPOINT_DESCRIPTOR;
-[; ;usb_ch9.h: 185: typedef struct
-[; ;usb_ch9.h: 186: {
-[; ;usb_ch9.h: 187: uint8_t index;
-[; ;usb_ch9.h: 188: uint8_t type;
-[; ;usb_ch9.h: 189: uint16_t language_id;
-[; ;usb_ch9.h: 191: } DESCRIPTOR_ID;
-[; ;usb_ch9.h: 200: typedef struct  _USB_OTG_DESCRIPTOR
-[; ;usb_ch9.h: 201: {
-[; ;usb_ch9.h: 202: uint8_t bLength;
-[; ;usb_ch9.h: 203: uint8_t bDescriptorType;
-[; ;usb_ch9.h: 204: uint8_t bmAttributes;
-[; ;usb_ch9.h: 205: } USB_OTG_DESCRIPTOR;
-[; ;usb_ch9.h: 224: typedef struct  _USB_STRING_DSC
-[; ;usb_ch9.h: 225: {
-[; ;usb_ch9.h: 226: uint8_t bLength;
-[; ;usb_ch9.h: 227: uint8_t bDescriptorType;
-[; ;usb_ch9.h: 229: } USB_STRING_DESCRIPTOR;
-[; ;usb_ch9.h: 243: typedef struct  _USB_DEVICE_QUALIFIER_DESCRIPTOR
-[; ;usb_ch9.h: 244: {
-[; ;usb_ch9.h: 245: uint8_t bLength;
-[; ;usb_ch9.h: 246: uint8_t bType;
-[; ;usb_ch9.h: 247: uint16_t bcdUSB;
-[; ;usb_ch9.h: 248: uint8_t bDeviceClass;
-[; ;usb_ch9.h: 249: uint8_t bDeviceSubClass;
-[; ;usb_ch9.h: 250: uint8_t bDeviceProtocol;
-[; ;usb_ch9.h: 251: uint8_t bMaxPacketSize0;
-[; ;usb_ch9.h: 252: uint8_t bNumConfigurations;
-[; ;usb_ch9.h: 253: uint8_t bReserved;
-[; ;usb_ch9.h: 255: } USB_DEVICE_QUALIFIER_DESCRIPTOR;
-[; ;usb_ch9.h: 266: typedef union 
-[; ;usb_ch9.h: 267: {
-[; ;usb_ch9.h: 269: struct 
-[; ;usb_ch9.h: 270: {
-[; ;usb_ch9.h: 271: uint8_t bmRequestType;
-[; ;usb_ch9.h: 272: uint8_t bRequest;
-[; ;usb_ch9.h: 273: uint16_t wValue;
-[; ;usb_ch9.h: 274: uint16_t wIndex;
-[; ;usb_ch9.h: 275: uint16_t wLength;
-[; ;usb_ch9.h: 276: };
-[; ;usb_ch9.h: 277: struct 
-[; ;usb_ch9.h: 278: {
-[; ;usb_ch9.h: 279: unsigned :8;
-[; ;usb_ch9.h: 280: unsigned :8;
-[; ;usb_ch9.h: 281: union
-[; ;usb_ch9.h: 282: {
-[; ;usb_ch9.h: 283: uint16_t Val;
-[; ;usb_ch9.h: 284: uint8_t v[2];
-[; ;usb_ch9.h: 285: struct
-[; ;usb_ch9.h: 286: {
-[; ;usb_ch9.h: 287: uint8_t LB;
-[; ;usb_ch9.h: 288: uint8_t HB;
-[; ;usb_ch9.h: 289: } byte;
-[; ;usb_ch9.h: 290: } W_Value;
-[; ;usb_ch9.h: 292: union
-[; ;usb_ch9.h: 293: {
-[; ;usb_ch9.h: 294: uint16_t Val;
-[; ;usb_ch9.h: 295: uint8_t v[2];
-[; ;usb_ch9.h: 296: struct
-[; ;usb_ch9.h: 297: {
-[; ;usb_ch9.h: 298: uint8_t LB;
-[; ;usb_ch9.h: 299: uint8_t HB;
-[; ;usb_ch9.h: 300: } byte;
-[; ;usb_ch9.h: 301: } W_Index;
-[; ;usb_ch9.h: 303: union
-[; ;usb_ch9.h: 304: {
-[; ;usb_ch9.h: 305: uint16_t Val;
-[; ;usb_ch9.h: 306: uint8_t v[2];
-[; ;usb_ch9.h: 307: struct
-[; ;usb_ch9.h: 308: {
-[; ;usb_ch9.h: 309: uint8_t LB;
-[; ;usb_ch9.h: 310: uint8_t HB;
-[; ;usb_ch9.h: 311: } byte;
-[; ;usb_ch9.h: 312: } W_Length;
-[; ;usb_ch9.h: 313: };
-[; ;usb_ch9.h: 314: struct 
-[; ;usb_ch9.h: 315: {
-[; ;usb_ch9.h: 316: unsigned Recipient:5;
-[; ;usb_ch9.h: 317: unsigned RequestType:2;
-[; ;usb_ch9.h: 318: unsigned DataDir:1;
-[; ;usb_ch9.h: 319: unsigned :8;
-[; ;usb_ch9.h: 320: uint8_t bFeature;
-[; ;usb_ch9.h: 321: unsigned :8;
-[; ;usb_ch9.h: 322: unsigned :8;
-[; ;usb_ch9.h: 323: unsigned :8;
-[; ;usb_ch9.h: 324: unsigned :8;
-[; ;usb_ch9.h: 325: unsigned :8;
-[; ;usb_ch9.h: 326: };
-[; ;usb_ch9.h: 327: struct 
-[; ;usb_ch9.h: 328: {
-[; ;usb_ch9.h: 329: union
-[; ;usb_ch9.h: 330: {
-[; ;usb_ch9.h: 331: uint8_t bmRequestType;
-[; ;usb_ch9.h: 332: struct
-[; ;usb_ch9.h: 333: {
-[; ;usb_ch9.h: 334: uint8_t recipient: 5;
-[; ;usb_ch9.h: 335: uint8_t type: 2;
-[; ;usb_ch9.h: 336: uint8_t direction: 1;
-[; ;usb_ch9.h: 337: };
-[; ;usb_ch9.h: 338: }requestInfo;
-[; ;usb_ch9.h: 339: };
-[; ;usb_ch9.h: 340: struct 
-[; ;usb_ch9.h: 341: {
-[; ;usb_ch9.h: 342: unsigned :8;
-[; ;usb_ch9.h: 343: unsigned :8;
-[; ;usb_ch9.h: 344: uint8_t bDscIndex;
-[; ;usb_ch9.h: 345: uint8_t bDescriptorType;
-[; ;usb_ch9.h: 346: uint16_t wLangID;
-[; ;usb_ch9.h: 347: unsigned :8;
-[; ;usb_ch9.h: 348: unsigned :8;
-[; ;usb_ch9.h: 349: };
-[; ;usb_ch9.h: 350: struct 
-[; ;usb_ch9.h: 351: {
-[; ;usb_ch9.h: 352: unsigned :8;
-[; ;usb_ch9.h: 353: unsigned :8;
-[; ;usb_ch9.h: 354: uint8_t bDevADR;
-[; ;usb_ch9.h: 355: uint8_t bDevADRH;
-[; ;usb_ch9.h: 356: unsigned :8;
-[; ;usb_ch9.h: 357: unsigned :8;
-[; ;usb_ch9.h: 358: unsigned :8;
-[; ;usb_ch9.h: 359: unsigned :8;
-[; ;usb_ch9.h: 360: };
-[; ;usb_ch9.h: 361: struct 
-[; ;usb_ch9.h: 362: {
-[; ;usb_ch9.h: 363: unsigned :8;
-[; ;usb_ch9.h: 364: unsigned :8;
-[; ;usb_ch9.h: 365: uint8_t bConfigurationValue;
-[; ;usb_ch9.h: 366: uint8_t bCfgRSD;
-[; ;usb_ch9.h: 367: unsigned :8;
-[; ;usb_ch9.h: 368: unsigned :8;
-[; ;usb_ch9.h: 369: unsigned :8;
-[; ;usb_ch9.h: 370: unsigned :8;
-[; ;usb_ch9.h: 371: };
-[; ;usb_ch9.h: 372: struct 
-[; ;usb_ch9.h: 373: {
-[; ;usb_ch9.h: 374: unsigned :8;
-[; ;usb_ch9.h: 375: unsigned :8;
-[; ;usb_ch9.h: 376: uint8_t bAltID;
-[; ;usb_ch9.h: 377: uint8_t bAltID_H;
-[; ;usb_ch9.h: 378: uint8_t bIntfID;
-[; ;usb_ch9.h: 379: uint8_t bIntfID_H;
-[; ;usb_ch9.h: 380: unsigned :8;
-[; ;usb_ch9.h: 381: unsigned :8;
-[; ;usb_ch9.h: 382: };
-[; ;usb_ch9.h: 383: struct 
-[; ;usb_ch9.h: 384: {
-[; ;usb_ch9.h: 385: unsigned :8;
-[; ;usb_ch9.h: 386: unsigned :8;
-[; ;usb_ch9.h: 387: unsigned :8;
-[; ;usb_ch9.h: 388: unsigned :8;
-[; ;usb_ch9.h: 389: uint8_t bEPID;
-[; ;usb_ch9.h: 390: uint8_t bEPID_H;
-[; ;usb_ch9.h: 391: unsigned :8;
-[; ;usb_ch9.h: 392: unsigned :8;
-[; ;usb_ch9.h: 393: };
-[; ;usb_ch9.h: 394: struct 
-[; ;usb_ch9.h: 395: {
-[; ;usb_ch9.h: 396: unsigned :8;
-[; ;usb_ch9.h: 397: unsigned :8;
-[; ;usb_ch9.h: 398: unsigned :8;
-[; ;usb_ch9.h: 399: unsigned :8;
-[; ;usb_ch9.h: 400: unsigned EPNum:4;
-[; ;usb_ch9.h: 401: unsigned :3;
-[; ;usb_ch9.h: 402: unsigned EPDir:1;
-[; ;usb_ch9.h: 403: unsigned :8;
-[; ;usb_ch9.h: 404: unsigned :8;
-[; ;usb_ch9.h: 405: unsigned :8;
-[; ;usb_ch9.h: 406: };
-[; ;usb_ch9.h: 410: } CTRL_TRF_SETUP, SETUP_PKT, *PSETUP_PKT;
-[; ;usb_device.h: 73: typedef enum
-[; ;usb_device.h: 74: {
-[; ;usb_device.h: 78: DETACHED_STATE
-[; ;usb_device.h: 79: = 0x00 ,
-[; ;usb_device.h: 82: ATTACHED_STATE
-[; ;usb_device.h: 83: = 0x01 ,
-[; ;usb_device.h: 86: POWERED_STATE
-[; ;usb_device.h: 87: = 0x02 ,
-[; ;usb_device.h: 90: DEFAULT_STATE
-[; ;usb_device.h: 91: = 0x04 ,
-[; ;usb_device.h: 97: ADR_PENDING_STATE
-[; ;usb_device.h: 98: = 0x08 ,
-[; ;usb_device.h: 101: ADDRESS_STATE
-[; ;usb_device.h: 102: = 0x10 ,
-[; ;usb_device.h: 108: CONFIGURED_STATE
-[; ;usb_device.h: 109: = 0x20
-[; ;usb_device.h: 110: } USB_DEVICE_STATE;
-[; ;usb_device.h: 114: typedef enum
-[; ;usb_device.h: 115: {
-[; ;usb_device.h: 117: EVENT_CONFIGURED
-[; ;usb_device.h: 118: = EVENT_DEVICE_STACK_BASE ,
-[; ;usb_device.h: 121: EVENT_SET_DESCRIPTOR,
-[; ;usb_device.h: 127: EVENT_EP0_REQUEST,
-[; ;usb_device.h: 156: EVENT_ATTACH,
-[; ;usb_device.h: 161: EVENT_TRANSFER_TERMINATED
-[; ;usb_device.h: 163: } USB_DEVICE_STACK_EVENTS;
-[; ;usb_device.h: 195: void USBDeviceInit(void);
-[; ;usb_device.h: 299: void USBDeviceTasks(void);
-[; ;usb_device.h: 351: void USBEnableEndpoint(uint8_t ep, uint8_t options);
-[; ;usb_device.h: 444: void* USBTransferOnePacket(uint8_t ep,uint8_t dir,uint8_t* data,uint8_t len);
-[; ;usb_device.h: 469: void USBStallEndpoint(uint8_t ep, uint8_t dir);
-[; ;usb_device.h: 493: void USBCancelIO(uint8_t endpoint);
-[; ;usb_device.h: 590: void USBDeviceDetach(void);
-[; ;usb_device.h: 635: void USBDeviceAttach(void);
-[; ;usb_device.h: 674: void USBCtrlEPAllowStatusStage(void);
-[; ;usb_device.h: 704: void USBCtrlEPAllowDataStage(void);
-[; ;usb_device.h: 780: void USBDeferOUTDataStage(void);
-[; ;usb_device.h: 781: extern volatile bool USBDeferOUTDataStagePackets;
-[; ;usb_device.h: 850: void USBDeferStatusStage(void);
-[; ;usb_device.h: 851: extern volatile bool USBDeferStatusStagePacket;
-[; ;usb_device.h: 902: bool USBOUTDataStageDeferred(void);
-[; ;usb_device.h: 985: void USBDeferINDataStage(void);
-[; ;usb_device.h: 986: extern volatile bool USBDeferINDataStagePackets;
-[; ;usb_device.h: 1039: bool USBINDataStageDeferred(void);
-[; ;usb_device.h: 1109: bool USBGetRemoteWakeupStatus(void);
-[; ;usb_device.h: 1166: USB_DEVICE_STATE USBGetDeviceState(void);
-[; ;usb_device.h: 1222: bool USBGetSuspendState(void);
-[; ;usb_device.h: 1257: bool USBIsDeviceSuspended(void);
-[; ;usb_device.h: 1300: bool USBIsBusSuspended(void);
-[; ;usb_device.h: 1326: void USBSoftDetach(void);
-[; ;usb_device.h: 1364: bool USBHandleBusy(void* handle);
-[; ;usb_device.h: 1402: uint16_t USBHandleGetLength(void* handle);
-[; ;usb_device.h: 1434: uint16_t USBHandleGetAddr(void*);
-[; ;usb_device.h: 1534: void* USBGetNextHandle(uint8_t ep_num, uint8_t ep_dir);
-[; ;usb_device.h: 1567: void USBEP0Transmit(uint8_t options);
-[; ;usb_device.h: 1595: void USBEP0SendRAMPtr(uint8_t* src, uint16_t size, uint8_t Options);
-[; ;usb_device.h: 1627: void USBEP0SendROMPtr(uint8_t* src, uint16_t size, uint8_t Options);
-[; ;usb_device.h: 1655: void USBEP0Receive(uint8_t* dest, uint16_t size, void (*function));
-[; ;usb_device.h: 1690: void* USBTxOnePacket(uint8_t ep, uint8_t* data, uint16_t len);
-[; ;usb_device.h: 1727: void* USBRxOnePacket(uint8_t ep, uint8_t* data, uint16_t len);
-[; ;usb_device.h: 1759: bool USB_APPLICATION_EVENT_HANDLER(uint8_t address, USB_EVENT event, void *pdata, uint16_t size);
-[; ;usb_device.h: 1804: void USBIncrement1msInternalTimers(void);
-[; ;usb_device.h: 1863: uint32_t USBGet1msTickCount(void);
-[; ;usb_device.h: 1904: uint8_t USBGetTicksSinceSuspendEnd(void);
-[; ;usb_device.h: 1976: typedef union
-[; ;usb_device.h: 1977: {
-[; ;usb_device.h: 1978: uint16_t Val;
-[; ;usb_device.h: 1979: uint8_t v[2];
-[; ;usb_device.h: 1980: struct
-[; ;usb_device.h: 1981: {
-[; ;usb_device.h: 1982: uint8_t LB;
-[; ;usb_device.h: 1983: uint8_t HB;
-[; ;usb_device.h: 1984: } byte;
-[; ;usb_device.h: 1985: } uint16_t_VAL;
-[; ;usb_device.h: 1990: typedef struct 
-[; ;usb_device.h: 1991: {
-[; ;usb_device.h: 1992: union 
-[; ;usb_device.h: 1993: {
-[; ;usb_device.h: 1996: uint8_t *bRam;
-[; ;usb_device.h: 1997: const uint8_t *bRom;
-[; ;usb_device.h: 1998: uint16_t *wRam;
-[; ;usb_device.h: 1999: const uint16_t *wRom;
-[; ;usb_device.h: 2000: }pSrc;
-[; ;usb_device.h: 2001: union 
-[; ;usb_device.h: 2002: {
-[; ;usb_device.h: 2003: struct 
-[; ;usb_device.h: 2004: {
-[; ;usb_device.h: 2006: uint8_t ctrl_trf_mem :1;
-[; ;usb_device.h: 2007: uint8_t reserved :5;
-[; ;usb_device.h: 2010: uint8_t includeZero :1;
-[; ;usb_device.h: 2012: uint8_t busy :1;
-[; ;usb_device.h: 2013: }bits;
-[; ;usb_device.h: 2014: uint8_t Val;
-[; ;usb_device.h: 2015: }info;
-[; ;usb_device.h: 2016: uint16_t_VAL  wCount;
-[; ;usb_device.h: 2017: }IN_PIPE;
-[; ;usb_device.h: 2019: extern volatile IN_PIPE inPipes[];
-[; ;usb_device.h: 2021: typedef struct 
-[; ;usb_device.h: 2022: {
-[; ;usb_device.h: 2023: union 
-[; ;usb_device.h: 2024: {
-[; ;usb_device.h: 2027: uint8_t *bRam;
-[; ;usb_device.h: 2028: uint16_t *wRam;
-[; ;usb_device.h: 2029: }pDst;
-[; ;usb_device.h: 2030: union 
-[; ;usb_device.h: 2031: {
-[; ;usb_device.h: 2032: struct 
-[; ;usb_device.h: 2033: {
-[; ;usb_device.h: 2034: uint8_t reserved :7;
-[; ;usb_device.h: 2036: uint8_t busy :1;
-[; ;usb_device.h: 2037: }bits;
-[; ;usb_device.h: 2038: uint8_t Val;
-[; ;usb_device.h: 2039: }info;
-[; ;usb_device.h: 2040: uint16_t_VAL wCount;
-[; ;usb_device.h: 2041: void (*pFunc)(void);
-[; ;usb_device.h: 2042: }OUT_PIPE;
-[; ;usb_device.h: 2044: extern volatile bool RemoteWakeup;
-[; ;usb_device.h: 2045: extern volatile bool USBBusIsSuspended;
-[; ;usb_device.h: 2046: extern volatile USB_DEVICE_STATE USBDeviceState;
-[; ;usb_device.h: 2047: extern volatile uint8_t USBActiveConfiguration;
-[; ;usb_device.h: 2048: extern volatile uint8_t USBTicksSinceSuspendEnd;
-[; ;string.h: 14: extern void * memcpy(void *, const void *, size_t);
-[; ;string.h: 15: extern void * memmove(void *, const void *, size_t);
-[; ;string.h: 16: extern void * memset(void *, int, size_t);
-[; ;string.h: 21: extern void * __builtin_memcpy(void *, const void *, size_t);
-[; ;string.h: 36: extern char * strcat(char *, const char *);
-[; ;string.h: 37: extern char * strcpy(char *, const char *);
-[; ;string.h: 38: extern char * strncat(char *, const char *, size_t);
-[; ;string.h: 39: extern char * strncpy(char *, const char *, size_t);
-[; ;string.h: 40: extern char * strdup(const char *);
-[; ;string.h: 41: extern char * strtok(char *, const char *);
-[; ;string.h: 44: extern int memcmp(const void *, const void *, size_t);
-[; ;string.h: 45: extern int strcmp(const char *, const char *);
-[; ;string.h: 46: extern int stricmp(const char *, const char *);
-[; ;string.h: 47: extern int strncmp(const char *, const char *, size_t);
-[; ;string.h: 48: extern int strnicmp(const char *, const char *, size_t);
-[; ;string.h: 49: extern void * memchr(const void *, int, size_t);
-[; ;string.h: 50: extern size_t strcspn(const char *, const char *);
-[; ;string.h: 51: extern char * strpbrk(const char *, const char *);
-[; ;string.h: 52: extern size_t strspn(const char *, const char *);
-[; ;string.h: 53: extern char * strstr(const char *, const char *);
-[; ;string.h: 54: extern char * stristr(const char *, const char *);
-[; ;string.h: 55: extern char * strerror(int);
-[; ;string.h: 56: extern size_t strlen(const char *);
-[; ;string.h: 57: extern char * strchr(const char *, int);
-[; ;string.h: 58: extern char * strichr(const char *, int);
-[; ;string.h: 59: extern char * strrchr(const char *, int);
-[; ;string.h: 60: extern char * strrichr(const char *, int);
-[; ;usb_hal_pic16f1.h: 223: typedef union _BD_STAT
-[; ;usb_hal_pic16f1.h: 224: {
-[; ;usb_hal_pic16f1.h: 225: uint8_t Val;
-[; ;usb_hal_pic16f1.h: 226: struct{
-[; ;usb_hal_pic16f1.h: 228: unsigned BC8:1;
-[; ;usb_hal_pic16f1.h: 229: unsigned BC9:1;
-[; ;usb_hal_pic16f1.h: 230: unsigned BSTALL:1;
-[; ;usb_hal_pic16f1.h: 231: unsigned DTSEN:1;
-[; ;usb_hal_pic16f1.h: 232: unsigned INCDIS:1;
-[; ;usb_hal_pic16f1.h: 233: unsigned KEN:1;
-[; ;usb_hal_pic16f1.h: 234: unsigned DTS:1;
-[; ;usb_hal_pic16f1.h: 235: unsigned UOWN:1;
-[; ;usb_hal_pic16f1.h: 236: };
-[; ;usb_hal_pic16f1.h: 237: struct{
-[; ;usb_hal_pic16f1.h: 240: unsigned :2;
-[; ;usb_hal_pic16f1.h: 241: unsigned PID0:1;
-[; ;usb_hal_pic16f1.h: 242: unsigned PID1:1;
-[; ;usb_hal_pic16f1.h: 243: unsigned PID2:1;
-[; ;usb_hal_pic16f1.h: 244: unsigned PID3:1;
-[; ;usb_hal_pic16f1.h: 245: unsigned :1;
-[; ;usb_hal_pic16f1.h: 246: };
-[; ;usb_hal_pic16f1.h: 247: struct{
-[; ;usb_hal_pic16f1.h: 248: unsigned :2;
-[; ;usb_hal_pic16f1.h: 249: unsigned PID:4;
-[; ;usb_hal_pic16f1.h: 250: unsigned :2;
-[; ;usb_hal_pic16f1.h: 251: };
-[; ;usb_hal_pic16f1.h: 252: } BD_STAT;
-[; ;usb_hal_pic16f1.h: 255: typedef union __BDT
-[; ;usb_hal_pic16f1.h: 256: {
-[; ;usb_hal_pic16f1.h: 257: struct
-[; ;usb_hal_pic16f1.h: 258: {
-[; ;usb_hal_pic16f1.h: 259: BD_STAT STAT;
-[; ;usb_hal_pic16f1.h: 260: uint8_t CNT;
-[; ;usb_hal_pic16f1.h: 261: uint8_t ADRL;
-[; ;usb_hal_pic16f1.h: 262: uint8_t ADRH;
-[; ;usb_hal_pic16f1.h: 263: };
-[; ;usb_hal_pic16f1.h: 264: struct
-[; ;usb_hal_pic16f1.h: 265: {
-[; ;usb_hal_pic16f1.h: 266: unsigned filler1:8;
-[; ;usb_hal_pic16f1.h: 267: unsigned filler2:8;
-[; ;usb_hal_pic16f1.h: 268: uint16_t ADR;
-[; ;usb_hal_pic16f1.h: 269: };
-[; ;usb_hal_pic16f1.h: 270: uint32_t Val;
-[; ;usb_hal_pic16f1.h: 271: uint8_t v[4];
-[; ;usb_hal_pic16f1.h: 272: } BDT_ENTRY;
-[; ;usb_hal_pic16f1.h: 275: typedef union __USTAT
-[; ;usb_hal_pic16f1.h: 276: {
-[; ;usb_hal_pic16f1.h: 277: struct
-[; ;usb_hal_pic16f1.h: 278: {
-[; ;usb_hal_pic16f1.h: 279: unsigned char filler1:1;
-[; ;usb_hal_pic16f1.h: 280: unsigned char ping_pong:1;
-[; ;usb_hal_pic16f1.h: 281: unsigned char direction:1;
-[; ;usb_hal_pic16f1.h: 282: unsigned char endpoint_number:4;
-[; ;usb_hal_pic16f1.h: 283: };
-[; ;usb_hal_pic16f1.h: 284: uint8_t Val;
-[; ;usb_hal_pic16f1.h: 285: } USTAT_FIELDS;
-[; ;usb_hal_pic16f1.h: 293: typedef union _POINTER
-[; ;usb_hal_pic16f1.h: 294: {
-[; ;usb_hal_pic16f1.h: 295: struct
-[; ;usb_hal_pic16f1.h: 296: {
-[; ;usb_hal_pic16f1.h: 297: uint8_t bLow;
-[; ;usb_hal_pic16f1.h: 298: uint8_t bHigh;
-[; ;usb_hal_pic16f1.h: 300: };
-[; ;usb_hal_pic16f1.h: 301: uint16_t _word;
-[; ;usb_hal_pic16f1.h: 305: uint8_t* bRam;
-[; ;usb_hal_pic16f1.h: 307: uint16_t* wRam;
-[; ;usb_hal_pic16f1.h: 310: const uint8_t* bRom;
-[; ;usb_hal_pic16f1.h: 311: const uint16_t* wRom;
-[; ;usb_hal_pic16f1.h: 316: } POINTER;
-[; ;usb_hal_pic16f1.h: 511: extern volatile uint8_t USBActiveConfiguration;
-[; ;usb_hal_pic16f1.h: 512: extern volatile IN_PIPE inPipes[1];
-[; ;usb_hal_pic16f1.h: 513: extern volatile OUT_PIPE outPipes[1];
-[; ;usb_hal_pic16f1.h: 516: extern volatile BDT_ENTRY* pBDTEntryOut[2+1];
-[; ;usb_hal_pic16f1.h: 517: extern volatile BDT_ENTRY* pBDTEntryIn[2+1];
-[; ;usb_hal.h: 167: void OTGCORE_SetDeviceAddr( uint8_t addr );
-[; ;usb_hal.h: 203: void USBHALControlUsbResistors( uint8_t flags );
-[; ;usb_hal.h: 237: bool USBHALSessionIsValid( void );
-[; ;usb_hal.h: 263: bool USBHALControlBusPower( uint8_t cmd );
-[; ;usb_hal.h: 293: unsigned long USBHALGetLastError( void );
-[; ;usb_hal.h: 326: void USBHALHandleBusEvent ( void );
-[; ;usb_hal.h: 367: bool OTGCORE_StallPipe( TRANSFER_FLAGS pipe );
-[; ;usb_hal.h: 404: bool OTGCORE_UnstallPipe( TRANSFER_FLAGS pipe );
-[; ;usb_hal.h: 438: uint16_t OTGCORE_GetStalledEndpoints ( void );
-[; ;usb_hal.h: 475: bool USBHALFlushPipe( TRANSFER_FLAGS pipe );
-[; ;usb_hal.h: 535: bool USBHALTransferData ( TRANSFER_FLAGS flags,
-[; ;usb_hal.h: 536: void *buffer,
-[; ;usb_hal.h: 537: unsigned int size );
-[; ;usb_hal.h: 575: bool USBHALSetEpConfiguration ( uint8_t ep_num, uint16_t max_pkt_size, uint16_t flags );
-[; ;usb_hal.h: 603: bool USBHALInitialize ( unsigned long flags );
-[; ;usb_device_cdc.h: 536: void CDCInitEP(void);
-[; ;usb_device_cdc.h: 562: void USBCheckCDCRequest(void);
-[; ;usb_device_cdc.h: 580: void CDCNotificationHandler(void);
-[; ;usb_device_cdc.h: 606: bool USBCDCEventHandler(USB_EVENT event, void *pdata, uint16_t size);
-[; ;usb_device_cdc.h: 653: uint8_t getsUSBUSART(uint8_t *buffer, uint8_t len);
-[; ;usb_device_cdc.h: 695: void putUSBUSART(uint8_t *data, uint8_t Length);
-[; ;usb_device_cdc.h: 736: void putsUSBUSART(char *data);
-[; ;usb_device_cdc.h: 779: void putrsUSBUSART(const const char *data);
-[; ;usb_device_cdc.h: 831: void CDCTxService(void);
-[; ;usb_device_cdc.h: 839: typedef union _LINE_CODING
-[; ;usb_device_cdc.h: 840: {
-[; ;usb_device_cdc.h: 841: struct
-[; ;usb_device_cdc.h: 842: {
-[; ;usb_device_cdc.h: 843: uint8_t _byte[0x07];
-[; ;usb_device_cdc.h: 844: };
-[; ;usb_device_cdc.h: 845: struct
-[; ;usb_device_cdc.h: 846: {
-[; ;usb_device_cdc.h: 847: uint32_t dwDTERate;
-[; ;usb_device_cdc.h: 848: uint8_t bCharFormat;
-[; ;usb_device_cdc.h: 849: uint8_t bParityType;
-[; ;usb_device_cdc.h: 850: uint8_t bDataBits;
-[; ;usb_device_cdc.h: 851: };
-[; ;usb_device_cdc.h: 852: } LINE_CODING;
-[; ;usb_device_cdc.h: 854: typedef union _CONTROL_SIGNAL_BITMAP
-[; ;usb_device_cdc.h: 855: {
-[; ;usb_device_cdc.h: 856: uint8_t _byte;
-[; ;usb_device_cdc.h: 857: struct
-[; ;usb_device_cdc.h: 858: {
-[; ;usb_device_cdc.h: 859: unsigned DTE_PRESENT:1;
-[; ;usb_device_cdc.h: 860: unsigned CARRIER_CONTROL:1;
-[; ;usb_device_cdc.h: 861: };
-[; ;usb_device_cdc.h: 862: } CONTROL_SIGNAL_BITMAP;
-[; ;usb_device_cdc.h: 868: typedef struct  _USB_CDC_HEADER_FN_DSC
-[; ;usb_device_cdc.h: 869: {
-[; ;usb_device_cdc.h: 870: uint8_t bFNLength;
-[; ;usb_device_cdc.h: 871: uint8_t bDscType;
-[; ;usb_device_cdc.h: 872: uint8_t bDscSubType;
-[; ;usb_device_cdc.h: 873: uint16_t bcdCDC;
-[; ;usb_device_cdc.h: 874: } USB_CDC_HEADER_FN_DSC;
-[; ;usb_device_cdc.h: 877: typedef struct  _USB_CDC_ACM_FN_DSC
-[; ;usb_device_cdc.h: 878: {
-[; ;usb_device_cdc.h: 879: uint8_t bFNLength;
-[; ;usb_device_cdc.h: 880: uint8_t bDscType;
-[; ;usb_device_cdc.h: 881: uint8_t bDscSubType;
-[; ;usb_device_cdc.h: 882: uint8_t bmCapabilities;
-[; ;usb_device_cdc.h: 883: } USB_CDC_ACM_FN_DSC;
-[; ;usb_device_cdc.h: 886: typedef struct  _USB_CDC_UNION_FN_DSC
-[; ;usb_device_cdc.h: 887: {
-[; ;usb_device_cdc.h: 888: uint8_t bFNLength;
-[; ;usb_device_cdc.h: 889: uint8_t bDscType;
-[; ;usb_device_cdc.h: 890: uint8_t bDscSubType;
-[; ;usb_device_cdc.h: 891: uint8_t bMasterIntf;
-[; ;usb_device_cdc.h: 892: uint8_t bSaveIntf0;
-[; ;usb_device_cdc.h: 893: } USB_CDC_UNION_FN_DSC;
-[; ;usb_device_cdc.h: 896: typedef struct  _USB_CDC_CALL_MGT_FN_DSC
-[; ;usb_device_cdc.h: 897: {
-[; ;usb_device_cdc.h: 898: uint8_t bFNLength;
-[; ;usb_device_cdc.h: 899: uint8_t bDscType;
-[; ;usb_device_cdc.h: 900: uint8_t bDscSubType;
-[; ;usb_device_cdc.h: 901: uint8_t bmCapabilities;
-[; ;usb_device_cdc.h: 902: uint8_t bDataInterface;
-[; ;usb_device_cdc.h: 903: } USB_CDC_CALL_MGT_FN_DSC;
-[; ;usb_device_cdc.h: 905: typedef union  _CDC_NOTICE
-[; ;usb_device_cdc.h: 906: {
-[; ;usb_device_cdc.h: 907: LINE_CODING GetLineCoding;
-[; ;usb_device_cdc.h: 908: LINE_CODING SetLineCoding;
-[; ;usb_device_cdc.h: 909: unsigned char packet[10];
-[; ;usb_device_cdc.h: 910: } CDC_NOTICE, *PCDC_NOTICE;
-[; ;usb_device_cdc.h: 913: typedef union
-[; ;usb_device_cdc.h: 914: {
-[; ;usb_device_cdc.h: 915: uint8_t byte;
-[; ;usb_device_cdc.h: 916: struct
-[; ;usb_device_cdc.h: 917: {
-[; ;usb_device_cdc.h: 918: uint8_t DCD :1;
-[; ;usb_device_cdc.h: 919: uint8_t DSR :1;
-[; ;usb_device_cdc.h: 920: uint8_t BreakState :1;
-[; ;usb_device_cdc.h: 921: uint8_t RingDetect :1;
-[; ;usb_device_cdc.h: 922: uint8_t FramingError :1;
-[; ;usb_device_cdc.h: 923: uint8_t ParityError :1;
-[; ;usb_device_cdc.h: 924: uint8_t Overrun :1;
-[; ;usb_device_cdc.h: 925: uint8_t Reserved :1;
-[; ;usb_device_cdc.h: 926: }bits;
-[; ;usb_device_cdc.h: 927: }BM_SERIAL_STATE;
-[; ;usb_device_cdc.h: 930: typedef struct
-[; ;usb_device_cdc.h: 931: {
-[; ;usb_device_cdc.h: 932: uint8_t bmRequestType;
-[; ;usb_device_cdc.h: 933: uint8_t bNotification;
-[; ;usb_device_cdc.h: 934: uint16_t wValue;
-[; ;usb_device_cdc.h: 935: uint16_t wIndex;
-[; ;usb_device_cdc.h: 936: uint16_t wLength;
-[; ;usb_device_cdc.h: 937: BM_SERIAL_STATE SerialState;
-[; ;usb_device_cdc.h: 938: uint8_t Reserved;
-[; ;usb_device_cdc.h: 939: }SERIAL_STATE_NOTIFICATION;
-[; ;usb_device_cdc.h: 943: extern uint8_t cdc_rx_len;
-[; ;usb_device_cdc.h: 944: extern void* lastTransmission;
-[; ;usb_device_cdc.h: 946: extern uint8_t cdc_trf_state;
-[; ;usb_device_cdc.h: 947: extern POINTER pCDCSrc;
-[; ;usb_device_cdc.h: 948: extern uint8_t cdc_tx_len;
-[; ;usb_device_cdc.h: 949: extern uint8_t cdc_mem_type;
-[; ;usb_device_cdc.h: 951: extern CDC_NOTICE cdc_notice;
-[; ;usb_device_cdc.h: 952: extern LINE_CODING line_coding;
-[; ;usb_device_cdc.h: 954: extern volatile CTRL_TRF_SETUP SetupPkt;
-[; ;usb_device_cdc.h: 955: extern const uint8_t configDescriptor1[];
 [; ;i2c_types.h: 29: typedef enum {
 [; ;i2c_types.h: 30: I2C_NOERR,
 [; ;i2c_types.h: 31: I2C_BUSY,
@@ -2805,93 +2211,1285 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;i2c_master.h: 50: void i2c_setTimeOutCallback(i2c_callback cb, void *p);
 [; ;i2c_master.h: 53: void i2c_ISR(void);
 [; ;i2c_master.h: 54: void i2c_busCollisionISR(void);
-[; ;i2c_simple_master.h: 29: uint8_t i2c_read1ByteRegister(i2c_address_t address, uint8_t reg);
-[; ;i2c_simple_master.h: 30: uint16_t i2c_read2ByteRegister(i2c_address_t address, uint8_t reg);
-[; ;i2c_simple_master.h: 31: void i2c_write1ByteRegister(i2c_address_t address, uint8_t reg, uint8_t data);
-[; ;i2c_simple_master.h: 32: void i2c_write2ByteRegister(i2c_address_t address, uint8_t reg, uint16_t data);
-[; ;i2c_simple_master.h: 34: void i2c_writeNBytes(i2c_address_t address, void* data, size_t len);
-[; ;i2c_simple_master.h: 35: void i2c_readDataBlock(i2c_address_t address, uint8_t reg, void *data, size_t len);
-[; ;i2c_simple_master.h: 36: void i2c_readNBytes(i2c_address_t address, void *data, size_t len);
-[; ;mcc.h: 72: void SYSTEM_Initialize(void);
-[; ;mcc.h: 85: void OSCILLATOR_Initialize(void);
-[; ;mcc.h: 98: void WDT_Initialize(void);
-"73 mcc_generated_files/mcc.c
-[v _SYSTEM_Initialize `(v ~T0 @X0 1 ef ]
-"74
-{
-[; ;mcc.c: 73: void SYSTEM_Initialize(void)
-[; ;mcc.c: 74: {
-[e :U _SYSTEM_Initialize ]
-[f ]
-[; ;mcc.c: 76: PIN_MANAGER_Initialize();
+[; ;i2c_driver.h: 34: inline void i2c_driver_close(void);
+[; ;i2c_driver.h: 37: inline void mssp_enableIRQ(void);
+[; ;i2c_driver.h: 38: inline bit mssp_IRQisEnabled(void);
+[; ;i2c_driver.h: 39: inline void mssp_disableIRQ(void);
+[; ;i2c_driver.h: 40: inline void mssp_clearIRQ(void);
+[; ;i2c_driver.h: 41: inline void mssp_setIRQ(void);
+[; ;i2c_driver.h: 42: inline bit mssp_IRQisSet(void);
+[; ;i2c_driver.h: 43: inline void mssp_waitForEvent(uint16_t*);
+[; ;i2c_driver.h: 46: bit i2c_driver_open(void);
+[; ;i2c_driver.h: 47: inline char i2c_driver_getRXData(void);
+[; ;i2c_driver.h: 48: inline char i2c_driver_getAddr(void);
+[; ;i2c_driver.h: 49: inline void i2c_driver_setAddr(char addr);
+[; ;i2c_driver.h: 50: inline void i2c_driver_setMask(char mask);
+[; ;i2c_driver.h: 51: inline void i2c_driver_TXData(char d);
+[; ;i2c_driver.h: 52: inline void i2c_driver_resetBus(void);
+[; ;i2c_driver.h: 53: inline void i2c_driver_start(void);
+[; ;i2c_driver.h: 54: inline void i2c_driver_restart(void);
+[; ;i2c_driver.h: 55: inline void i2c_driver_stop(void);
+[; ;i2c_driver.h: 56: inline bit i2c_driver_isNACK(void);
+[; ;i2c_driver.h: 57: inline void i2c_driver_startRX(void);
+[; ;i2c_driver.h: 58: inline void i2c_driver_sendACK(void);
+[; ;i2c_driver.h: 59: inline void i2c_driver_sendNACK(void);
+[; ;i2c_driver.h: 60: inline void i2c_driver_clearBusCollision(void);
+[; ;i2c_driver.h: 62: bit i2c_driver_initSlaveHardware(void);
+[; ;i2c_driver.h: 63: inline void i2c_driver_releaseClock(void);
+[; ;i2c_driver.h: 64: inline bit i2c_driver_isBufferFull(void);
+[; ;i2c_driver.h: 65: inline bit i2c_driver_isStart(void);
+[; ;i2c_driver.h: 66: inline bit i2c_driver_isStop(void);
+[; ;i2c_driver.h: 67: inline bit i2c_driver_isAddress(void);
+[; ;i2c_driver.h: 68: inline bit i2c_driver_isData(void);
+[; ;i2c_driver.h: 69: inline bit i2c_driver_isRead(void);
+[; ;i2c_driver.h: 70: inline bit i2c_driver_isWriteCollision(void);
+[; ;i2c_driver.h: 71: inline bit i2c_driver_isReceiveOverflow(void);
+[; ;i2c_driver.h: 73: inline void i2c_driver_setBusCollisionISR(void *f);
+[; ;i2c_driver.h: 74: inline void i2c_driver_setI2cISR(void *f);
+"75 mcc_generated_files/drivers/../i2c_driver.h
+[v _i2c_driver_busCollisionISR `*F2342 ~T0 @X0 1 e ]
+[; ;i2c_driver.h: 75: void (*i2c_driver_busCollisionISR)(void);
 "76
-[e ( _PIN_MANAGER_Initialize ..  ]
-[; ;mcc.c: 77: OSCILLATOR_Initialize();
-"77
-[e ( _OSCILLATOR_Initialize ..  ]
-[; ;mcc.c: 78: WDT_Initialize();
-"78
-[e ( _WDT_Initialize ..  ]
-[; ;mcc.c: 79: USBDeviceInit();
-"79
-[e ( _USBDeviceInit ..  ]
-[; ;mcc.c: 80: USBDeviceAttach();
-"80
-[e ( _USBDeviceAttach ..  ]
-[; ;mcc.c: 81: }
-"81
-[e :UE 320 ]
-}
-"83
-[v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
-"84
-{
-[; ;mcc.c: 83: void OSCILLATOR_Initialize(void)
-[; ;mcc.c: 84: {
-[e :U _OSCILLATOR_Initialize ]
-[f ]
-[; ;mcc.c: 86: OSCCON = 0x7C;
-"86
-[e = _OSCCON -> -> 124 `i `uc ]
-[; ;mcc.c: 88: OSCTUNE = 0x00;
-"88
-[e = _OSCTUNE -> -> 0 `i `uc ]
-[; ;mcc.c: 90: ACTCON = 0x00;
+[v _i2c_driver_i2cISR `*F2345 ~T0 @X0 1 e ]
+[; ;i2c_driver.h: 76: void (*i2c_driver_i2cISR)(void);
+[; ;i2c_master.c: 32: typedef enum {
+[; ;i2c_master.c: 33: I2C_IDLE = 0,
+[; ;i2c_master.c: 34: I2C_SEND_ADR_READ,
+[; ;i2c_master.c: 35: I2C_SEND_ADR_WRITE,
+[; ;i2c_master.c: 36: I2C_TX,
+[; ;i2c_master.c: 37: I2C_RX,
+[; ;i2c_master.c: 38: I2C_RCEN,
+[; ;i2c_master.c: 39: I2C_TX_EMPTY,
+[; ;i2c_master.c: 40: I2C_SEND_RESTART_READ,
+[; ;i2c_master.c: 41: I2C_SEND_RESTART_WRITE,
+[; ;i2c_master.c: 42: I2C_SEND_RESTART,
+[; ;i2c_master.c: 43: I2C_SEND_STOP,
+[; ;i2c_master.c: 44: I2C_RX_DO_ACK,
+[; ;i2c_master.c: 45: I2C_RX_DO_NACK_STOP,
+[; ;i2c_master.c: 46: I2C_RX_DO_NACK_RESTART,
+[; ;i2c_master.c: 47: I2C_RESET,
+[; ;i2c_master.c: 48: I2C_ADDRESS_NACK
+[; ;i2c_master.c: 49: } i2c_fsm_states_t;
+[; ;i2c_master.c: 52: typedef enum
+[; ;i2c_master.c: 53: {
+[; ;i2c_master.c: 54: i2c_dataComplete = 0,
+[; ;i2c_master.c: 55: i2c_writeCollision,
+[; ;i2c_master.c: 56: i2c_addressNACK,
+[; ;i2c_master.c: 57: i2c_dataNACK,
+[; ;i2c_master.c: 58: i2c_timeOut,
+[; ;i2c_master.c: 59: i2c_NULL
+[; ;i2c_master.c: 60: } i2c_callbackIndex;
+[; ;i2c_master.c: 63: typedef struct
+[; ;i2c_master.c: 64: {
+[; ;i2c_master.c: 65: unsigned busy:1;
+[; ;i2c_master.c: 66: unsigned inUse:1;
+[; ;i2c_master.c: 67: unsigned bufferFree:1;
+[; ;i2c_master.c: 68: unsigned addressNACKCheck:1;
+[; ;i2c_master.c: 69: i2c_address_t address;
+[; ;i2c_master.c: 70: uint8_t *data_ptr;
+[; ;i2c_master.c: 71: size_t data_length;
+[; ;i2c_master.c: 72: uint16_t time_out;
+[; ;i2c_master.c: 73: uint16_t time_out_value;
+[; ;i2c_master.c: 74: i2c_fsm_states_t state;
+[; ;i2c_master.c: 75: i2c_error_t error;
+[; ;i2c_master.c: 76: i2c_callback callbackTable[6];
+[; ;i2c_master.c: 77: void *callbackPayload[6];
+[; ;i2c_master.c: 78: } i2c_status_t;
+"80 mcc_generated_files/drivers/i2c_master.c
+[v _i2c_status `S258 ~T0 @X0 1 e ]
+[i _i2c_status
+:U ..
+:U ..
+-> -> 0 `i `uc
+..
+..
+]
+[; ;i2c_master.c: 80: i2c_status_t i2c_status = {0};
+[; ;i2c_master.c: 82: static void setCallBack(i2c_callbackIndex idx, i2c_callback cb, void *p);
+[; ;i2c_master.c: 83: static i2c_operations_t returnStop(void *p);
+[; ;i2c_master.c: 84: static i2c_operations_t returnReset(void *p);
+[; ;i2c_master.c: 86: inline void i2c_poller(void);
+"89
+[v _i2c_setDataCompleteCallback `(v ~T0 @X0 1 ef2`*F2189`*v ]
 "90
-[e = _ACTCON -> -> 0 `i `uc ]
-[; ;mcc.c: 92: BORCON = 0x00;
+{
+[; ;i2c_master.c: 89: void i2c_setDataCompleteCallback(i2c_callback cb, void *p)
+[; ;i2c_master.c: 90: {
+[e :U _i2c_setDataCompleteCallback ]
+"89
+[v _cb `*F2189 ~T0 @X0 1 r1 ]
+[v _p `*v ~T0 @X0 1 r2 ]
+"90
+[f ]
+[; ;i2c_master.c: 91: setCallBack(i2c_dataComplete,cb,p);
+"91
+[e ( _setCallBack (3 , , . `E2365 0 _cb _p ]
+[; ;i2c_master.c: 92: }
 "92
-[e = _BORCON -> -> 0 `i `uc ]
-[; ;mcc.c: 94: while(PLLRDY == 0)
+[e :UE 259 ]
+}
 "94
-[e $U 322  ]
-[e :U 323 ]
-[; ;mcc.c: 95: {
+[v _i2c_setWriteCollisionCallback `(v ~T0 @X0 1 ef2`*F2189`*v ]
 "95
 {
-"96
-}
-[e :U 322 ]
+[; ;i2c_master.c: 94: void i2c_setWriteCollisionCallback(i2c_callback cb, void *p)
+[; ;i2c_master.c: 95: {
+[e :U _i2c_setWriteCollisionCallback ]
 "94
-[e $ == -> _PLLRDY `i -> 0 `i 323  ]
-[e :U 324 ]
-[; ;mcc.c: 96: }
-[; ;mcc.c: 97: }
+[v _cb `*F2189 ~T0 @X0 1 r1 ]
+[v _p `*v ~T0 @X0 1 r2 ]
+"95
+[f ]
+[; ;i2c_master.c: 96: setCallBack(i2c_writeCollision,cb,p);
+"96
+[e ( _setCallBack (3 , , . `E2365 1 _cb _p ]
+[; ;i2c_master.c: 97: }
 "97
-[e :UE 321 ]
+[e :UE 260 ]
 }
 "99
-[v _WDT_Initialize `(v ~T0 @X0 1 ef ]
+[v _i2c_setAddressNACKCallback `(v ~T0 @X0 1 ef2`*F2189`*v ]
 "100
 {
-[; ;mcc.c: 99: void WDT_Initialize(void)
-[; ;mcc.c: 100: {
-[e :U _WDT_Initialize ]
+[; ;i2c_master.c: 99: void i2c_setAddressNACKCallback(i2c_callback cb, void *p)
+[; ;i2c_master.c: 100: {
+[e :U _i2c_setAddressNACKCallback ]
+"99
+[v _cb `*F2189 ~T0 @X0 1 r1 ]
+[v _p `*v ~T0 @X0 1 r2 ]
+"100
 [f ]
-[; ;mcc.c: 102: WDTCON = 0x16;
+[; ;i2c_master.c: 101: setCallBack(i2c_addressNACK,cb,p);
+"101
+[e ( _setCallBack (3 , , . `E2365 2 _cb _p ]
+[; ;i2c_master.c: 102: }
 "102
-[e = _WDTCON -> -> 22 `i `uc ]
-[; ;mcc.c: 103: }
-"103
-[e :UE 325 ]
+[e :UE 261 ]
+}
+"104
+[v _i2c_setDataNACKCallback `(v ~T0 @X0 1 ef2`*F2189`*v ]
+"105
+{
+[; ;i2c_master.c: 104: void i2c_setDataNACKCallback(i2c_callback cb, void *p)
+[; ;i2c_master.c: 105: {
+[e :U _i2c_setDataNACKCallback ]
+"104
+[v _cb `*F2189 ~T0 @X0 1 r1 ]
+[v _p `*v ~T0 @X0 1 r2 ]
+"105
+[f ]
+[; ;i2c_master.c: 106: setCallBack(i2c_dataNACK,cb,p);
+"106
+[e ( _setCallBack (3 , , . `E2365 3 _cb _p ]
+[; ;i2c_master.c: 107: }
+"107
+[e :UE 262 ]
+}
+"109
+[v _i2c_setTimeOutCallback `(v ~T0 @X0 1 ef2`*F2189`*v ]
+"110
+{
+[; ;i2c_master.c: 109: void i2c_setTimeOutCallback(i2c_callback cb, void *p)
+[; ;i2c_master.c: 110: {
+[e :U _i2c_setTimeOutCallback ]
+"109
+[v _cb `*F2189 ~T0 @X0 1 r1 ]
+[v _p `*v ~T0 @X0 1 r2 ]
+"110
+[f ]
+[; ;i2c_master.c: 111: setCallBack(i2c_timeOut,cb,p);
+"111
+[e ( _setCallBack (3 , , . `E2365 4 _cb _p ]
+[; ;i2c_master.c: 112: }
+"112
+[e :UE 263 ]
+}
+"116
+[v _i2c_open `(E2176 ~T0 @X0 1 ef1`uc ]
+"117
+{
+[; ;i2c_master.c: 116: i2c_error_t i2c_open(i2c_address_t address)
+[; ;i2c_master.c: 117: {
+[e :U _i2c_open ]
+"116
+[v _address `uc ~T0 @X0 1 r1 ]
+"117
+[f ]
+"118
+[v _ret `E2176 ~T0 @X0 1 a ]
+[; ;i2c_master.c: 118: i2c_error_t ret = I2C_BUSY;
+[e = _ret . `E2176 1 ]
+[; ;i2c_master.c: 120: if(!i2c_status.inUse)
+"120
+[e $ ! ! != -> . _i2c_status 1 `i -> -> -> 0 `i `uc `i 265  ]
+[; ;i2c_master.c: 121: {
+"121
+{
+[; ;i2c_master.c: 122: i2c_status.address = address;
+"122
+[e = . _i2c_status 4 _address ]
+[; ;i2c_master.c: 123: i2c_status.busy = 0;
+"123
+[e = . _i2c_status 0 -> -> 0 `i `uc ]
+[; ;i2c_master.c: 124: i2c_status.inUse = 1;
+"124
+[e = . _i2c_status 1 -> -> 1 `i `uc ]
+[; ;i2c_master.c: 125: i2c_status.addressNACKCheck = 0;
+"125
+[e = . _i2c_status 3 -> -> 0 `i `uc ]
+[; ;i2c_master.c: 126: i2c_status.state = I2C_RESET;
+"126
+[e = . _i2c_status 9 . `E2347 14 ]
+[; ;i2c_master.c: 127: i2c_status.time_out_value = 500;
+"127
+[e = . _i2c_status 8 -> -> 500 `i `ui ]
+[; ;i2c_master.c: 128: i2c_status.bufferFree = 1;
+"128
+[e = . _i2c_status 2 -> -> 1 `i `uc ]
+[; ;i2c_master.c: 131: i2c_status.callbackTable[i2c_dataComplete]=returnStop;
+"131
+[e = *U + &U . _i2c_status 11 * -> . `E2365 0 `ux -> -> # *U &U . _i2c_status 11 `ui `ux &U _returnStop ]
+[; ;i2c_master.c: 132: i2c_status.callbackPayload[i2c_dataComplete] = (0);
+"132
+[e = *U + &U . _i2c_status 12 * -> . `E2365 0 `ux -> -> # *U &U . _i2c_status 12 `ui `ux -> -> 0 `i `*v ]
+[; ;i2c_master.c: 133: i2c_status.callbackTable[i2c_writeCollision]=returnStop;
+"133
+[e = *U + &U . _i2c_status 11 * -> . `E2365 1 `ux -> -> # *U &U . _i2c_status 11 `ui `ux &U _returnStop ]
+[; ;i2c_master.c: 134: i2c_status.callbackPayload[i2c_writeCollision] = (0);
+"134
+[e = *U + &U . _i2c_status 12 * -> . `E2365 1 `ux -> -> # *U &U . _i2c_status 12 `ui `ux -> -> 0 `i `*v ]
+[; ;i2c_master.c: 135: i2c_status.callbackTable[i2c_addressNACK]=returnStop;
+"135
+[e = *U + &U . _i2c_status 11 * -> . `E2365 2 `ux -> -> # *U &U . _i2c_status 11 `ui `ux &U _returnStop ]
+[; ;i2c_master.c: 136: i2c_status.callbackPayload[i2c_addressNACK] = (0);
+"136
+[e = *U + &U . _i2c_status 12 * -> . `E2365 2 `ux -> -> # *U &U . _i2c_status 12 `ui `ux -> -> 0 `i `*v ]
+[; ;i2c_master.c: 137: i2c_status.callbackTable[i2c_dataNACK]=returnStop;
+"137
+[e = *U + &U . _i2c_status 11 * -> . `E2365 3 `ux -> -> # *U &U . _i2c_status 11 `ui `ux &U _returnStop ]
+[; ;i2c_master.c: 138: i2c_status.callbackPayload[i2c_dataNACK] = (0);
+"138
+[e = *U + &U . _i2c_status 12 * -> . `E2365 3 `ux -> -> # *U &U . _i2c_status 12 `ui `ux -> -> 0 `i `*v ]
+[; ;i2c_master.c: 139: i2c_status.callbackTable[i2c_timeOut]=returnReset;
+"139
+[e = *U + &U . _i2c_status 11 * -> . `E2365 4 `ux -> -> # *U &U . _i2c_status 11 `ui `ux &U _returnReset ]
+[; ;i2c_master.c: 140: i2c_status.callbackPayload[i2c_timeOut] = (0);
+"140
+[e = *U + &U . _i2c_status 12 * -> . `E2365 4 `ux -> -> # *U &U . _i2c_status 12 `ui `ux -> -> 0 `i `*v ]
+[; ;i2c_master.c: 142: i2c_driver_open();
+"142
+[e ( _i2c_driver_open ..  ]
+[; ;i2c_master.c: 143: mssp_clearIRQ();
+"143
+[e ( _mssp_clearIRQ ..  ]
+[; ;i2c_master.c: 145: i2c_driver_setBusCollisionISR(i2c_busCollisionISR);
+"145
+[e ( _i2c_driver_setBusCollisionISR (1 -> &U _i2c_busCollisionISR `*v ]
+[; ;i2c_master.c: 146: i2c_driver_setI2cISR(i2c_ISR);
+"146
+[e ( _i2c_driver_setI2cISR (1 -> &U _i2c_ISR `*v ]
+[; ;i2c_master.c: 151: ret = I2C_NOERR;
+"151
+[e = _ret . `E2176 0 ]
+"152
+}
+[e :U 265 ]
+[; ;i2c_master.c: 152: }
+[; ;i2c_master.c: 153: return ret;
+"153
+[e ) _ret ]
+[e $UE 264  ]
+[; ;i2c_master.c: 154: }
+"154
+[e :UE 264 ]
+}
+"156
+[v _i2c_setAddress `(v ~T0 @X0 1 ef1`uc ]
+"157
+{
+[; ;i2c_master.c: 156: void i2c_setAddress(i2c_address_t address)
+[; ;i2c_master.c: 157: {
+[e :U _i2c_setAddress ]
+"156
+[v _address `uc ~T0 @X0 1 r1 ]
+"157
+[f ]
+[; ;i2c_master.c: 158: i2c_status.address = address;
+"158
+[e = . _i2c_status 4 _address ]
+[; ;i2c_master.c: 159: }
+"159
+[e :UE 266 ]
+}
+"162
+[v _i2c_close `(E2176 ~T0 @X0 1 ef ]
+"163
+{
+[; ;i2c_master.c: 162: i2c_error_t i2c_close(void)
+[; ;i2c_master.c: 163: {
+[e :U _i2c_close ]
+[f ]
+"164
+[v _ret `E2176 ~T0 @X0 1 a ]
+[; ;i2c_master.c: 164: i2c_error_t ret = I2C_BUSY;
+[e = _ret . `E2176 1 ]
+[; ;i2c_master.c: 165: if(!i2c_status.busy)
+"165
+[e $ ! ! != -> . _i2c_status 0 `i -> -> -> 0 `i `uc `i 268  ]
+[; ;i2c_master.c: 166: {
+"166
+{
+[; ;i2c_master.c: 167: i2c_status.inUse = 0;
+"167
+[e = . _i2c_status 1 -> -> 0 `i `uc ]
+[; ;i2c_master.c: 169: i2c_status.address = 0xff;
+"169
+[e = . _i2c_status 4 -> -> 255 `i `uc ]
+[; ;i2c_master.c: 170: mssp_clearIRQ();
+"170
+[e ( _mssp_clearIRQ ..  ]
+[; ;i2c_master.c: 171: mssp_disableIRQ();
+"171
+[e ( _mssp_disableIRQ ..  ]
+[; ;i2c_master.c: 172: ret = i2c_status.error;
+"172
+[e = _ret . _i2c_status 10 ]
+"173
+}
+[e :U 268 ]
+[; ;i2c_master.c: 173: }
+[; ;i2c_master.c: 174: return ret;
+"174
+[e ) _ret ]
+[e $UE 267  ]
+[; ;i2c_master.c: 175: }
+"175
+[e :UE 267 ]
+}
+"177
+[v _i2c_setTimeOut `(v ~T0 @X0 1 ef1`uc ]
+"178
+{
+[; ;i2c_master.c: 177: void i2c_setTimeOut(uint8_t to)
+[; ;i2c_master.c: 178: {
+[e :U _i2c_setTimeOut ]
+"177
+[v _to `uc ~T0 @X0 1 r1 ]
+"178
+[f ]
+[; ;i2c_master.c: 179: mssp_disableIRQ();
+"179
+[e ( _mssp_disableIRQ ..  ]
+[; ;i2c_master.c: 180: i2c_status.time_out_value = to;
+"180
+[e = . _i2c_status 8 -> _to `ui ]
+[; ;i2c_master.c: 181: mssp_enableIRQ();
+"181
+[e ( _mssp_enableIRQ ..  ]
+[; ;i2c_master.c: 182: }
+"182
+[e :UE 269 ]
+}
+"184
+[v _i2c_setBuffer `(v ~T0 @X0 1 ef2`*v`ui ]
+"185
+{
+[; ;i2c_master.c: 184: void i2c_setBuffer(void *buffer, size_t bufferSize)
+[; ;i2c_master.c: 185: {
+[e :U _i2c_setBuffer ]
+"184
+[v _buffer `*v ~T0 @X0 1 r1 ]
+[v _bufferSize `ui ~T0 @X0 1 r2 ]
+"185
+[f ]
+[; ;i2c_master.c: 186: if(i2c_status.bufferFree)
+"186
+[e $ ! != -> . _i2c_status 2 `i -> -> -> 0 `i `uc `i 271  ]
+[; ;i2c_master.c: 187: {
+"187
+{
+[; ;i2c_master.c: 188: i2c_status.data_ptr = buffer;
+"188
+[e = . _i2c_status 5 -> _buffer `*uc ]
+[; ;i2c_master.c: 189: i2c_status.data_length = bufferSize;
+"189
+[e = . _i2c_status 6 _bufferSize ]
+[; ;i2c_master.c: 190: i2c_status.bufferFree = 0;
+"190
+[e = . _i2c_status 2 -> -> 0 `i `uc ]
+"191
+}
+[e :U 271 ]
+[; ;i2c_master.c: 191: }
+[; ;i2c_master.c: 192: }
+"192
+[e :UE 270 ]
+}
+"193
+[v _i2c_masterOperation `(E2176 ~T0 @X0 1 ef1`uc ]
+"194
+{
+[; ;i2c_master.c: 193: i2c_error_t i2c_masterOperation(bool read)
+[; ;i2c_master.c: 194: {
+[e :U _i2c_masterOperation ]
+"193
+[v _read `uc ~T0 @X0 1 r1 ]
+"194
+[f ]
+"195
+[v _ret `E2176 ~T0 @X0 1 a ]
+[; ;i2c_master.c: 195: i2c_error_t ret = I2C_BUSY;
+[e = _ret . `E2176 1 ]
+[; ;i2c_master.c: 196: if(!i2c_status.busy)
+"196
+[e $ ! ! != -> . _i2c_status 0 `i -> -> -> 0 `i `uc `i 273  ]
+[; ;i2c_master.c: 197: {
+"197
+{
+[; ;i2c_master.c: 198: i2c_status.busy = 1;
+"198
+[e = . _i2c_status 0 -> -> 1 `i `uc ]
+[; ;i2c_master.c: 199: ret = I2C_NOERR;
+"199
+[e = _ret . `E2176 0 ]
+[; ;i2c_master.c: 201: if(read)
+"201
+[e $ ! != -> _read `i -> -> -> 0 `i `uc `i 274  ]
+[; ;i2c_master.c: 202: {
+"202
+{
+[; ;i2c_master.c: 203: i2c_status.state = I2C_SEND_ADR_READ;
+"203
+[e = . _i2c_status 9 . `E2347 1 ]
+"204
+}
+[; ;i2c_master.c: 204: }
+[e $U 275  ]
+"205
+[e :U 274 ]
+[; ;i2c_master.c: 205: else
+[; ;i2c_master.c: 206: {
+"206
+{
+[; ;i2c_master.c: 207: i2c_status.state = I2C_SEND_ADR_WRITE;
+"207
+[e = . _i2c_status 9 . `E2347 2 ]
+"208
+}
+[e :U 275 ]
+[; ;i2c_master.c: 208: }
+[; ;i2c_master.c: 209: i2c_driver_start();
+"209
+[e ( _i2c_driver_start ..  ]
+[; ;i2c_master.c: 211: if(! mssp_IRQisEnabled())
+"211
+[e $ ! ! ( _mssp_IRQisEnabled ..  276  ]
+[; ;i2c_master.c: 212: i2c_poller();
+"212
+[e ( _i2c_poller ..  ]
+[e :U 276 ]
+"213
+}
+[e :U 273 ]
+[; ;i2c_master.c: 213: }
+[; ;i2c_master.c: 214: return ret;
+"214
+[e ) _ret ]
+[e $UE 272  ]
+[; ;i2c_master.c: 215: }
+"215
+[e :UE 272 ]
+}
+"217
+[v _i2c_masterRead `(E2176 ~T0 @X0 1 ef ]
+"218
+{
+[; ;i2c_master.c: 217: i2c_error_t i2c_masterRead(void)
+[; ;i2c_master.c: 218: {
+[e :U _i2c_masterRead ]
+[f ]
+[; ;i2c_master.c: 219: return i2c_masterOperation(1);
+"219
+[e ) ( _i2c_masterOperation (1 -> -> 1 `i `uc ]
+[e $UE 277  ]
+[; ;i2c_master.c: 220: }
+"220
+[e :UE 277 ]
+}
+"222
+[v _i2c_masterWrite `(E2176 ~T0 @X0 1 ef ]
+"223
+{
+[; ;i2c_master.c: 222: i2c_error_t i2c_masterWrite(void)
+[; ;i2c_master.c: 223: {
+[e :U _i2c_masterWrite ]
+[f ]
+[; ;i2c_master.c: 224: return i2c_masterOperation(0);
+"224
+[e ) ( _i2c_masterOperation (1 -> -> 0 `i `uc ]
+[e $UE 278  ]
+[; ;i2c_master.c: 225: }
+"225
+[e :UE 278 ]
+}
+"230
+[v _i2c_poller `TF2399 ~T0 @X0 1 e ]
+"231
+{
+[; ;i2c_master.c: 230: inline void i2c_poller(void)
+[; ;i2c_master.c: 231: {
+[e :U _i2c_poller ]
+[f ]
+[; ;i2c_master.c: 232: while(i2c_status.busy)
+"232
+[e $U 280  ]
+[e :U 281 ]
+[; ;i2c_master.c: 233: {
+"233
+{
+[; ;i2c_master.c: 234: mssp_waitForEvent((0));
+"234
+[e ( _mssp_waitForEvent (1 -> -> 0 `i `*ui ]
+[; ;i2c_master.c: 235: i2c_ISR();
+"235
+[e ( _i2c_ISR ..  ]
+"236
+}
+[e :U 280 ]
+"232
+[e $ != -> . _i2c_status 0 `i -> -> -> 0 `i `uc `i 281  ]
+[e :U 282 ]
+[; ;i2c_master.c: 236: }
+[; ;i2c_master.c: 237: }
+"237
+[e :UE 279 ]
+}
+"239
+[v _do_I2C_RESET `(E2347 ~T0 @X0 1 sf ]
+"240
+{
+[; ;i2c_master.c: 239: static i2c_fsm_states_t do_I2C_RESET(void)
+[; ;i2c_master.c: 240: {
+[e :U _do_I2C_RESET ]
+[f ]
+[; ;i2c_master.c: 241: i2c_driver_resetBus();
+"241
+[e ( _i2c_driver_resetBus ..  ]
+[; ;i2c_master.c: 242: i2c_status.busy = 0;
+"242
+[e = . _i2c_status 0 -> -> 0 `i `uc ]
+[; ;i2c_master.c: 243: i2c_status.error = I2C_NOERR;
+"243
+[e = . _i2c_status 10 . `E2176 0 ]
+[; ;i2c_master.c: 244: return I2C_RESET;
+"244
+[e ) . `E2347 14 ]
+[e $UE 283  ]
+[; ;i2c_master.c: 245: }
+"245
+[e :UE 283 ]
+}
+"247
+[v _do_I2C_IDLE `(E2347 ~T0 @X0 1 sf ]
+"248
+{
+[; ;i2c_master.c: 247: static i2c_fsm_states_t do_I2C_IDLE(void)
+[; ;i2c_master.c: 248: {
+[e :U _do_I2C_IDLE ]
+[f ]
+[; ;i2c_master.c: 249: i2c_status.busy = 0;
+"249
+[e = . _i2c_status 0 -> -> 0 `i `uc ]
+[; ;i2c_master.c: 250: i2c_status.error = I2C_NOERR;
+"250
+[e = . _i2c_status 10 . `E2176 0 ]
+[; ;i2c_master.c: 251: return I2C_RESET;
+"251
+[e ) . `E2347 14 ]
+[e $UE 284  ]
+[; ;i2c_master.c: 252: }
+"252
+[e :UE 284 ]
+}
+"254
+[v _do_I2C_SEND_RESTART_READ `(E2347 ~T0 @X0 1 sf ]
+"255
+{
+[; ;i2c_master.c: 254: static i2c_fsm_states_t do_I2C_SEND_RESTART_READ(void)
+[; ;i2c_master.c: 255: {
+[e :U _do_I2C_SEND_RESTART_READ ]
+[f ]
+[; ;i2c_master.c: 256: i2c_driver_restart();
+"256
+[e ( _i2c_driver_restart ..  ]
+[; ;i2c_master.c: 257: return I2C_SEND_ADR_READ;
+"257
+[e ) . `E2347 1 ]
+[e $UE 285  ]
+[; ;i2c_master.c: 258: }
+"258
+[e :UE 285 ]
+}
+"260
+[v _do_I2C_SEND_RESTART_WRITE `(E2347 ~T0 @X0 1 sf ]
+"261
+{
+[; ;i2c_master.c: 260: static i2c_fsm_states_t do_I2C_SEND_RESTART_WRITE(void)
+[; ;i2c_master.c: 261: {
+[e :U _do_I2C_SEND_RESTART_WRITE ]
+[f ]
+[; ;i2c_master.c: 262: i2c_driver_restart();
+"262
+[e ( _i2c_driver_restart ..  ]
+[; ;i2c_master.c: 263: return I2C_SEND_ADR_WRITE;
+"263
+[e ) . `E2347 2 ]
+[e $UE 286  ]
+[; ;i2c_master.c: 264: }
+"264
+[e :UE 286 ]
+}
+"266
+[v _do_I2C_SEND_RESTART `(E2347 ~T0 @X0 1 sf ]
+"267
+{
+[; ;i2c_master.c: 266: static i2c_fsm_states_t do_I2C_SEND_RESTART(void)
+[; ;i2c_master.c: 267: {
+[e :U _do_I2C_SEND_RESTART ]
+[f ]
+[; ;i2c_master.c: 268: i2c_driver_restart();
+"268
+[e ( _i2c_driver_restart ..  ]
+[; ;i2c_master.c: 269: return I2C_SEND_ADR_READ;
+"269
+[e ) . `E2347 1 ]
+[e $UE 287  ]
+[; ;i2c_master.c: 270: }
+"270
+[e :UE 287 ]
+}
+"272
+[v _do_I2C_SEND_STOP `(E2347 ~T0 @X0 1 sf ]
+"273
+{
+[; ;i2c_master.c: 272: static i2c_fsm_states_t do_I2C_SEND_STOP(void)
+[; ;i2c_master.c: 273: {
+[e :U _do_I2C_SEND_STOP ]
+[f ]
+[; ;i2c_master.c: 274: i2c_driver_stop();
+"274
+[e ( _i2c_driver_stop ..  ]
+[; ;i2c_master.c: 275: return I2C_IDLE;
+"275
+[e ) . `E2347 0 ]
+[e $UE 288  ]
+[; ;i2c_master.c: 276: }
+"276
+[e :UE 288 ]
+}
+"278
+[v _do_I2C_SEND_ADR_READ `(E2347 ~T0 @X0 1 sf ]
+"279
+{
+[; ;i2c_master.c: 278: static i2c_fsm_states_t do_I2C_SEND_ADR_READ(void)
+[; ;i2c_master.c: 279: {
+[e :U _do_I2C_SEND_ADR_READ ]
+[f ]
+[; ;i2c_master.c: 280: i2c_status.addressNACKCheck = 1;
+"280
+[e = . _i2c_status 3 -> -> 1 `i `uc ]
+[; ;i2c_master.c: 281: i2c_driver_TXData(i2c_status.address << 1 | 1);
+"281
+[e ( _i2c_driver_TXData (1 -> | << -> . _i2c_status 4 `i -> 1 `i -> 1 `i `uc ]
+[; ;i2c_master.c: 282: return I2C_RCEN;
+"282
+[e ) . `E2347 5 ]
+[e $UE 289  ]
+[; ;i2c_master.c: 283: }
+"283
+[e :UE 289 ]
+}
+"285
+[v _do_I2C_SEND_ADR_WRITE `(E2347 ~T0 @X0 1 sf ]
+"286
+{
+[; ;i2c_master.c: 285: static i2c_fsm_states_t do_I2C_SEND_ADR_WRITE(void)
+[; ;i2c_master.c: 286: {
+[e :U _do_I2C_SEND_ADR_WRITE ]
+[f ]
+[; ;i2c_master.c: 287: i2c_status.addressNACKCheck = 1;
+"287
+[e = . _i2c_status 3 -> -> 1 `i `uc ]
+[; ;i2c_master.c: 288: i2c_driver_TXData(i2c_status.address << 1);
+"288
+[e ( _i2c_driver_TXData (1 -> << -> . _i2c_status 4 `i -> 1 `i `uc ]
+[; ;i2c_master.c: 289: return I2C_TX;
+"289
+[e ) . `E2347 3 ]
+[e $UE 290  ]
+[; ;i2c_master.c: 290: }
+"290
+[e :UE 290 ]
+}
+"292
+[v _do_I2C_RCEN `(E2347 ~T0 @X0 1 sf ]
+"293
+{
+[; ;i2c_master.c: 292: static i2c_fsm_states_t do_I2C_RCEN(void)
+[; ;i2c_master.c: 293: {
+[e :U _do_I2C_RCEN ]
+[f ]
+[; ;i2c_master.c: 294: i2c_status.addressNACKCheck = 0;
+"294
+[e = . _i2c_status 3 -> -> 0 `i `uc ]
+[; ;i2c_master.c: 295: i2c_driver_startRX();
+"295
+[e ( _i2c_driver_startRX ..  ]
+[; ;i2c_master.c: 296: return I2C_RX;
+"296
+[e ) . `E2347 4 ]
+[e $UE 291  ]
+[; ;i2c_master.c: 297: }
+"297
+[e :UE 291 ]
+}
+"299
+[v _do_I2C_DO_ACK `(E2347 ~T0 @X0 1 sf ]
+"300
+{
+[; ;i2c_master.c: 299: static i2c_fsm_states_t do_I2C_DO_ACK(void)
+[; ;i2c_master.c: 300: {
+[e :U _do_I2C_DO_ACK ]
+[f ]
+[; ;i2c_master.c: 301: i2c_driver_sendACK();
+"301
+[e ( _i2c_driver_sendACK ..  ]
+[; ;i2c_master.c: 302: return I2C_RCEN;
+"302
+[e ) . `E2347 5 ]
+[e $UE 292  ]
+[; ;i2c_master.c: 303: }
+"303
+[e :UE 292 ]
+}
+"305
+[v _do_I2C_DO_NACK_STOP `(E2347 ~T0 @X0 1 sf ]
+"306
+{
+[; ;i2c_master.c: 305: static i2c_fsm_states_t do_I2C_DO_NACK_STOP(void)
+[; ;i2c_master.c: 306: {
+[e :U _do_I2C_DO_NACK_STOP ]
+[f ]
+[; ;i2c_master.c: 307: i2c_driver_sendNACK();
+"307
+[e ( _i2c_driver_sendNACK ..  ]
+[; ;i2c_master.c: 308: return I2C_SEND_STOP;
+"308
+[e ) . `E2347 10 ]
+[e $UE 293  ]
+[; ;i2c_master.c: 309: }
+"309
+[e :UE 293 ]
+}
+"311
+[v _do_I2C_DO_NACK_RESTART `(E2347 ~T0 @X0 1 sf ]
+"312
+{
+[; ;i2c_master.c: 311: static i2c_fsm_states_t do_I2C_DO_NACK_RESTART(void)
+[; ;i2c_master.c: 312: {
+[e :U _do_I2C_DO_NACK_RESTART ]
+[f ]
+[; ;i2c_master.c: 313: i2c_driver_sendNACK();
+"313
+[e ( _i2c_driver_sendNACK ..  ]
+[; ;i2c_master.c: 314: return I2C_SEND_RESTART;
+"314
+[e ) . `E2347 9 ]
+[e $UE 294  ]
+[; ;i2c_master.c: 315: }
+"315
+[e :UE 294 ]
+}
+"319
+[v _do_I2C_DO_ADDRESS_NACK `(E2347 ~T0 @X0 1 sf ]
+"320
+{
+[; ;i2c_master.c: 319: static i2c_fsm_states_t do_I2C_DO_ADDRESS_NACK(void)
+[; ;i2c_master.c: 320: {
+[e :U _do_I2C_DO_ADDRESS_NACK ]
+[f ]
+[; ;i2c_master.c: 321: i2c_status.addressNACKCheck = 0;
+"321
+[e = . _i2c_status 3 -> -> 0 `i `uc ]
+[; ;i2c_master.c: 322: i2c_status.error = I2C_FAIL;
+"322
+[e = . _i2c_status 10 . `E2176 2 ]
+[; ;i2c_master.c: 323: switch(i2c_status.callbackTable[i2c_addressNACK](i2c_status.callbackPayload[i2c_addressNACK]))
+"323
+[e $U 297  ]
+[; ;i2c_master.c: 324: {
+"324
+{
+[; ;i2c_master.c: 325: case i2c_restart_read:
+"325
+[e :U 298 ]
+"326
+[e :U 299 ]
+[; ;i2c_master.c: 326: case i2c_restart_write:
+[; ;i2c_master.c: 327: return do_I2C_SEND_RESTART();
+"327
+[e ) ( _do_I2C_SEND_RESTART ..  ]
+[e $UE 295  ]
+[; ;i2c_master.c: 328: default:
+"328
+[e :U 300 ]
+[; ;i2c_master.c: 329: return do_I2C_SEND_STOP();
+"329
+[e ) ( _do_I2C_SEND_STOP ..  ]
+[e $UE 295  ]
+"330
+}
+[; ;i2c_master.c: 330: }
+[e $U 296  ]
+"323
+[e :U 297 ]
+[e [\ ( *U *U + &U . _i2c_status 11 * -> . `E2365 2 `ux -> -> # *U &U . _i2c_status 11 `ui `ux (1 *U + &U . _i2c_status 12 * -> . `E2365 2 `ux -> -> # *U &U . _i2c_status 12 `ui `ux , $ . `E2181 1 298
+ , $ . `E2181 2 299
+ 300 ]
+"330
+[e :U 296 ]
+[; ;i2c_master.c: 331: }
+"331
+[e :UE 295 ]
+}
+"333
+[v _do_I2C_TX `(E2347 ~T0 @X0 1 sf ]
+"334
+{
+[; ;i2c_master.c: 333: static i2c_fsm_states_t do_I2C_TX(void)
+[; ;i2c_master.c: 334: {
+[e :U _do_I2C_TX ]
+[f ]
+[; ;i2c_master.c: 335: if(i2c_driver_isNACK())
+"335
+[e $ ! ( _i2c_driver_isNACK ..  302  ]
+[; ;i2c_master.c: 336: {
+"336
+{
+[; ;i2c_master.c: 337: switch(i2c_status.callbackTable[i2c_dataNACK](i2c_status.callbackPayload[i2c_dataNACK]))
+"337
+[e $U 304  ]
+[; ;i2c_master.c: 338: {
+"338
+{
+[; ;i2c_master.c: 339: case i2c_restart_read:
+"339
+[e :U 305 ]
+[; ;i2c_master.c: 340: return do_I2C_SEND_RESTART_READ();
+"340
+[e ) ( _do_I2C_SEND_RESTART_READ ..  ]
+[e $UE 301  ]
+[; ;i2c_master.c: 341: case i2c_restart_write:
+"341
+[e :U 306 ]
+[; ;i2c_master.c: 342: return do_I2C_SEND_RESTART_WRITE();
+"342
+[e ) ( _do_I2C_SEND_RESTART_WRITE ..  ]
+[e $UE 301  ]
+[; ;i2c_master.c: 343: default:
+"343
+[e :U 307 ]
+[; ;i2c_master.c: 344: case i2c_continue:
+"344
+[e :U 308 ]
+"345
+[e :U 309 ]
+[; ;i2c_master.c: 345: case i2c_stop:
+[; ;i2c_master.c: 346: return do_I2C_SEND_STOP();
+"346
+[e ) ( _do_I2C_SEND_STOP ..  ]
+[e $UE 301  ]
+"347
+}
+[; ;i2c_master.c: 347: }
+[e $U 303  ]
+"337
+[e :U 304 ]
+[e [\ ( *U *U + &U . _i2c_status 11 * -> . `E2365 3 `ux -> -> # *U &U . _i2c_status 11 `ui `ux (1 *U + &U . _i2c_status 12 * -> . `E2365 3 `ux -> -> # *U &U . _i2c_status 12 `ui `ux , $ . `E2181 1 305
+ , $ . `E2181 2 306
+ , $ . `E2181 3 308
+ , $ . `E2181 0 309
+ 307 ]
+"347
+[e :U 303 ]
+"348
+}
+[; ;i2c_master.c: 348: }
+[e $U 310  ]
+"349
+[e :U 302 ]
+[; ;i2c_master.c: 349: else
+[; ;i2c_master.c: 350: {
+"350
+{
+[; ;i2c_master.c: 351: i2c_status.addressNACKCheck = 0;
+"351
+[e = . _i2c_status 3 -> -> 0 `i `uc ]
+[; ;i2c_master.c: 352: i2c_driver_TXData(*i2c_status.data_ptr++);
+"352
+[e ( _i2c_driver_TXData (1 *U ++ . _i2c_status 5 * -> -> 1 `i `x -> -> # *U . _i2c_status 5 `i `x ]
+[; ;i2c_master.c: 353: return (--i2c_status.data_length)?I2C_TX:I2C_TX_EMPTY;
+"353
+[e ) -> ? != =- . _i2c_status 6 -> -> 1 `i `ui -> -> 0 `i `ui : -> . `E2347 3 `i -> . `E2347 6 `i `E2347 ]
+[e $UE 301  ]
+"354
+}
+[e :U 310 ]
+[; ;i2c_master.c: 354: }
+[; ;i2c_master.c: 355: }
+"355
+[e :UE 301 ]
+}
+"357
+[v _do_I2C_RX `(E2347 ~T0 @X0 1 sf ]
+"358
+{
+[; ;i2c_master.c: 357: static i2c_fsm_states_t do_I2C_RX(void)
+[; ;i2c_master.c: 358: {
+[e :U _do_I2C_RX ]
+[f ]
+[; ;i2c_master.c: 359: *i2c_status.data_ptr++ = i2c_driver_getRXData();
+"359
+[e = *U ++ . _i2c_status 5 * -> -> 1 `i `x -> -> # *U . _i2c_status 5 `i `x ( _i2c_driver_getRXData ..  ]
+[; ;i2c_master.c: 360: if(--i2c_status.data_length)
+"360
+[e $ ! != =- . _i2c_status 6 -> -> 1 `i `ui -> -> 0 `i `ui 312  ]
+[; ;i2c_master.c: 361: {
+"361
+{
+[; ;i2c_master.c: 362: i2c_driver_sendACK();
+"362
+[e ( _i2c_driver_sendACK ..  ]
+[; ;i2c_master.c: 363: return I2C_RCEN;
+"363
+[e ) . `E2347 5 ]
+[e $UE 311  ]
+"364
+}
+[; ;i2c_master.c: 364: }
+[e $U 313  ]
+"365
+[e :U 312 ]
+[; ;i2c_master.c: 365: else
+[; ;i2c_master.c: 366: {
+"366
+{
+[; ;i2c_master.c: 367: i2c_status.bufferFree = 1;
+"367
+[e = . _i2c_status 2 -> -> 1 `i `uc ]
+[; ;i2c_master.c: 368: switch(i2c_status.callbackTable[i2c_dataComplete](i2c_status.callbackPayload[i2c_dataComplete]))
+"368
+[e $U 315  ]
+[; ;i2c_master.c: 369: {
+"369
+{
+[; ;i2c_master.c: 370: case i2c_restart_write:
+"370
+[e :U 316 ]
+"371
+[e :U 317 ]
+[; ;i2c_master.c: 371: case i2c_restart_read:
+[; ;i2c_master.c: 372: return do_I2C_DO_NACK_RESTART();
+"372
+[e ) ( _do_I2C_DO_NACK_RESTART ..  ]
+[e $UE 311  ]
+[; ;i2c_master.c: 373: default:
+"373
+[e :U 318 ]
+[; ;i2c_master.c: 374: case i2c_continue:
+"374
+[e :U 319 ]
+"375
+[e :U 320 ]
+[; ;i2c_master.c: 375: case i2c_stop:
+[; ;i2c_master.c: 376: return do_I2C_DO_NACK_STOP();
+"376
+[e ) ( _do_I2C_DO_NACK_STOP ..  ]
+[e $UE 311  ]
+"377
+}
+[; ;i2c_master.c: 377: }
+[e $U 314  ]
+"368
+[e :U 315 ]
+[e [\ ( *U *U + &U . _i2c_status 11 * -> . `E2365 0 `ux -> -> # *U &U . _i2c_status 11 `ui `ux (1 *U + &U . _i2c_status 12 * -> . `E2365 0 `ux -> -> # *U &U . _i2c_status 12 `ui `ux , $ . `E2181 2 316
+ , $ . `E2181 1 317
+ , $ . `E2181 3 319
+ , $ . `E2181 0 320
+ 318 ]
+"377
+[e :U 314 ]
+"379
+}
+[e :U 313 ]
+[; ;i2c_master.c: 379: }
+[; ;i2c_master.c: 380: }
+"380
+[e :UE 311 ]
+}
+"382
+[v _do_I2C_TX_EMPTY `(E2347 ~T0 @X0 1 sf ]
+"383
+{
+[; ;i2c_master.c: 382: static i2c_fsm_states_t do_I2C_TX_EMPTY(void)
+[; ;i2c_master.c: 383: {
+[e :U _do_I2C_TX_EMPTY ]
+[f ]
+[; ;i2c_master.c: 384: i2c_status.bufferFree = 1;
+"384
+[e = . _i2c_status 2 -> -> 1 `i `uc ]
+[; ;i2c_master.c: 385: switch(i2c_status.callbackTable[i2c_dataComplete](i2c_status.callbackPayload[i2c_dataComplete]))
+"385
+[e $U 323  ]
+[; ;i2c_master.c: 386: {
+"386
+{
+[; ;i2c_master.c: 387: case i2c_restart_read:
+"387
+[e :U 324 ]
+"388
+[e :U 325 ]
+[; ;i2c_master.c: 388: case i2c_restart_write:
+[; ;i2c_master.c: 389: return do_I2C_SEND_RESTART();
+"389
+[e ) ( _do_I2C_SEND_RESTART ..  ]
+[e $UE 321  ]
+[; ;i2c_master.c: 390: case i2c_continue:
+"390
+[e :U 326 ]
+[; ;i2c_master.c: 391: mssp_setIRQ();
+"391
+[e ( _mssp_setIRQ ..  ]
+[; ;i2c_master.c: 392: return I2C_TX;
+"392
+[e ) . `E2347 3 ]
+[e $UE 321  ]
+[; ;i2c_master.c: 393: default:
+"393
+[e :U 327 ]
+[; ;i2c_master.c: 394: case i2c_stop:
+"394
+[e :U 328 ]
+[; ;i2c_master.c: 395: return do_I2C_SEND_STOP();
+"395
+[e ) ( _do_I2C_SEND_STOP ..  ]
+[e $UE 321  ]
+"396
+}
+[; ;i2c_master.c: 396: }
+[e $U 322  ]
+"385
+[e :U 323 ]
+[e [\ ( *U *U + &U . _i2c_status 11 * -> . `E2365 0 `ux -> -> # *U &U . _i2c_status 11 `ui `ux (1 *U + &U . _i2c_status 12 * -> . `E2365 0 `ux -> -> # *U &U . _i2c_status 12 `ui `ux , $ . `E2181 1 324
+ , $ . `E2181 2 325
+ , $ . `E2181 3 326
+ , $ . `E2181 0 328
+ 327 ]
+"396
+[e :U 322 ]
+[; ;i2c_master.c: 397: }
+"397
+[e :UE 321 ]
+}
+[; ;i2c_master.c: 399: typedef i2c_fsm_states_t (stateHandlerFunction)(void);
+"399
+[v _stateHandlerFunction `(E2347 ~T0 @X0 1 tf ]
+"400
+[v _fsmStateTable `*C_stateHandlerFunction ~T0 @X0 -> 0 `x e ]
+[i _fsmStateTable
+:U ..
+"401
+-> &U _do_I2C_IDLE `*C_stateHandlerFunction
+"402
+-> &U _do_I2C_SEND_ADR_READ `*C_stateHandlerFunction
+"403
+-> &U _do_I2C_SEND_ADR_WRITE `*C_stateHandlerFunction
+"404
+-> &U _do_I2C_TX `*C_stateHandlerFunction
+"405
+-> &U _do_I2C_RX `*C_stateHandlerFunction
+"406
+-> &U _do_I2C_RCEN `*C_stateHandlerFunction
+"407
+-> &U _do_I2C_TX_EMPTY `*C_stateHandlerFunction
+"408
+-> &U _do_I2C_SEND_RESTART_READ `*C_stateHandlerFunction
+"409
+-> &U _do_I2C_SEND_RESTART_WRITE `*C_stateHandlerFunction
+"410
+-> &U _do_I2C_SEND_RESTART `*C_stateHandlerFunction
+"411
+-> &U _do_I2C_SEND_STOP `*C_stateHandlerFunction
+"412
+-> &U _do_I2C_DO_ACK `*C_stateHandlerFunction
+"413
+-> &U _do_I2C_DO_NACK_STOP `*C_stateHandlerFunction
+"414
+-> &U _do_I2C_DO_NACK_RESTART `*C_stateHandlerFunction
+"415
+-> &U _do_I2C_RESET `*C_stateHandlerFunction
+"417
+-> &U _do_I2C_DO_ADDRESS_NACK `*C_stateHandlerFunction
+..
+]
+[; ;i2c_master.c: 400: const stateHandlerFunction *fsmStateTable[] = {
+[; ;i2c_master.c: 401: do_I2C_IDLE,
+[; ;i2c_master.c: 402: do_I2C_SEND_ADR_READ,
+[; ;i2c_master.c: 403: do_I2C_SEND_ADR_WRITE,
+[; ;i2c_master.c: 404: do_I2C_TX,
+[; ;i2c_master.c: 405: do_I2C_RX,
+[; ;i2c_master.c: 406: do_I2C_RCEN,
+[; ;i2c_master.c: 407: do_I2C_TX_EMPTY,
+[; ;i2c_master.c: 408: do_I2C_SEND_RESTART_READ,
+[; ;i2c_master.c: 409: do_I2C_SEND_RESTART_WRITE,
+[; ;i2c_master.c: 410: do_I2C_SEND_RESTART,
+[; ;i2c_master.c: 411: do_I2C_SEND_STOP,
+[; ;i2c_master.c: 412: do_I2C_DO_ACK,
+[; ;i2c_master.c: 413: do_I2C_DO_NACK_STOP,
+[; ;i2c_master.c: 414: do_I2C_DO_NACK_RESTART,
+[; ;i2c_master.c: 415: do_I2C_RESET,
+[; ;i2c_master.c: 416: do_I2C_DO_ADDRESS_NACK
+[; ;i2c_master.c: 417: };
+"419
+[v _i2c_ISR `(v ~T0 @X0 1 ef ]
+"420
+{
+[; ;i2c_master.c: 419: void i2c_ISR(void)
+[; ;i2c_master.c: 420: {
+[e :U _i2c_ISR ]
+[f ]
+[; ;i2c_master.c: 421: mssp_clearIRQ();
+"421
+[e ( _mssp_clearIRQ ..  ]
+[; ;i2c_master.c: 427: if(i2c_status.addressNACKCheck && i2c_driver_isNACK())
+"427
+[e $ ! && != -> . _i2c_status 3 `i -> -> -> 0 `i `uc `i ( _i2c_driver_isNACK ..  330  ]
+[; ;i2c_master.c: 428: {
+"428
+{
+[; ;i2c_master.c: 429: i2c_status.state = I2C_ADDRESS_NACK;
+"429
+[e = . _i2c_status 9 . `E2347 15 ]
+"430
+}
+[e :U 330 ]
+[; ;i2c_master.c: 430: }
+[; ;i2c_master.c: 432: i2c_status.state = fsmStateTable[i2c_status.state]();
+"432
+[e = . _i2c_status 9 ( *U *U + &U _fsmStateTable * -> . _i2c_status 9 `ux -> -> # *U &U _fsmStateTable `ui `ux ..  ]
+[; ;i2c_master.c: 433: }
+"433
+[e :UE 329 ]
+}
+"435
+[v _i2c_busCollisionISR `(v ~T0 @X0 1 ef ]
+"436
+{
+[; ;i2c_master.c: 435: void i2c_busCollisionISR(void)
+[; ;i2c_master.c: 436: {
+[e :U _i2c_busCollisionISR ]
+[f ]
+[; ;i2c_master.c: 437: i2c_driver_clearBusCollision();
+"437
+[e ( _i2c_driver_clearBusCollision ..  ]
+[; ;i2c_master.c: 438: }
+"438
+[e :UE 331 ]
+}
+"443
+[v _returnStop `(E2181 ~T0 @X0 1 sf1`*v ]
+"444
+{
+[; ;i2c_master.c: 443: static i2c_operations_t returnStop(void *p)
+[; ;i2c_master.c: 444: {
+[e :U _returnStop ]
+"443
+[v _p `*v ~T0 @X0 1 r1 ]
+"444
+[f ]
+[; ;i2c_master.c: 445: return i2c_stop;
+"445
+[e ) . `E2181 0 ]
+[e $UE 332  ]
+[; ;i2c_master.c: 446: }
+"446
+[e :UE 332 ]
+}
+"448
+[v _returnReset `(E2181 ~T0 @X0 1 sf1`*v ]
+"449
+{
+[; ;i2c_master.c: 448: static i2c_operations_t returnReset(void *p)
+[; ;i2c_master.c: 449: {
+[e :U _returnReset ]
+"448
+[v _p `*v ~T0 @X0 1 r1 ]
+"449
+[f ]
+[; ;i2c_master.c: 450: return i2c_reset_link;
+"450
+[e ) . `E2181 4 ]
+[e $UE 333  ]
+[; ;i2c_master.c: 451: }
+"451
+[e :UE 333 ]
+}
+"453
+[v _setCallBack `(v ~T0 @X0 1 sf3`E2365`*F2189`*v ]
+"454
+{
+[; ;i2c_master.c: 453: static void setCallBack(i2c_callbackIndex idx, i2c_callback cb, void *p)
+[; ;i2c_master.c: 454: {
+[e :U _setCallBack ]
+"453
+[v _idx `E2365 ~T0 @X0 1 r1 ]
+[v _cb `*F2189 ~T0 @X0 1 r2 ]
+[v _p `*v ~T0 @X0 1 r3 ]
+"454
+[f ]
+[; ;i2c_master.c: 455: if(cb)
+"455
+[e $ ! != _cb -> -> 0 `i `*F2189 335  ]
+[; ;i2c_master.c: 456: {
+"456
+{
+[; ;i2c_master.c: 457: i2c_status.callbackTable[idx] = cb;
+"457
+[e = *U + &U . _i2c_status 11 * -> _idx `ux -> -> # *U &U . _i2c_status 11 `ui `ux _cb ]
+[; ;i2c_master.c: 458: i2c_status.callbackPayload[idx] = p;
+"458
+[e = *U + &U . _i2c_status 12 * -> _idx `ux -> -> # *U &U . _i2c_status 12 `ui `ux _p ]
+"459
+}
+[; ;i2c_master.c: 459: }
+[e $U 336  ]
+"460
+[e :U 335 ]
+[; ;i2c_master.c: 460: else
+[; ;i2c_master.c: 461: {
+"461
+{
+[; ;i2c_master.c: 462: i2c_status.callbackTable[idx] = returnStop;
+"462
+[e = *U + &U . _i2c_status 11 * -> _idx `ux -> -> # *U &U . _i2c_status 11 `ui `ux &U _returnStop ]
+[; ;i2c_master.c: 463: i2c_status.callbackPayload[idx] = (0);
+"463
+[e = *U + &U . _i2c_status 12 * -> _idx `ux -> -> # *U &U . _i2c_status 12 `ui `ux -> -> 0 `i `*v ]
+"464
+}
+[e :U 336 ]
+[; ;i2c_master.c: 464: }
+[; ;i2c_master.c: 465: }
+"465
+[e :UE 334 ]
 }

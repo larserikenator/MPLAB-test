@@ -50,7 +50,10 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "interrupt_manager.h"
+#include "i2c_driver.h"
 #include "usb/usb.h"
+#include "drivers/i2c_master.h"
+#include "drivers/i2c_simple_master.h"
 
 #define _XTAL_FREQ  48000000
 
