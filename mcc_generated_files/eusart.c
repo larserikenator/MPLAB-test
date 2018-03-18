@@ -1,26 +1,25 @@
 /**
-  @Generated PIC10 / PIC12 / PIC16 / PIC18 MCUs Header File
+  EUSART Generated Driver File
 
-  @Company:
+  @Company
     Microchip Technology Inc.
 
-  @File Name:
-    mcc.h
+  @File Name
+    eusart.c
 
-  @Summary:
-    This is the mcc.h file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
+  @Summary
+    This is the generated driver implementation file for the EUSART driver using PIC10 / PIC12 / PIC16 / PIC18 MCUs
 
-  @Description:
-    This header file provides implementations for driver APIs for all modules selected in the GUI.
+  @Description
+    This source file provides APIs for EUSART.
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.65
         Device            :  PIC16F1454
         Driver Version    :  2.00
     The generated drivers are tested against the following:
-        Compiler          :  XC8 1.45 or later
-        MPLAB             :  MPLAB X 4.10
+        Compiler          :  XC8 1.45
+        MPLAB 	          :  MPLAB X 4.10
 */
-
 /*
     (c) 2016 Microchip Technology Inc. and its subsidiaries. You may use this
     software and any derivatives exclusively with Microchip products.
@@ -42,63 +41,66 @@
     MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE
     TERMS.
 */
-
-#ifndef MCC_H
-#define	MCC_H
-#include <xc.h>
-#include "pin_manager.h"
-#include <stdint.h>
-#include <stdbool.h>
-#include "interrupt_manager.h"
-#include "i2c_driver.h"
-#include "usb/usb.h"
+/**
+  Section: Included Files
+*/
 #include "eusart.h"
-#include "drivers/i2c_master.h"
-#include "drivers/i2c_simple_master.h"
-
-#define _XTAL_FREQ  48000000
 
 
 /**
- * @Param
-    none
- * @Returns
-    none
- * @Description
-    Initializes the device to the default states configured in the
- *                  MCC GUI
- * @Example
-    SYSTEM_Initialize(void);
- */
-void SYSTEM_Initialize(void);
+  Section: EUSART APIs
+*/
+void EUSART_Initialize(void)
+{
+    // Set the EUSART module to the options selected in the user interface.
+
+    // SCKP Non-Inverted; BRG16 16bit_generator; WUE disabled; ABDEN disabled; 
+    BAUDCON = 0x08;
+
+    // SPEN enabled; RX9 8-bit; CREN disabled; ADDEN disabled; SREN disabled; 
+    RCSTA = 0x80;
+
+    // TX9 8-bit; TX9D 0; SENDB sync_break_complete; TXEN disabled; SYNC asynchronous; BRGH hi_speed; CSRC slave; 
+    TXSTA = 0x04;
+
+    // SPBRGL 225; 
+    SPBRGL = 0xE1;
+
+    // SPBRGH 4; 
+    SPBRGH = 0x04;
+
+
+}
+
+uint8_t EUSART_Read(void)
+{
+    while(!PIR1bits.RCIF)
+    {
+    }
+
+    
+    if(1 == RCSTAbits.OERR)
+    {
+        // EUSART error - restart
+
+        RCSTAbits.CREN = 0; 
+        RCSTAbits.CREN = 1; 
+    }
+
+    return RCREG;
+}
+
+void EUSART_Write(uint8_t txData)
+{
+    while(0 == PIR1bits.TXIF)
+    {
+    }
+
+    TXREG = txData;    // Write the data byte to the USART.
+}
+
+
 
 /**
- * @Param
-    none
- * @Returns
-    none
- * @Description
-    Initializes the oscillator to the default states configured in the
- *                  MCC GUI
- * @Example
-    OSCILLATOR_Initialize(void);
- */
-void OSCILLATOR_Initialize(void);
-
-/**
- * @Param
-    none
- * @Returns
-    none
- * @Description
-    Initializes the WDT module to the default states configured in the
- *                  MCC GUI
- * @Example
-    WDT_Initialize(void);
- */
-void WDT_Initialize(void);
-
-#endif	/* MCC_H */
-/**
- End of File
+  End of File
 */

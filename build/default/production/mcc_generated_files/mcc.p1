@@ -1,16 +1,18 @@
 Version 3.2 HI-TECH Software Intermediate Code
 [v F2168 `(v ~T0 @X0 0 tf ]
 [v F2171 `(v ~T0 @X0 0 tf ]
-"120 mcc_generated_files/pin_manager.h
+"134 mcc_generated_files/pin_manager.h
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
-"85 mcc_generated_files/mcc.h
+"86 mcc_generated_files/mcc.h
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
-"98
+"99
 [v _WDT_Initialize `(v ~T0 @X0 0 ef ]
 "195 mcc_generated_files/usb/usb_device.h
 [v _USBDeviceInit `(v ~T0 @X0 0 ef ]
 "635
 [v _USBDeviceAttach `(v ~T0 @X0 0 ef ]
+"93 mcc_generated_files/eusart.h
+[v _EUSART_Initialize `(v ~T0 @X0 0 ef ]
 "1366 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1454.h
 [v _OSCCON `Vuc ~T0 @X0 0 e@153 ]
 "1302
@@ -2039,8 +2041,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 193: extern __bank0 unsigned char __resetbits;
 [; ;pic.h: 194: extern __bank0 __bit __powerdown;
 [; ;pic.h: 195: extern __bank0 __bit __timeout;
-[; ;pin_manager.h: 120: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 132: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 134: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 146: void PIN_MANAGER_IOC(void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 28: typedef signed short long int int24_t;
@@ -2770,6 +2772,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;usb_device_cdc.h: 952: extern LINE_CODING line_coding;
 [; ;usb_device_cdc.h: 954: extern volatile CTRL_TRF_SETUP SetupPkt;
 [; ;usb_device_cdc.h: 955: extern const uint8_t configDescriptor1[];
+[; ;eusart.h: 93: void EUSART_Initialize(void);
+[; ;eusart.h: 113: uint8_t EUSART_Read(void);
+[; ;eusart.h: 133: void EUSART_Write(uint8_t txData);
 [; ;i2c_types.h: 29: typedef enum {
 [; ;i2c_types.h: 30: I2C_NOERR,
 [; ;i2c_types.h: 31: I2C_BUSY,
@@ -2812,9 +2817,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;i2c_simple_master.h: 34: void i2c_writeNBytes(i2c_address_t address, void* data, size_t len);
 [; ;i2c_simple_master.h: 35: void i2c_readDataBlock(i2c_address_t address, uint8_t reg, void *data, size_t len);
 [; ;i2c_simple_master.h: 36: void i2c_readNBytes(i2c_address_t address, void *data, size_t len);
-[; ;mcc.h: 72: void SYSTEM_Initialize(void);
-[; ;mcc.h: 85: void OSCILLATOR_Initialize(void);
-[; ;mcc.h: 98: void WDT_Initialize(void);
+[; ;mcc.h: 73: void SYSTEM_Initialize(void);
+[; ;mcc.h: 86: void OSCILLATOR_Initialize(void);
+[; ;mcc.h: 99: void WDT_Initialize(void);
 "73 mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize `(v ~T0 @X0 1 ef ]
 "74
@@ -2838,60 +2843,63 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mcc.c: 80: USBDeviceAttach();
 "80
 [e ( _USBDeviceAttach ..  ]
-[; ;mcc.c: 81: }
+[; ;mcc.c: 81: EUSART_Initialize();
 "81
+[e ( _EUSART_Initialize ..  ]
+[; ;mcc.c: 82: }
+"82
 [e :UE 320 ]
 }
-"83
-[v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
 "84
+[v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
+"85
 {
-[; ;mcc.c: 83: void OSCILLATOR_Initialize(void)
-[; ;mcc.c: 84: {
+[; ;mcc.c: 84: void OSCILLATOR_Initialize(void)
+[; ;mcc.c: 85: {
 [e :U _OSCILLATOR_Initialize ]
 [f ]
-[; ;mcc.c: 86: OSCCON = 0x7C;
-"86
+[; ;mcc.c: 87: OSCCON = 0x7C;
+"87
 [e = _OSCCON -> -> 124 `i `uc ]
-[; ;mcc.c: 88: OSCTUNE = 0x00;
-"88
+[; ;mcc.c: 89: OSCTUNE = 0x00;
+"89
 [e = _OSCTUNE -> -> 0 `i `uc ]
-[; ;mcc.c: 90: ACTCON = 0x00;
-"90
+[; ;mcc.c: 91: ACTCON = 0x00;
+"91
 [e = _ACTCON -> -> 0 `i `uc ]
-[; ;mcc.c: 92: BORCON = 0x00;
-"92
+[; ;mcc.c: 93: BORCON = 0x00;
+"93
 [e = _BORCON -> -> 0 `i `uc ]
-[; ;mcc.c: 94: while(PLLRDY == 0)
-"94
+[; ;mcc.c: 95: while(PLLRDY == 0)
+"95
 [e $U 322  ]
 [e :U 323 ]
-[; ;mcc.c: 95: {
-"95
-{
+[; ;mcc.c: 96: {
 "96
+{
+"97
 }
 [e :U 322 ]
-"94
+"95
 [e $ == -> _PLLRDY `i -> 0 `i 323  ]
 [e :U 324 ]
-[; ;mcc.c: 96: }
 [; ;mcc.c: 97: }
-"97
+[; ;mcc.c: 98: }
+"98
 [e :UE 321 ]
 }
-"99
-[v _WDT_Initialize `(v ~T0 @X0 1 ef ]
 "100
+[v _WDT_Initialize `(v ~T0 @X0 1 ef ]
+"101
 {
-[; ;mcc.c: 99: void WDT_Initialize(void)
-[; ;mcc.c: 100: {
+[; ;mcc.c: 100: void WDT_Initialize(void)
+[; ;mcc.c: 101: {
 [e :U _WDT_Initialize ]
 [f ]
-[; ;mcc.c: 102: WDTCON = 0x16;
-"102
-[e = _WDTCON -> -> 22 `i `uc ]
-[; ;mcc.c: 103: }
+[; ;mcc.c: 103: WDTCON = 0x16;
 "103
+[e = _WDTCON -> -> 22 `i `uc ]
+[; ;mcc.c: 104: }
+"104
 [e :UE 325 ]
 }

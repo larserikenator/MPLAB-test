@@ -2107,8 +2107,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 193: extern __bank0 unsigned char __resetbits;
 [; ;pic.h: 194: extern __bank0 __bit __powerdown;
 [; ;pic.h: 195: extern __bank0 __bit __timeout;
-[; ;pin_manager.h: 120: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 132: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 134: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 146: void PIN_MANAGER_IOC(void);
 [; ;interrupt_manager.h: 108: void interrupt INTERRUPT_InterruptManager(void);
 [; ;i2c_driver.h: 34: inline void i2c_driver_close(void);
 [; ;i2c_driver.h: 37: inline void mssp_enableIRQ(void);
@@ -2779,6 +2779,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;usb_device_cdc.h: 952: extern LINE_CODING line_coding;
 [; ;usb_device_cdc.h: 954: extern volatile CTRL_TRF_SETUP SetupPkt;
 [; ;usb_device_cdc.h: 955: extern const uint8_t configDescriptor1[];
+[; ;eusart.h: 93: void EUSART_Initialize(void);
+[; ;eusart.h: 113: uint8_t EUSART_Read(void);
+[; ;eusart.h: 133: void EUSART_Write(uint8_t txData);
 [; ;i2c_types.h: 29: typedef enum {
 [; ;i2c_types.h: 30: I2C_NOERR,
 [; ;i2c_types.h: 31: I2C_BUSY,
@@ -2821,9 +2824,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;i2c_simple_master.h: 34: void i2c_writeNBytes(i2c_address_t address, void* data, size_t len);
 [; ;i2c_simple_master.h: 35: void i2c_readDataBlock(i2c_address_t address, uint8_t reg, void *data, size_t len);
 [; ;i2c_simple_master.h: 36: void i2c_readNBytes(i2c_address_t address, void *data, size_t len);
-[; ;mcc.h: 72: void SYSTEM_Initialize(void);
-[; ;mcc.h: 85: void OSCILLATOR_Initialize(void);
-[; ;mcc.h: 98: void WDT_Initialize(void);
+[; ;mcc.h: 73: void SYSTEM_Initialize(void);
+[; ;mcc.h: 86: void OSCILLATOR_Initialize(void);
+[; ;mcc.h: 99: void WDT_Initialize(void);
 "30 mcc_generated_files/i2c_driver.c
 [p n 520 ]
 [v F2066 `(v ~T0 @X0 1 tf ]

@@ -24,7 +24,9 @@
         <itemPath>mcc_generated_files/drivers/i2c_types.h</itemPath>
         <itemPath>mcc_generated_files/i2c_driver.h</itemPath>
         <itemPath>mcc_generated_files/drivers/i2c_simple_master.h</itemPath>
+        <itemPath>mcc_generated_files/eusart.h</itemPath>
       </logicalFolder>
+      <itemPath>userDefinitions.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -47,6 +49,7 @@
         <itemPath>mcc_generated_files/drivers/i2c_types.c</itemPath>
         <itemPath>mcc_generated_files/i2c_driver.c</itemPath>
         <itemPath>mcc_generated_files/drivers/i2c_simple_master.c</itemPath>
+        <itemPath>mcc_generated_files/eusart.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
     </logicalFolder>

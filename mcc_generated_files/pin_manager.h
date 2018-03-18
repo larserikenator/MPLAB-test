@@ -93,6 +93,20 @@
 #define SDA_SetAnalogMode()  do { ANSELCbits.ANSC1 = 1; } while(0)
 #define SDA_SetDigitalMode() do { ANSELCbits.ANSC1 = 0; } while(0)
 
+// get/set SDO aliases
+#define SDO_TRIS               TRISCbits.TRISC2
+#define SDO_LAT                LATCbits.LATC2
+#define SDO_PORT               PORTCbits.RC2
+#define SDO_ANS                ANSELCbits.ANSC2
+#define SDO_SetHigh()            do { LATCbits.LATC2 = 1; } while(0)
+#define SDO_SetLow()             do { LATCbits.LATC2 = 0; } while(0)
+#define SDO_Toggle()             do { LATCbits.LATC2 = ~LATCbits.LATC2; } while(0)
+#define SDO_GetValue()           PORTCbits.RC2
+#define SDO_SetDigitalInput()    do { TRISCbits.TRISC2 = 1; } while(0)
+#define SDO_SetDigitalOutput()   do { TRISCbits.TRISC2 = 0; } while(0)
+#define SDO_SetAnalogMode()  do { ANSELCbits.ANSC2 = 1; } while(0)
+#define SDO_SetDigitalMode() do { ANSELCbits.ANSC2 = 0; } while(0)
+
 // get/set IO_RC3 aliases
 #define IO_RC3_TRIS               TRISCbits.TRISC3
 #define IO_RC3_LAT                LATCbits.LATC3

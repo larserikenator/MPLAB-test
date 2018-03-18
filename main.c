@@ -41,6 +41,7 @@
 */
 #include <string.h>
 #include "mcc_generated_files/mcc.h"
+#include "userDefinitions.h"
 
 /** VARIABLES ******************************************************/
 
@@ -127,6 +128,8 @@ void UserApplication(void)
             // Starte avlesning for hver sensor, basert på kommando, og skrive det til COM-port
             // Alt dette på de resterende 1300 ord.. evt droppe USB firmware
             // Evt bruke FTDI USB-2-serial chip (FT232RL eller liknednde)
+            
+            
         }
         
         

@@ -13,6 +13,7 @@ mcc_generated_files/usb/usb_device_config.h  \
 mcc_generated_files/usb/usb_device_cdc.h  \
 mcc_generated_files/interrupt_manager.h  \
 mcc_generated_files/usb/usb.h  \
+mcc_generated_files/eusart.h  \
 mcc_generated_files/pin_manager.h  \
 mcc_generated_files/drivers/i2c_simple_master.h  \
 mcc_generated_files/usb/fixed_address_memory.h  \
